@@ -1,5 +1,6 @@
-from Src.Models.settings import settings # type: ignore
+from Src.settings import settings
 from Src.Core.abstract_logic import abstract_logic
+from Src.Core.validator import validator
 
 
 import json
@@ -27,8 +28,7 @@ class settings_manager(abstract_logic):
     Открыть и загрузить настройки
     """
     def open(self, file_name:str = ""):
-        if not isinstance(file_name, str):
-            raise TypeError("Некорректно переданы параметры!")
+        validator.validate(file_name, str)
         
         if file_name != "":
             self.__file_name = file_name
@@ -64,7 +64,7 @@ class settings_manager(abstract_logic):
     Загруженные настройки
     """
     @property
-    def current_settings(self) -> settings:
+    def settings(self) -> settings:
         return self.__settings
     
     """
@@ -74,6 +74,10 @@ class settings_manager(abstract_logic):
         _settings = settings()
         _settings.inn = "380080920202"
         _settings.organization_name = "Рога и копыта (default)"
+        _settings.account = "98745632107"
+        _settings.correspondent_account = "12345678901"
+        _settings.bic = "123456789"
+        _settings.organization_type = "12345"
         return _settings
     
 

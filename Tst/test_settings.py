@@ -48,8 +48,8 @@ class test_settings(unittest.TestCase):
 
        # Проверки
        assert manager1 == manager2
-       assert manager1.current_settings.inn == manager2.current_settings.inn
-       assert manager1.current_settings.organization_name == manager2.current_settings.organization_name
+       assert manager1.settings.inn == manager2.settings.inn
+       assert manager1.settings.organization_name == manager2.settings.organization_name
 
        
 

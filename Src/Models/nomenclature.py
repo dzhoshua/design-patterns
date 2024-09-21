@@ -32,7 +32,7 @@ class nomenclature_model(base_model_code):
 
     @group.setter
     def group(self, value: group_model):
-        validator.validate(value,group_model )
+        validator.validate(value, group_model)
         self.__group = value    
 
     """
