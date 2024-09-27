@@ -1,0 +1,33 @@
+<?xml version="1.0" ?>
+<report>
+    <item>
+        <group>ab836f7adcaf465386fcdd7b5badb856</group>
+        <name>Пшеничная мука</name>
+        <range>b96f477442594fd0ba32a1cdd09e4a9d</range>
+        <unique_code>c2efe90e300f4e2cbe11b985014ad50b</unique_code>
+    </item>
+    <item>
+        <group>ab836f7adcaf465386fcdd7b5badb856</group>
+        <name>Сахар</name>
+        <range>b96f477442594fd0ba32a1cdd09e4a9d</range>
+        <unique_code>108c12c927b54d279b92241b7bea78a3</unique_code>
+    </item>
+    <item>
+        <group>ab836f7adcaf465386fcdd7b5badb856</group>
+        <name>Сливочное масло</name>
+        <range>b96f477442594fd0ba32a1cdd09e4a9d</range>
+        <unique_code>2483faa4c0a5421f8dbbe2db5e4de0d0</unique_code>
+    </item>
+    <item>
+        <group>ab836f7adcaf465386fcdd7b5badb856</group>
+        <name>Сливочное масло</name>
+        <range>5326dac8ccf342c4a24647e50a4c1bb8</range>
+        <unique_code>610771a2b7fb45e9a143ae49714930cd</unique_code>
+    </item>
+    <item>
+        <group>ab836f7adcaf465386fcdd7b5badb856</group>
+        <name>Ванилин</name>
+        <range>b96f477442594fd0ba32a1cdd09e4a9d</range>
+        <unique_code>6557c37723264faea28df62fcb28fab5</unique_code>
+    </item>
+</report>
