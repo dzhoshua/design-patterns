@@ -6,21 +6,12 @@ from Src.Core.base_models import base_model_name
 class group_model(base_model_name):
 
     """
-    Default группа - сырье (фабричный метод)
+    Фабричный метод
     """
     @staticmethod
-    def default_group_source():
+    def create(name: str) -> 'group_model':
         item = group_model()
-        item.name = "Сырье"
-        return item
-    
-    """
-    Default группа - замарозка (фабричный метод)
-    """
-    @staticmethod
-    def default_group_cold():
-        item = group_model()
-        item.name = "Заморозка"
+        item.name = name
         return item
     
 

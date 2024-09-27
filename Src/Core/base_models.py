@@ -5,6 +5,10 @@ from Src.Core.validator import validator
 Базовый класс для наследования с поддержкой сравнения по коду
 """
 class base_model_code(abstract_model):
+
+    def __init__(self) -> None:
+        super().__init__()
+
     def set_compare_mode(self, other_object) -> bool:
          return super().set_compare_mode(other_object)
 
@@ -13,6 +17,9 @@ class base_model_code(abstract_model):
 """    
 class base_model_name(abstract_model):
     __name:str = ""
+
+    def __init__(self) -> None:
+        super().__init__()
 
     @property
     def name(self) -> str:
@@ -29,4 +36,5 @@ class base_model_name(abstract_model):
 
         return self.name ==  other_object.name
             
+
 

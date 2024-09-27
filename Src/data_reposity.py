@@ -24,13 +24,39 @@ class data_reposity(abstract_logic):
     """
     @staticmethod
     def group_key() -> str:
-        return "group"
+        return "group_model"
+    
+    """
+    Ключ для хранения номенклатуры
+    """
+    @staticmethod
+    def nomenclature_key() -> str:
+        return "nomenclature_model"
+    
+    """
+    Ключ для хранения единиц измерения
+    """
+    @staticmethod
+    def range_key() -> str:
+        return "range_model"
+    
+    """
+    Ключ для хранения рецептов
+    """
+    @staticmethod
+    def receipt_key() -> str:
+        return "receipt_model"
+    
+    
+    
+
     
     """
     Перегрузка абстрактного метода
     """
     def set_exception(self, ex: Exception):
         self._inner_set_exception(ex)    
+       
     
 
     

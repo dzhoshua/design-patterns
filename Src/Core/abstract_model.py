@@ -6,14 +6,18 @@ import uuid
 Абстрактный класс для наследования моделей данных
 """
 class abstract_model(ABC):
-    __unique_code:str =  uuid.uuid4()
+    __unique_code:str
+
+    def __init__(self) -> None:
+        super().__init__()
+        self.__unique_code = uuid.uuid4().hex
 
     """
     Уникальный код
     """
     @property
     def unique_code(self) -> str:
-        return self.__unique_code.hex
+        return self.__unique_code
     
 
     """
@@ -31,6 +35,8 @@ class abstract_model(ABC):
     """
     def __eq__(self, value: object) -> bool:
         return self.set_compare_mode(value)
-        
+    
 
+    def __str__(self) -> str:
+        return self.unique_code
         

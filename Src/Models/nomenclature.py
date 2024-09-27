@@ -32,7 +32,7 @@ class nomenclature_model(base_model_code):
 
     @group.setter
     def group(self, value: group_model):
-        validator.validate(value, group_model)
+        validator.validate(value,group_model )
         self.__group = value    
 
     """
@@ -46,4 +46,18 @@ class nomenclature_model(base_model_code):
     def range(self, value: range_model):
         validator.validate(value, range_model)
         self.__range = value
-    
+
+    """
+    Фабричный метод
+    """
+    @staticmethod
+    def create(name:str, range:range_model, group: group_model) -> 'nomenclature_model':
+        validator.validate(name, str, 255)
+        validator.validate(range, range_model)
+        validator.validate(group, group_model)
+
+        item = nomenclature_model()
+        item.group = group
+        item.range = range
+        item.name = name
+        return item
