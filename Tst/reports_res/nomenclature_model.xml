@@ -1,33 +1,33 @@
 <?xml version="1.0" ?>
 <report>
     <item>
-        <group>ab836f7adcaf465386fcdd7b5badb856</group>
+        <group>e4be859216b14c18b541b7c95e7f305e</group>
         <name>Пшеничная мука</name>
-        <range>b96f477442594fd0ba32a1cdd09e4a9d</range>
-        <unique_code>c2efe90e300f4e2cbe11b985014ad50b</unique_code>
+        <range>c88c8d1acb6d41a08b3ad2c672034d19</range>
+        <unique_code>bdc728f426b44d60a9bad942965d5ce2</unique_code>
     </item>
     <item>
-        <group>ab836f7adcaf465386fcdd7b5badb856</group>
+        <group>e4be859216b14c18b541b7c95e7f305e</group>
         <name>Сахар</name>
-        <range>b96f477442594fd0ba32a1cdd09e4a9d</range>
-        <unique_code>108c12c927b54d279b92241b7bea78a3</unique_code>
+        <range>c88c8d1acb6d41a08b3ad2c672034d19</range>
+        <unique_code>63105a35c1b6419790a2d53aaf9e13f5</unique_code>
     </item>
     <item>
-        <group>ab836f7adcaf465386fcdd7b5badb856</group>
+        <group>e4be859216b14c18b541b7c95e7f305e</group>
         <name>Сливочное масло</name>
-        <range>b96f477442594fd0ba32a1cdd09e4a9d</range>
-        <unique_code>2483faa4c0a5421f8dbbe2db5e4de0d0</unique_code>
+        <range>c88c8d1acb6d41a08b3ad2c672034d19</range>
+        <unique_code>d6f356d4984a4cf4bde2396a4c86f705</unique_code>
     </item>
     <item>
-        <group>ab836f7adcaf465386fcdd7b5badb856</group>
+        <group>e4be859216b14c18b541b7c95e7f305e</group>
         <name>Сливочное масло</name>
-        <range>5326dac8ccf342c4a24647e50a4c1bb8</range>
-        <unique_code>610771a2b7fb45e9a143ae49714930cd</unique_code>
+        <range>0bb753d224254899b5cb793a6856229b</range>
+        <unique_code>eb4c0a6aefe6453fa47467549a459387</unique_code>
     </item>
     <item>
-        <group>ab836f7adcaf465386fcdd7b5badb856</group>
+        <group>e4be859216b14c18b541b7c95e7f305e</group>
         <name>Ванилин</name>
-        <range>b96f477442594fd0ba32a1cdd09e4a9d</range>
-        <unique_code>6557c37723264faea28df62fcb28fab5</unique_code>
+        <range>c88c8d1acb6d41a08b3ad2c672034d19</range>
+        <unique_code>08922bc9f8bf44f7ba77ccfda3ac7ce2</unique_code>
     </item>
 </report>

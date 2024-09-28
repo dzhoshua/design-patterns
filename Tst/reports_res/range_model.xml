@@ -3,31 +3,31 @@
     <item>
         <base/>
         <name>грамм</name>
-        <unique_code>e4e16fe20a514d799e950fcbecfe947c</unique_code>
+        <unique_code>0f3f5f949f1b4c08813b830909f1c3f1</unique_code>
         <value>1</value>
     </item>
     <item>
         <base/>
         <name>миллилитр</name>
-        <unique_code>dc728c9c08864f71a986342201b1d26a</unique_code>
+        <unique_code>b85af9e5a1a749cfbe724dc19f69622f</unique_code>
         <value>1</value>
     </item>
     <item>
-        <base>e4e16fe20a514d799e950fcbecfe947c</base>
+        <base>0f3f5f949f1b4c08813b830909f1c3f1</base>
         <name>кг</name>
-        <unique_code>1bdf3e5ff1aa45f0b06f723772ab41ec</unique_code>
+        <unique_code>f44b397784f84b159460da481afafdf3</unique_code>
         <value>1000</value>
     </item>
     <item>
-        <base>dc728c9c08864f71a986342201b1d26a</base>
+        <base>b85af9e5a1a749cfbe724dc19f69622f</base>
         <name>литр</name>
-        <unique_code>8798d904bed141af817f91cf9a01ee79</unique_code>
+        <unique_code>8d37e9dddf204f16a720af5c9bb6a6af</unique_code>
         <value>1000</value>
     </item>
     <item>
         <base/>
         <name>штука</name>
-        <unique_code>f7c9684ac4dd43289a3433e24c1b1120</unique_code>
+        <unique_code>cf5a253af3814e8c83ad4c77a9d05d7c</unique_code>
         <value>1</value>
     </item>
 </report>

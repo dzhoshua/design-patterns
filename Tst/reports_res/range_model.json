@@ -2,31 +2,31 @@
     {
         "base": null,
         "name": "грамм",
-        "unique_code": "8ab95a2c8a8e411ab1c01a21f94e38c5",
+        "unique_code": "518e3db17f3a489c86be284327aca762",
         "value": 1
     },
     {
         "base": null,
         "name": "миллилитр",
-        "unique_code": "f53eb49d2e524900b8faba370fc50058",
+        "unique_code": "576de24c340349a680e39f86953911e7",
         "value": 1
     },
     {
         "base": {},
         "name": "кг",
-        "unique_code": "358832dcf71543d89c4bd1179485269e",
+        "unique_code": "bde1f3455209453b8f95e8cb72755862",
         "value": 1000
     },
     {
         "base": {},
         "name": "литр",
-        "unique_code": "043958fb6c254b62a2a5cf8ff0956168",
+        "unique_code": "8f4bd39654aa4e6bbfd9b7453b01e27d",
         "value": 1000
     },
     {
         "base": null,
         "name": "штука",
-        "unique_code": "8e160342cb904a0cb5b1c785df9e86d6",
+        "unique_code": "5e61f2783cea4533b4c5b9595e7ab133",
         "value": 1
     }
 ]
