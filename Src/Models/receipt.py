@@ -53,6 +53,7 @@ class receipt_model(base_model_name):
     def instructions(self) -> list[str]:
         return self.__instructions
     
+    @instructions.setter
     def instructions(self, value:list[str]):
         validator.validate(value, list)
         self.__instructions = value

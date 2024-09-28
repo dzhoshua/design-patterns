@@ -107,7 +107,7 @@ class test_reporting(unittest.TestCase):
         report = csv_report()
 
         # Действие
-        report.create(reposity.data[data_reposity.receipt_key()])
+        report.create(reposity.data[data_reposity.receipt_key])
 
         # Проверка
         assert report.result != ""
@@ -193,7 +193,7 @@ class test_reporting(unittest.TestCase):
         report = markdown_report()
 
         # Действие
-        report.create(reposity.data[data_reposity.receipt_key()])
+        report.create(reposity.data[data_reposity.receipt_key])
 
         # Проверка
         print(report.result)
@@ -280,7 +280,7 @@ class test_reporting(unittest.TestCase):
         report = json_report()
 
         # Действие
-        report.create(reposity.data[data_reposity.receipt_key()])
+        report.create(reposity.data[data_reposity.receipt_key])
 
         # Проверка
         print(report.result)
@@ -366,7 +366,7 @@ class test_reporting(unittest.TestCase):
         report = xml_report()
 
         # Действие
-        report.create(reposity.data[data_reposity.receipt_key()])
+        report.create(reposity.data[data_reposity.receipt_key])
 
         # Проверка
         print(report.result)
@@ -451,7 +451,7 @@ class test_reporting(unittest.TestCase):
         report = rtf_report()
 
         # Действие
-        report.create(reposity.data[data_reposity.receipt_key()])
+        report.create(reposity.data[data_reposity.receipt_key])
 
         # Проверка
         print(report.result)
