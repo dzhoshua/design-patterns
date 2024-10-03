@@ -46,7 +46,14 @@ class nomenclature_model(base_model_code):
     def range(self, value: range_model):
         validator.validate(value, range_model)
         self.__range = value
-
+        
+        
+    def to_dict(self):
+        return {
+            "name": self.name,
+            "group": self.group.to_dict(),
+            "range": self.range.to_dict()
+        }
     """
     Фабричный метод
     """

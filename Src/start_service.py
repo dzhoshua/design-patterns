@@ -24,7 +24,7 @@ class start_service(abstract_logic):
     Сформировать стартовый набор групп номенклатуры
     """
     def __create_nomenclature_groups(self):
-        items = [group_model.create("Сырье"), group_model.create("Продукция")]
+        items = [group_model.default_group_source(), group_model.default_group_cold()]
         self.__reposity.data[data_reposity.group_key()] = items    
 
 
@@ -47,7 +47,12 @@ class start_service(abstract_logic):
             raise operation_exception(f"В стартовом наборе default единица измерения 'штука'  не найдена!")
         base_item = base_item_list[0]
 
-        return (group, base_gramm, base_item)
+        base_killogram_list = list(filter(lambda x: x.name == "кг", self.__reposity.data[data_reposity.range_key()]  ))
+        if len(base_killogram_list) == 0:
+            raise operation_exception(f"В стартовом наборе default единица измерения 'кг'  не найдена!")
+        base_killogram = base_killogram_list[0]
+
+        return (group, base_gramm, base_item, base_killogram)
 
 
     """
@@ -56,11 +61,11 @@ class start_service(abstract_logic):
     def __create_nomenclatures(self):
         # Формируем словарь для дальнейшего переиспользования
         default = self.__get_default_items()
-        self.__nomenclatures["Пшеничная мука"] = [nomenclature_model.create("Пшеничная мука", default[1], default[0] ), 100]
-        self.__nomenclatures["Сахар"] = [nomenclature_model.create("Сахар", default[1], default[0] ), 80]
-        self.__nomenclatures["Сливочное масло"] = [nomenclature_model.create("Сливочное масло", default[1], default[0] ),70]
-        self.__nomenclatures["Яйца"] = [nomenclature_model.create("Сливочное масло", default[2], default[0] ), 1]
-        self.__nomenclatures["Ванилин"] = [nomenclature_model.create("Ванилин", default[1], default[0] ), 5]
+        self.__nomenclatures["Пшеничная мука"] = [nomenclature_model.create("Пшеничная мука", default[3], default[0] ), 100]
+        self.__nomenclatures["Сахар"] = [nomenclature_model.create("Сахар", default[3], default[0] ), 80]
+        self.__nomenclatures["Сливочное масло"] = [nomenclature_model.create("Сливочное масло", default[3], default[0] ),70]
+        self.__nomenclatures["Яйцо"] = [nomenclature_model.create("Яйцо", default[2], default[0] ), 1]
+        self.__nomenclatures["Ванилин"] = [nomenclature_model.create("Ванилин", default[3], default[0] ), 5]
 
         # Формируем список номенклатуры
         items = []
@@ -88,11 +93,11 @@ class start_service(abstract_logic):
     """
     def __create_receipts(self):
         # Формируем список ингредиентов
-        ingredients = {}
+        ingredients = []
         for value in self.__nomenclatures.values():
             base_range = value[0].range.base or value[0].range
             ingredient = ingredient_model.create(value[0], base_range, value[1])
-            ingredients[value[0].unique_code] = ingredient
+            ingredients.append(ingredient)
 
         # Формируем рецепты
         receipt =  receipt_model.create("Вафли хрустящие в вафельнице", ingredients, 
@@ -106,7 +111,7 @@ class start_service(abstract_logic):
                                          "Пеките вафли несколько минут до золотистого цвета. Осторожно откройте вафельницу, она очень горячая! Снимите вафлю лопаткой. Горячая она очень мягкая, как блинчик."],
                                          10, 10)
                                         
-        self.__reposity.data[data_reposity.receipt_key] = [receipt]          
+        self.__reposity.data[data_reposity.receipt_key()] = [receipt]          
 
 
     """
