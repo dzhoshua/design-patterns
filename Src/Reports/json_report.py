@@ -1,7 +1,6 @@
 from Src.Core.format_reporting import format_reporting
 from Src.Core.abstract_report import abstract_report
 from Src.Core.validator import validator, operation_exception
-from Src.Models.ingredient import ingredient_model
 import json
 
 """
@@ -34,15 +33,15 @@ class json_report(abstract_report):
             json_data.append(row_data)
         
         self.result = json.dumps(json_data, indent=4, ensure_ascii=False)
-
+    
     def __serialize(self, value):
         if isinstance(value, list):
             return [self.__serialize(item) for item in value]
-        if isinstance(value, dict):
-            return {key: self.__serialize(val) for key, val in value.items() if not key.startswith("_")}
         elif hasattr(value, "to_dict"):
             return value.to_dict()
         elif hasattr(value, "__dict__"):
             return {key: self.__serialize(val) for key, val in value.__dict__.items() if not key.startswith("_")}
+        elif isinstance(value, dict):
+             return {key: self.__serialize(val) for key, val in value.items() if not key.startswith("_")}
         else:
             return value

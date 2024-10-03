@@ -1,33 +1,33 @@
 <?xml version="1.0" ?>
 <report>
     <item>
-        <group>c1c93e6697c745d4a1ffbc55e2a4494e</group>
+        <group>{'unique_code': 'a4879a27d1704691b85dc00264302056', 'name': 'Сырье'}</group>
         <name>Пшеничная мука</name>
-        <range>0478f57f9a954ce5aed81899871c8487</range>
-        <unique_code>8f0b0738ad374368902dfa7a73194b44</unique_code>
+        <range>{'unique_code': '905cc16a193b4025a155aa81060bea24', 'name': 'кг', 'base': {'unique_code': 'eeba3efad38243e9bc61b42aac79a38d', 'name': 'грамм', 'base': None, 'value': 1}, 'value': 1000}</range>
+        <unique_code>5fbe487ed2f549f7b05b40d80c87ef96</unique_code>
     </item>
     <item>
-        <group>c1c93e6697c745d4a1ffbc55e2a4494e</group>
+        <group>{'unique_code': 'a4879a27d1704691b85dc00264302056', 'name': 'Сырье'}</group>
         <name>Сахар</name>
-        <range>0478f57f9a954ce5aed81899871c8487</range>
-        <unique_code>fc63611d0e6b4b0192507e131c34c6d3</unique_code>
+        <range>{'unique_code': '905cc16a193b4025a155aa81060bea24', 'name': 'кг', 'base': {'unique_code': 'eeba3efad38243e9bc61b42aac79a38d', 'name': 'грамм', 'base': None, 'value': 1}, 'value': 1000}</range>
+        <unique_code>909ae7fdbe534e45832665a63b247a2e</unique_code>
     </item>
     <item>
-        <group>c1c93e6697c745d4a1ffbc55e2a4494e</group>
+        <group>{'unique_code': 'a4879a27d1704691b85dc00264302056', 'name': 'Сырье'}</group>
         <name>Сливочное масло</name>
-        <range>0478f57f9a954ce5aed81899871c8487</range>
-        <unique_code>5baede5b37614cdbb514e35a34dc0d7e</unique_code>
+        <range>{'unique_code': '905cc16a193b4025a155aa81060bea24', 'name': 'кг', 'base': {'unique_code': 'eeba3efad38243e9bc61b42aac79a38d', 'name': 'грамм', 'base': None, 'value': 1}, 'value': 1000}</range>
+        <unique_code>b01b3aa26ffd4da38fa0cf46d3984ff2</unique_code>
     </item>
     <item>
-        <group>c1c93e6697c745d4a1ffbc55e2a4494e</group>
-        <name>Сливочное масло</name>
-        <range>b69fe66db1e5437fb9224a9a394df4c9</range>
-        <unique_code>525c7cc03c974eeaba1890e6894b8dcb</unique_code>
+        <group>{'unique_code': 'a4879a27d1704691b85dc00264302056', 'name': 'Сырье'}</group>
+        <name>Яйцо</name>
+        <range>{'unique_code': '68e12e484b044a9b9c8bf6904beafee0', 'name': 'штука', 'base': None, 'value': 1}</range>
+        <unique_code>7e1206471c6648a8944a7b999d316d3b</unique_code>
     </item>
     <item>
-        <group>c1c93e6697c745d4a1ffbc55e2a4494e</group>
+        <group>{'unique_code': 'a4879a27d1704691b85dc00264302056', 'name': 'Сырье'}</group>
         <name>Ванилин</name>
-        <range>0478f57f9a954ce5aed81899871c8487</range>
-        <unique_code>ca4f306e10ab4adc9f5e237c8dbf7246</unique_code>
+        <range>{'unique_code': '905cc16a193b4025a155aa81060bea24', 'name': 'кг', 'base': {'unique_code': 'eeba3efad38243e9bc61b42aac79a38d', 'name': 'грамм', 'base': None, 'value': 1}, 'value': 1000}</range>
+        <unique_code>e2a056d5b7534daeba1805ab5b0cd92b</unique_code>
     </item>
 </report>

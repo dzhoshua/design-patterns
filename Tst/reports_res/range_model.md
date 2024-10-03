@@ -1,7 +1,7 @@
 | base | name | unique_code | value |
 | --- | --- | --- | --- |
-| None | грамм | 2d115d34575042caacb3069f19c2ac73 | 1 |
-| None | миллилитр | d848368654b4454eaf0b96acefa04056 | 1 |
-| 2d115d34575042caacb3069f19c2ac73 | кг | 2aa127f66c974ecc96f70e61d0080805 | 1000 |
-| d848368654b4454eaf0b96acefa04056 | литр | 2bfe45e50f9f4028b6bc906d42f03e69 | 1000 |
-| None | штука | 55fa7bde85b745959583e172452e3da4 | 1 |
+| None | грамм | 6688b9e40ff045739e084edf8d09a116 | 1 |
+| None | миллилитр | 1cce4da34ddb42b8b39c0e12bdf4617e | 1 |
+| 6688b9e40ff045739e084edf8d09a116 | кг | 48d0db2b47794235bc8fe66b87199876 | 1000 |
+| 1cce4da34ddb42b8b39c0e12bdf4617e | литр | 9b557b36b1a24247aec2c969a0f15e1e | 1000 |
+| None | штука | 8a9a495dcb0a42cfaf284b1ca407cd4c | 1 |

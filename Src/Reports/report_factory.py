@@ -48,6 +48,7 @@ class report_factory(abstract_logic):
     def reports_setting(self) -> dict:
         return self.__reports_setting
     
+    @reports_setting.setter
     def reports_setting(self, reports_setting: dict):
         validator.validate(reports_setting, dict)
         self.__reports_setting = reports_setting
@@ -57,7 +58,7 @@ class report_factory(abstract_logic):
     @property
     def reports(self) -> dict:
         return self.__reports
-    
+    @reports.setter
     def reports(self, reports: dict):
         validator.validate(reports, dict)
         self.__reports = reports

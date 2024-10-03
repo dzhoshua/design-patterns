@@ -73,7 +73,15 @@ class receipt_model(base_model_name):
         
         self.__cooking_period = value
 
-
+    def to_dict(self):
+        return {
+            "unique_code": self.unique_code,
+            "name": self.name,
+            "cooking_period": self.cooking_period,
+            "cooking_portion": self.cooking_portion,
+            "ingredients": self.ingredients,
+            "instructions": self.instructions
+        }
     """
     Фабричный метод
     """

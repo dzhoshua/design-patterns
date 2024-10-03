@@ -29,6 +29,8 @@ class xml_report(abstract_report):
             for field in fields:
                 value = getattr(row, field)
                 
+                value = self.__serialize(value)
+                
                 field_element = ET.SubElement(row_element, field)
                 field_element.text = str(value) if value is not None else ""
         
@@ -36,3 +38,15 @@ class xml_report(abstract_report):
 
         parsed_xml = minidom.parseString(raw_xml)
         self.result = parsed_xml.toprettyxml(indent="    ")
+        
+    def __serialize(self, value):
+        if isinstance(value, list):
+            return [self.__serialize(item) for item in value]
+        if isinstance(value, dict):
+            return {key: self.__serialize(val) for key, val in value.items() if not key.startswith("_")}
+        elif hasattr(value, "to_dict"):
+            return value.to_dict()
+        elif hasattr(value, "__dict__"):
+            return {key: self.__serialize(val) for key, val in value.__dict__.items() if not key.startswith("_")}
+        else:
+            return value
