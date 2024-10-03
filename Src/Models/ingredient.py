@@ -49,14 +49,7 @@ class ingredient_model(base_model_code):
         validator.validate(value, int)
         if value <= 0:
             raise argument_exception("Некорректный аргумент!")
-        
-    def to_dict(self):
-        return {
-            "unique_code": self.unique_code,
-            "quantity": self.quantity,
-            "group": self.nomenclature.to_dict(),
-            "range": self.range.to_dict()
-        }
+    
         
     """
     Фабричный метод
@@ -71,3 +64,6 @@ class ingredient_model(base_model_code):
         item.nomenclature = nomenclature
         item.range = range
         return item
+    
+    def to_dict(self):
+        return self.nomenclature.to_dict()

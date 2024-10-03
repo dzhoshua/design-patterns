@@ -34,13 +34,7 @@ class range_model(base_model_name):
     def base(self, value):
         self.__base = value
         
-    def to_dict(self):
-        return {
-            "unique_code": self.unique_code,
-            "name": self.name,
-            "base": self.base.to_dict() if self.base is not None else self.base,
-            "value": self.value
-        }
+    
 
     "Фабричный метод"
     @staticmethod
@@ -55,3 +49,11 @@ class range_model(base_model_name):
             item.base = base
             
         return item
+    
+    def to_dict(self):
+        return {
+            "unique_code": self.unique_code,
+            "value": self.value,
+            "name": self.name,
+            "base": self.base.to_dict() if self.base is not None else self.base,
+        }

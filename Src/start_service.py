@@ -93,11 +93,11 @@ class start_service(abstract_logic):
     """
     def __create_receipts(self):
         # Формируем список ингредиентов
-        ingredients = {}
+        ingredients = []
         for value in self.__nomenclatures.values():
             base_range = value[0].range.base or value[0].range
             ingredient = ingredient_model.create(value[0], base_range, value[1])
-            ingredients[value[0].unique_code] = ingredient
+            ingredients.append(ingredient)
 
         # Формируем рецепты
         receipt =  receipt_model.create("Вафли хрустящие в вафельнице", ingredients, 

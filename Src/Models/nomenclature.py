@@ -50,7 +50,6 @@ class nomenclature_model(base_model_code):
         
     def to_dict(self):
         return {
-            "unique_code": self.unique_code,
             "name": self.name,
             "group": self.group.to_dict(),
             "range": self.range.to_dict()

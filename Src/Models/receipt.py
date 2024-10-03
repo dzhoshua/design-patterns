@@ -7,7 +7,9 @@ from Src.Core.base_models import  base_model_name
 """
 class receipt_model(base_model_name):
     # Ингредиенты
-    __ingredients: dict = {}
+    __ingredients: list
+    # __ingredients: ingredient_model = None
+    
 
     # Инструкции
     __instructions: list[str]
@@ -23,12 +25,12 @@ class receipt_model(base_model_name):
     Ингредиенты
     """
     @property
-    def ingredients(self) -> dict:
+    def ingredients(self) -> list:
         return self.__ingredients
     
     @ingredients.setter
-    def ingredients(self, value: dict):
-        validator.validate(value, dict)
+    def ingredients(self, value: list):
+        validator.validate(value, list)
         self.__ingredients = value
 
 
@@ -79,14 +81,14 @@ class receipt_model(base_model_name):
             "name": self.name,
             "cooking_period": self.cooking_period,
             "cooking_portion": self.cooking_portion,
-            "ingredients": self.ingredients,
-            "instructions": self.instructions
+            "instructions": self.instructions,
+            "ingredients": self.ingredients
         }
     """
     Фабричный метод
     """
     @staticmethod
-    def create(name: str, ingredients: dict, insructions:list[str], cooking_period:int, cooking_portion:int )  :
+    def create(name: str, ingredients: list, insructions:list[str], cooking_period:int, cooking_portion:int )  :
         validator.validate(name, str)
         if len(ingredients) == 0:
             raise argument_exception("Некорректный аргумент!")
