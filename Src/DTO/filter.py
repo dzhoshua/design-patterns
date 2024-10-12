@@ -51,10 +51,10 @@ class filter:
     @staticmethod
     def create(data) -> filter:
         
-        filter_name = data.get('filter_name', 'EQUALS').upper()
-        filter_name = getattr(format_filter, filter_name, format_filter.EQUALS)
-        filter_unique_code = data.get('filter_unique_code', 'EQUALS').upper()
-        filter_unique_code = getattr(format_filter, filter_unique_code, format_filter.EQUALS)
+        filter_name = data.get('filter_name').upper()
+        filter_name = getattr(format_filter, filter_name)
+        filter_unique_code = data.get('filter_unique_code').upper()
+        filter_unique_code = getattr(format_filter, filter_unique_code)
 
         filter_ = filter()
         filter_.name = data.get('name')

@@ -30,10 +30,11 @@ def filter_data(domain: str):
         return Response(f"Домен '{domain}'не найден!", 400)
     
     request_data = request.get_json()
-    print(request_data)
     
     item_filter = filter.create(request_data)
     
+    # print(item_filter, domain)
+    # print(reposity.data)
     try:
         data = reposity.data[domain]
     except Exception as e:

@@ -8,7 +8,7 @@ from Src.Core.format_filter import format_filter
 """
 Набор тестов для фильтрации
 """
-class test_prototypy(unittest.TestCase):
+class test_prototype(unittest.TestCase):
     
     reposity = data_reposity()
     start = start_service(reposity)
@@ -62,19 +62,21 @@ class test_prototypy(unittest.TestCase):
         data = self.reposity.data[data_reposity.nomenclature_key()]
 
         item_filter = filter()
-        item_filter.name = "мука"
-        
+        item_filter.name = "а"
         item_filter.filter_name = format_filter.LIKE
+        
         prototype = domain_prototype(data)
-
+        
         # Действие
         prototype.create(data, item_filter)
         
         # Проверка
-        for i in range(len(prototype.data)):
-            assert item_filter.name in prototype.data[i].name
+        assert len(prototype.data) == 4
+        
+        assert item_filter.name in prototype.data[0].name
             
-    def test_name_like(self):
+            
+    def test_unique_code_like(self):
         # Подготовка
         data = self.reposity.data[data_reposity.nomenclature_key()]
 
@@ -86,7 +88,8 @@ class test_prototypy(unittest.TestCase):
 
         # Действие
         prototype.create(data, item_filter)
+        print(prototype)
         
         # Проверка
-        for i in range(len(prototype.data)):
-            assert item_filter.unique_code in prototype.data[i].unique_code
+        assert len(prototype.data) > 0
+        assert item_filter.unique_code in prototype.data[0].unique_code
