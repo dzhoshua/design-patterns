@@ -9,6 +9,12 @@ from Src.Reports.report_factory import report_factory
 from Src.Core.format_reporting import format_reporting
 from Src.settings_manager import settings_manager
 
+from Src.Reports.json_deserializer import json_deserializer
+from Src.Models.range import range_model
+from Src.Models.nomenclature import nomenclature_model
+from Src.Models.receipt import receipt_model
+from Src.Models.group import group_model
+
 import unittest
 import os
 
@@ -309,5 +315,93 @@ class test_reporting(unittest.TestCase):
         self.__check_folder_exists()
         file_name = f"{data_reposity.receipt_key()}.rtf"
         self.__save_file(file_name, self.report_rtf.result)
+        
+        
+        
+    """
+    Проверка работы отчета json для group
+    """ 
+    # def test_des_json_group(self):
+    #     # Подготовка
+    #     self.__test_json_report_create_group()
+    #     file_name = "group_model.json"
+    #     deserializer = json_deserializer(group_model)
+    #     group_data = self.reposity.data[data_reposity.group_key()]
+
+    #     # Действие
+    #     deserializer.open(file_name)
+
+    #     # Проверка
+    #     assert len(deserializer.model_objects) != 0
+
+    #     for object, data in zip(deserializer.model_objects, group_data):
+    #         assert object == data
+
+    #     assert deserializer.model_objects[1] != group_data[0]
+
+
+    # """
+    # Проверка десериализации данных из JSON для range
+    # """
+    # def test_des_json_range(self):
+    #     # Подготовка
+    #     self.__test_json_report_create_range()
+    #     file_name = "range_model.json"
+    #     deserializer = json_deserializer(range_model)
+    #     range_data = self.reposity.data[data_reposity.range_key()]
+
+    #     # Действие
+    #     deserializer.open(file_name)
+
+    #     # Проверка
+    #     assert len(deserializer.model_objects) != 0
+
+    #     for object, data in zip(deserializer.model_objects, range_data):
+    #         assert object == data
+
+    #     assert deserializer.model_objects[1] != range_data[0]
+
+    
+    # """
+    # Проверка десериализации данных из JSON для nomenclature
+    # """
+    # def test_des_json_nomenclature(self):
+    #     # Подготовка
+    #     self.__test_json_report_create_nomenclature()
+    #     file_name = "nomenclature_model.json"
+    #     deserializer = json_deserializer(nomenclature_model)
+    #     nomenclature_data = self.reposity.data[data_reposity.nomenclature_key()]
+
+    #     # Действие
+    #     deserializer.open(file_name)
+
+    #     # Проверка
+    #     assert len(deserializer.model_objects) != 0
+
+    #     for object, data in zip(deserializer.model_objects, nomenclature_data):
+    #         assert object == data
+
+    #     assert deserializer.model_objects[1] != nomenclature_data[0] 
+
+    # """
+    # Проверка десериализации данных из JSON для recipe
+    # """
+    # def test_des_json_recipe(self):
+    #     # Подготовка
+    #     self.__test_json_report_create_receipt
+    #     file_name = "receipt_model.json"
+    #     deserializer = json_deserializer(receipt_model)
+    #     recipe_data = self.reposity.data[data_reposity.receipt_key()]
+
+    #     # Действие
+    #     deserializer.open(file_name)
+
+    #     # Проверка
+    #     assert len(deserializer.model_objects) != 0
+
+    #     for object, data in zip(deserializer.model_objects, recipe_data): 
+    #         assert object == data
+
+    #     assert deserializer.model_objects[1] != recipe_data[0]
 
    
