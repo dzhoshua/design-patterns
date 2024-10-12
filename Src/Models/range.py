@@ -57,3 +57,10 @@ class range_model(base_model_name):
             "name": self.name,
             "base": self.base.to_dict() if self.base is not None else self.base,
         }
+        
+    """
+    Переопределение получения аттрибутов и класса
+    """
+    @property
+    def attribute_class(self) -> dict:
+        return {"base_range": range_model}

@@ -1,5 +1,5 @@
 from Src.Core.validator import argument_exception, validator
-from Src.Models.ingredient import ingredient_model
+from Src.Models.nomenclature import nomenclature_model
 from Src.Core.base_models import  base_model_name
 
 """
@@ -84,6 +84,17 @@ class receipt_model(base_model_name):
             "instructions": self.instructions,
             "ingredients": self.ingredients
         }
+        
+        
+    """
+    Переопределение получения аттрибутов и класса
+    """
+    @property
+    def attribute_class(self) -> dict:
+        return {"nomenclatures": nomenclature_model}
+    
+    
+    
     """
     Фабричный метод
     """

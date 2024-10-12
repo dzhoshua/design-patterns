@@ -54,6 +54,17 @@ class nomenclature_model(base_model_code):
             "group": self.group.to_dict(),
             "range": self.range.to_dict()
         }
+        
+    """
+    Переопределение получения аттрибутов и класса
+    """
+    @property
+    def attribute_class(self) -> dict:
+        return {
+            "group": group_model,
+            "range": range_model
+            }
+        
     """
     Фабричный метод
     """

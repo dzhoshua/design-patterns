@@ -20,8 +20,7 @@ class rtf_report(abstract_report):
         
 
         first_model = data[0]
-        fields = list(filter(lambda x: not x.startswith("_") and not callable(getattr(first_model.__class__, x)), dir(first_model) ))
-        
+        fields = self.get_class_fields(first_model)
         # Начало 
         self.result += r"{\rtf1\ansi\ansicpg1251\deff0\nouicompat{\fonttbl{\f0\fnil\fcharset0 Arial;}}"
         self.result += r"{\*\generator Riched20 10.0.18362;}"
