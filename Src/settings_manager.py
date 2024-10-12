@@ -1,6 +1,8 @@
 from Src.settings import settings
 from Src.Core.abstract_logic import abstract_logic
-from Src.Core.validator import validator
+from Src.Core.abstract_report import abstract_report
+from Src.Core.validator import validator, operation_exception, argument_exception
+from Src.Core.format_reporting import format_reporting
 
 
 import json
@@ -12,6 +14,13 @@ import os
 class settings_manager(abstract_logic):
     __file_name = "settings.json"
     __settings:settings = None
+    __report_settings = {
+        "CSV": "csv_report",
+        "MARKDOWN": "markdown_report",
+        "JSON": "json_report",
+        "XML": "xml_report",
+        "RTF": "rtf_report"
+    }
 
 
     def __new__(cls):
@@ -22,7 +31,8 @@ class settings_manager(abstract_logic):
 
     def __init__(self) -> None:
         if self.__settings is None:
-            self.__settings = self.__default_setting() 
+            self.__settings = self.__default_setting()
+        
 
     """
     Открыть и загрузить настройки
@@ -67,6 +77,10 @@ class settings_manager(abstract_logic):
     def settings(self) -> settings:
         return self.__settings
     
+    @property
+    def report_settings(self):
+        return self.__report_settings
+    
     """
     Набор настроек по умолчанию
     """
@@ -80,7 +94,17 @@ class settings_manager(abstract_logic):
         _settings.organization_type = "12345"
         return _settings
     
+    
+    def get_report_class(self, format: format_reporting = None) -> abstract_report:
+        if format is None:
+            format = self.__settings.report_format
 
+        validator.validate(format, format_reporting)
+        report_class = self.report_settings.get(format.name, None)
+
+        return report_class()
+    
+    
     """
     Перегрузка абстрактного метода
     """

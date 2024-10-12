@@ -1,4 +1,5 @@
 from Src.Core.validator import validator
+from Src.Reports.report_factory import format_reporting
 
 
 """
@@ -11,6 +12,7 @@ class settings:
     __correspondent_account = ""
     __bic = ""
     __organization_type = ""
+    __report_format = format_reporting.CSV
 
     """
     Наименование организации
@@ -83,3 +85,14 @@ class settings:
         validator.validate(value, str, 5)
         self.__organization_type = value
     
+    """
+    Вид отчета
+    """
+    @property
+    def report_format(self):
+        return self.__report_format
+
+    def report_format(self, value:str):
+        validator.validate(value, format_reporting)
+        self.__report_format = value
+        

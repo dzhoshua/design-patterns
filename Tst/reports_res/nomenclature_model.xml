@@ -1,0 +1,33 @@
+<?xml version="1.0" ?>
+<report>
+    <item>
+        <group>{'unique_code': 'a4879a27d1704691b85dc00264302056', 'name': 'Сырье'}</group>
+        <name>Пшеничная мука</name>
+        <range>{'unique_code': '905cc16a193b4025a155aa81060bea24', 'name': 'кг', 'base': {'unique_code': 'eeba3efad38243e9bc61b42aac79a38d', 'name': 'грамм', 'base': None, 'value': 1}, 'value': 1000}</range>
+        <unique_code>5fbe487ed2f549f7b05b40d80c87ef96</unique_code>
+    </item>
+    <item>
+        <group>{'unique_code': 'a4879a27d1704691b85dc00264302056', 'name': 'Сырье'}</group>
+        <name>Сахар</name>
+        <range>{'unique_code': '905cc16a193b4025a155aa81060bea24', 'name': 'кг', 'base': {'unique_code': 'eeba3efad38243e9bc61b42aac79a38d', 'name': 'грамм', 'base': None, 'value': 1}, 'value': 1000}</range>
+        <unique_code>909ae7fdbe534e45832665a63b247a2e</unique_code>
+    </item>
+    <item>
+        <group>{'unique_code': 'a4879a27d1704691b85dc00264302056', 'name': 'Сырье'}</group>
+        <name>Сливочное масло</name>
+        <range>{'unique_code': '905cc16a193b4025a155aa81060bea24', 'name': 'кг', 'base': {'unique_code': 'eeba3efad38243e9bc61b42aac79a38d', 'name': 'грамм', 'base': None, 'value': 1}, 'value': 1000}</range>
+        <unique_code>b01b3aa26ffd4da38fa0cf46d3984ff2</unique_code>
+    </item>
+    <item>
+        <group>{'unique_code': 'a4879a27d1704691b85dc00264302056', 'name': 'Сырье'}</group>
+        <name>Яйцо</name>
+        <range>{'unique_code': '68e12e484b044a9b9c8bf6904beafee0', 'name': 'штука', 'base': None, 'value': 1}</range>
+        <unique_code>7e1206471c6648a8944a7b999d316d3b</unique_code>
+    </item>
+    <item>
+        <group>{'unique_code': 'a4879a27d1704691b85dc00264302056', 'name': 'Сырье'}</group>
+        <name>Ванилин</name>
+        <range>{'unique_code': '905cc16a193b4025a155aa81060bea24', 'name': 'кг', 'base': {'unique_code': 'eeba3efad38243e9bc61b42aac79a38d', 'name': 'грамм', 'base': None, 'value': 1}, 'value': 1000}</range>
+        <unique_code>e2a056d5b7534daeba1805ab5b0cd92b</unique_code>
+    </item>
+</report>

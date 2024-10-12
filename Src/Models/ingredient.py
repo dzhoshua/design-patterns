@@ -32,7 +32,7 @@ class ingredient_model(base_model_code):
     def range(self) -> range_model:
         return self.__range
     
-
+    @range.setter
     def range(self, value:range_model):
         validator.validate(value, range_model)
         self.__range = value
@@ -44,10 +44,12 @@ class ingredient_model(base_model_code):
     def quantity(self) -> int:
         return self.__quantity
     
+    @quantity.setter
     def quantity(self, value:int):
         validator.validate(value, int)
         if value <= 0:
             raise argument_exception("Некорректный аргумент!")
+    
         
     """
     Фабричный метод
@@ -62,3 +64,6 @@ class ingredient_model(base_model_code):
         item.nomenclature = nomenclature
         item.range = range
         return item
+    
+    def to_dict(self):
+        return self.nomenclature.to_dict()
