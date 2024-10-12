@@ -6,15 +6,15 @@
             {
                 "name": "Пшеничная мука",
                 "group": {
-                    "unique_code": "6073ec0af190407d89ba4aa0a7237a52",
+                    "unique_code": "91836feec9094465b91285e75d1d55d7",
                     "name": "Сырье"
                 },
                 "range": {
-                    "unique_code": "015d68d91d074c109707985eb7da61f5",
+                    "unique_code": "1cdee2d40f4d480682a49d443bb3d3cf",
                     "value": 1000,
                     "name": "кг",
                     "base": {
-                        "unique_code": "efa07cd15e584f5c9796aef12b3df447",
+                        "unique_code": "ba706a68060c4bb9a49645c007515e25",
                         "value": 1,
                         "name": "грамм",
                         "base": null
@@ -24,15 +24,15 @@
             {
                 "name": "Сахар",
                 "group": {
-                    "unique_code": "6073ec0af190407d89ba4aa0a7237a52",
+                    "unique_code": "91836feec9094465b91285e75d1d55d7",
                     "name": "Сырье"
                 },
                 "range": {
-                    "unique_code": "015d68d91d074c109707985eb7da61f5",
+                    "unique_code": "1cdee2d40f4d480682a49d443bb3d3cf",
                     "value": 1000,
                     "name": "кг",
                     "base": {
-                        "unique_code": "efa07cd15e584f5c9796aef12b3df447",
+                        "unique_code": "ba706a68060c4bb9a49645c007515e25",
                         "value": 1,
                         "name": "грамм",
                         "base": null
@@ -42,15 +42,15 @@
             {
                 "name": "Сливочное масло",
                 "group": {
-                    "unique_code": "6073ec0af190407d89ba4aa0a7237a52",
+                    "unique_code": "91836feec9094465b91285e75d1d55d7",
                     "name": "Сырье"
                 },
                 "range": {
-                    "unique_code": "015d68d91d074c109707985eb7da61f5",
+                    "unique_code": "1cdee2d40f4d480682a49d443bb3d3cf",
                     "value": 1000,
                     "name": "кг",
                     "base": {
-                        "unique_code": "efa07cd15e584f5c9796aef12b3df447",
+                        "unique_code": "ba706a68060c4bb9a49645c007515e25",
                         "value": 1,
                         "name": "грамм",
                         "base": null
@@ -60,11 +60,11 @@
             {
                 "name": "Яйцо",
                 "group": {
-                    "unique_code": "6073ec0af190407d89ba4aa0a7237a52",
+                    "unique_code": "91836feec9094465b91285e75d1d55d7",
                     "name": "Сырье"
                 },
                 "range": {
-                    "unique_code": "6e3c896d1ebc423eaa34a0fa417be4f0",
+                    "unique_code": "c2138063c7064871a4b2c7425e486fe8",
                     "value": 1,
                     "name": "штука",
                     "base": null
@@ -73,15 +73,15 @@
             {
                 "name": "Ванилин",
                 "group": {
-                    "unique_code": "6073ec0af190407d89ba4aa0a7237a52",
+                    "unique_code": "91836feec9094465b91285e75d1d55d7",
                     "name": "Сырье"
                 },
                 "range": {
-                    "unique_code": "015d68d91d074c109707985eb7da61f5",
+                    "unique_code": "1cdee2d40f4d480682a49d443bb3d3cf",
                     "value": 1000,
                     "name": "кг",
                     "base": {
-                        "unique_code": "efa07cd15e584f5c9796aef12b3df447",
+                        "unique_code": "ba706a68060c4bb9a49645c007515e25",
                         "value": 1,
                         "name": "грамм",
                         "base": null
@@ -100,6 +100,6 @@
             "Пеките вафли несколько минут до золотистого цвета. Осторожно откройте вафельницу, она очень горячая! Снимите вафлю лопаткой. Горячая она очень мягкая, как блинчик."
         ],
         "name": "Вафли хрустящие в вафельнице",
-        "unique_code": "541f940555794dda96b879267ec9ac0e"
+        "unique_code": "3d20f183bcac408293b819fee1a46250"
     }
 ]
