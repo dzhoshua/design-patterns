@@ -34,8 +34,9 @@ def filter_data(domain: str):
     
     item_filter = filter.create(request_data)
     
-    data = reposity.data[domain]
-    if not data:
+    try:
+        data = reposity.data[domain]
+    except Exception as e:
         return Response(f"Нет данных!", 400)
     
     prototype = domain_prototype(data)

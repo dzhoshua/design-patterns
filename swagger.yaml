@@ -56,7 +56,7 @@ paths:
                 filter_name:
                   type: string
                   default: "EQUALS"
-                id:
+                unique_code:
                   type: string
                   default: ""
                 filter_unique_code:
