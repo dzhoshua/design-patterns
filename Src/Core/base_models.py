@@ -11,6 +11,13 @@ class base_model_code(abstract_model):
 
     def set_compare_mode(self, other_object) -> bool:
          return super().set_compare_mode(other_object)
+     
+    def to_dict(self):
+        return super().to_dict()
+    
+    @property
+    def attribute_class(self) -> dict:
+        return {}
 
 """
 Базовый класс для наследования с поддержкой сравнения по наименованию
@@ -35,6 +42,13 @@ class base_model_name(abstract_model):
         if not isinstance(other_object, base_model_name): return False
 
         return self.name ==  other_object.name
+    
+    def to_dict(self):
+        return super().to_dict()
+    
+    @property
+    def attribute_class(self) -> dict:
+        return {}
             
 
 

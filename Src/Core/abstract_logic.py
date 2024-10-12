@@ -1,5 +1,6 @@
 from abc import ABC, abstractmethod
 from Src.Core.validator import validator
+import glob
 
 
 """
@@ -37,4 +38,16 @@ class abstract_logic(ABC):
     @abstractmethod
     def set_exception(self, ex: Exception):
         pass
+    
+    
+    @staticmethod
+    def file_search(file_name: str) -> str:
+        validator.validate(file_name, str)
+
+        path = f"./**/{file_name}"
+        full_path = glob.glob(path, recursive=True)[0]
+        
+        validator.validatet(full_path, str)
+
+        return full_path
        

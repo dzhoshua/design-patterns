@@ -1,92 +1,92 @@
 [
     {
         "group": {
-            "unique_code": "901a73c1453948c28f0d4197a4b557c3",
+            "unique_code": "d9607060405546eb9112c9606a8ac338",
             "name": "Сырье"
         },
         "name": "Пшеничная мука",
         "range": {
-            "unique_code": "0fbbd8559cd34cedba9c205ece2535bd",
+            "unique_code": "82df6f6ce1e542fea869267a02d6d7b2",
+            "value": 1000,
             "name": "кг",
             "base": {
-                "unique_code": "e7a4be60ac694a43991360fb69b092c1",
+                "unique_code": "8b4adf4c750748d8ad723d9395a73533",
+                "value": 1,
                 "name": "грамм",
-                "base": null,
-                "value": 1
-            },
-            "value": 1000
+                "base": null
+            }
         },
-        "unique_code": "232abde54329443491e6d9953214bd92"
+        "unique_code": "0737f10ba9944ff38c2c0f8eaaa00da0"
     },
     {
         "group": {
-            "unique_code": "901a73c1453948c28f0d4197a4b557c3",
+            "unique_code": "d9607060405546eb9112c9606a8ac338",
             "name": "Сырье"
         },
         "name": "Сахар",
         "range": {
-            "unique_code": "0fbbd8559cd34cedba9c205ece2535bd",
+            "unique_code": "82df6f6ce1e542fea869267a02d6d7b2",
+            "value": 1000,
             "name": "кг",
             "base": {
-                "unique_code": "e7a4be60ac694a43991360fb69b092c1",
+                "unique_code": "8b4adf4c750748d8ad723d9395a73533",
+                "value": 1,
                 "name": "грамм",
-                "base": null,
-                "value": 1
-            },
-            "value": 1000
+                "base": null
+            }
         },
-        "unique_code": "f41b3575401b49cc88fb79c0c1b86129"
+        "unique_code": "c805dd44eab8418abd7d3ca23b8bcb48"
     },
     {
         "group": {
-            "unique_code": "901a73c1453948c28f0d4197a4b557c3",
+            "unique_code": "d9607060405546eb9112c9606a8ac338",
             "name": "Сырье"
         },
         "name": "Сливочное масло",
         "range": {
-            "unique_code": "0fbbd8559cd34cedba9c205ece2535bd",
+            "unique_code": "82df6f6ce1e542fea869267a02d6d7b2",
+            "value": 1000,
             "name": "кг",
             "base": {
-                "unique_code": "e7a4be60ac694a43991360fb69b092c1",
+                "unique_code": "8b4adf4c750748d8ad723d9395a73533",
+                "value": 1,
                 "name": "грамм",
-                "base": null,
-                "value": 1
-            },
-            "value": 1000
+                "base": null
+            }
         },
-        "unique_code": "4e673b5172414b26831a472489687e05"
+        "unique_code": "293d487aacb04e62b71d81efb6d24f09"
     },
     {
         "group": {
-            "unique_code": "901a73c1453948c28f0d4197a4b557c3",
+            "unique_code": "d9607060405546eb9112c9606a8ac338",
             "name": "Сырье"
         },
         "name": "Яйцо",
         "range": {
-            "unique_code": "577c6b8725e2473da2d432ed50deff05",
+            "unique_code": "e1968e6577c84a0aad9f7fd217c35965",
+            "value": 1,
             "name": "штука",
-            "base": null,
-            "value": 1
+            "base": null
         },
-        "unique_code": "d31b3fffcab8450fb9bfc5597f404b66"
+        "unique_code": "9e9bb1e4ca674f21908dac53e4a1d1ae"
     },
     {
         "group": {
-            "unique_code": "901a73c1453948c28f0d4197a4b557c3",
+            "unique_code": "d9607060405546eb9112c9606a8ac338",
             "name": "Сырье"
         },
         "name": "Ванилин",
         "range": {
-            "unique_code": "0fbbd8559cd34cedba9c205ece2535bd",
+            "unique_code": "82df6f6ce1e542fea869267a02d6d7b2",
+            "value": 1000,
             "name": "кг",
             "base": {
-                "unique_code": "e7a4be60ac694a43991360fb69b092c1",
+                "unique_code": "8b4adf4c750748d8ad723d9395a73533",
+                "value": 1,
                 "name": "грамм",
-                "base": null,
-                "value": 1
-            },
-            "value": 1000
+                "base": null
+            }
         },
-        "unique_code": "060057577b874e7e98b51aefa1330b16"
+        "unique_code": "8ec5474d87e143a180edddcc151312d7"
     }
 ]

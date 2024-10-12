@@ -7,6 +7,7 @@ import uuid
 """
 class abstract_model(ABC):
     __unique_code:str
+    
 
     def __init__(self) -> None:
         super().__init__()
@@ -18,6 +19,26 @@ class abstract_model(ABC):
     @property
     def unique_code(self) -> str:
         return self.__unique_code
+    
+
+    """
+    Класс у аттрибута
+    """
+    @property
+    @abstractmethod
+    def attribute_class(self) -> dict:
+        pass
+    
+    
+    """
+    Абстрактный метод для преобразования в json
+    """
+    @abstractmethod
+    def to_dict(self):
+        return {
+            "unique_code": self.unique_code,
+            #"name": self.name,
+        }
     
 
     """
@@ -39,4 +60,6 @@ class abstract_model(ABC):
 
     def __str__(self) -> str:
         return self.unique_code
+    
+    
         

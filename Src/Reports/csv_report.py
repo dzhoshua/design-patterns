@@ -22,8 +22,7 @@ class csv_report(abstract_report):
         first_model = data[0]
 
         # Список полей от типа назначения    
-        fields = list(filter(lambda x: not x.startswith("_") and not callable(getattr(first_model.__class__, x )),  dir(first_model) ))
-
+        fields = self.get_class_fields(first_model)
         # Заголовок
         for field in fields:
             self.result += f"{str(field)};"
