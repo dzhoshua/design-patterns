@@ -1,9 +1,13 @@
 import connexion
+from flask import Response, request
+from Src.DTO.filter import filter
+from Src.DTO.domain_prototype import domain_prototype
 from Src.Core.format_reporting import format_reporting
 from Src.Reports.report_factory import report_factory
 from Src.data_reposity import data_reposity
 from Src.settings_manager import settings_manager
 from Src.start_service import start_service
+
 
 app = connexion.FlaskApp(__name__)
 manager = settings_manager()
@@ -12,41 +16,74 @@ reposity = data_reposity()
 start = start_service(reposity)
 start.create()
 
+keys = {
+    'group': data_reposity.group_key(),
+    'range': data_reposity.range_key(),
+    'nomenclature': data_reposity.nomenclature_key(),
+    'receipt': data_reposity.receipt_key()
+}
+
+
+@app.route("/api/filter/<domain>", methods=["POST"])
+def filter_data(domain: str):
+    if domain not in keys:
+        return Response(f"Домен '{domain}'не найден!", 400)
+    
+    request_data = request.get_json()
+    print(request_data)
+    
+    item_filter = filter.create(request_data)
+    
+    data = reposity.data[domain]
+    if not data:
+        return Response(f"Нет данных!", 400)
+    
+    prototype = domain_prototype(data)
+    prototype.create(data, item_filter)
+    if not prototype.data:
+        return {}
+    
+    report = report_factory(manager).create(format_reporting.JSON)
+    report.create(prototype.data)
+    return report.result
+
+
 @app.route("/api/reports/formats", methods=["GET"])
 def formats():
     return [{"name":item.name, "value":item.value} for item in format_reporting]
+
 
 @app.route("/api/reports/range/<format>", methods=["GET"])
 def reports_range(format: str):
     inner_format = format_reporting(format)
     report = report_factory(manager).create(inner_format)
     report.create( reposity.data[ data_reposity.range_key()  ] )
-
     return report.result
+
 
 @app.route("/api/reports/group/<format>", methods=["GET"])
 def reports_group(format: str):
     inner_format = format_reporting(format)
     report = report_factory(manager).create(inner_format)
     report.create( reposity.data[ data_reposity.group_key()  ] )
-
     return report.result
+
 
 @app.route("/api/reports/nomenclature/<format>", methods=["GET"])
 def reports_nomenclature(format: str):
     inner_format = format_reporting(format)
     report = report_factory(manager).create(inner_format)
     report.create( reposity.data[ data_reposity.nomenclature_key()  ] )
-
     return report.result
+
 
 @app.route("/api/reports/recipe/<format>", methods=["GET"])
 def reports_recipe(format: str):
     inner_format = format_reporting(format)
     report = report_factory(manager).create(inner_format)
     report.create( reposity.data[ data_reposity.receipt_key()  ] )
-
     return report.result
+
 
 if __name__ == "__main__":
     app.add_api("swagger.yaml")

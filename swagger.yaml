@@ -28,6 +28,55 @@ paths:
         default:
           description: Неизвестная ошибка     
 
+
+  /filter/{domain}:
+      post:
+        summary: Фильтрация данных по модели
+        operationId: main.filter_data
+        consumes:
+          - application/json
+        produces:
+          - application/json
+        parameters:
+          - name: domain
+            in: path
+            required: true
+            type: string
+            description: Доступные модели для фильтрации nomenclature, group, range, receipt
+          - in: body
+            name: filter
+            description: Доступные фильтры EQUALS, LIKE
+            required: true
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                  default: ""
+                filter_name:
+                  type: string
+                  default: "EQUALS"
+                id:
+                  type: string
+                  default: ""
+                filter_unique_code:
+                  type: string
+                  default: "EQUALS"
+        responses:
+          200:
+            description: OK
+            schema:
+              type: object
+          400:
+            description: Ошибка ввода данных
+            schema:
+              type: object
+          500:
+            description: Ошибка на сервере
+          default:
+            description: Неизвестная ошибка
+
+
   /reports/range/{format}:
     get:
       summary: Получить список единиц измерения
