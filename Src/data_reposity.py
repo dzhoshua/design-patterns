@@ -24,28 +24,28 @@ class data_reposity(abstract_logic):
     """
     @staticmethod
     def group_key() -> str:
-        return "group_model"
+        return "group"
     
     """
     Ключ для хранения номенклатуры
     """
     @staticmethod
     def nomenclature_key() -> str:
-        return "nomenclature_model"
+        return "nomenclature"
     
     """
     Ключ для хранения единиц измерения
     """
     @staticmethod
     def range_key() -> str:
-        return "range_model"
+        return "range"
     
     """
     Ключ для хранения рецептов
     """
     @staticmethod
     def receipt_key() -> str:
-        return "receipt_model"
+        return "receipt"
     
     
     
