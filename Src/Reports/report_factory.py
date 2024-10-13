@@ -44,6 +44,11 @@ class report_factory(abstract_logic):
         report = self.__reports[format]
         return report()
     
+    def create_default(self) -> abstract_report:
+        report_format = self.settings.report_format
+        return self.create(report_format)
+    
+    
     @property
     def reports_setting(self) -> dict:
         return self.__reports_setting

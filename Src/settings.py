@@ -12,7 +12,7 @@ class settings:
     __correspondent_account = ""
     __bic = ""
     __organization_type = ""
-    __report_format = format_reporting.CSV
+    __report_format = format_reporting.JSON
 
     """
     Наименование организации
@@ -34,6 +34,7 @@ class settings:
     def inn(self):
         return self.__inn
 
+    @inn.setter
     def inn(self, value:str):
         validator.validate(value, str, 12)
         self.__inn = value
@@ -46,6 +47,7 @@ class settings:
     def account(self):
         return self.__account
 
+    @account.setter
     def account(self, value:str):
         validator.validate(value, str, 11)
         self.__account = value
@@ -57,6 +59,7 @@ class settings:
     def correspondent_account(self):
         return self.__correspondent_account
 
+    @correspondent_account.setter
     def correspondent_account(self, value:str):
         validator.validate(value, str, 11)
         self.__correspondent_account = value
@@ -69,6 +72,7 @@ class settings:
     def bic(self):
         return self.__bic
 
+    @bic.setter
     def bic(self, value:str):
         validator.validate(value, str, 9)
         self.__bic = value
@@ -81,6 +85,7 @@ class settings:
     def organization_type(self):
         return self.__organization_type
 
+    @organization_type.setter
     def organization_type(self, value:str):
         validator.validate(value, str, 5)
         self.__organization_type = value
@@ -92,6 +97,7 @@ class settings:
     def report_format(self):
         return self.__report_format
 
+    @report_format.setter
     def report_format(self, value:str):
         validator.validate(value, format_reporting)
         self.__report_format = value

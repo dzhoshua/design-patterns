@@ -33,8 +33,6 @@ def filter_data(domain: str):
     
     item_filter = filter.create(request_data)
     
-    # print(item_filter, domain)
-    # print(reposity.data)
     try:
         data = reposity.data[domain]
     except Exception as e:
@@ -45,7 +43,7 @@ def filter_data(domain: str):
     if not prototype.data:
         return {}
     
-    report = report_factory(manager).create(format_reporting.JSON)
+    report = report_factory(manager).create_default()
     report.create(prototype.data)
     return report.result
 
