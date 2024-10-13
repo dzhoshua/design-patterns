@@ -48,7 +48,16 @@ class data_reposity(abstract_logic):
         return "receipt"
     
     
-    
+    @staticmethod
+    def keys() -> list:
+        result = []
+        methods = [method for method in dir(data_reposity) if
+                    callable(getattr(data_reposity, method)) and method.endswith('_key')]
+        for method in methods:
+            key = getattr(data_reposity, method)()
+            result.append(key)
+
+        return result
 
     
     """

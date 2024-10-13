@@ -16,21 +16,17 @@ reposity = data_reposity()
 start = start_service(reposity)
 start.create()
 
-keys = {
-    'group': data_reposity.group_key(),
-    'range': data_reposity.range_key(),
-    'nomenclature': data_reposity.nomenclature_key(),
-    'receipt': data_reposity.receipt_key()
-}
+
 
 
 @app.route("/api/filter/<domain>", methods=["POST"])
 def filter_data(domain: str):
-    if domain not in keys:
+    if domain not in reposity.keys():
         return Response(f"Домен '{domain}'не найден!", 400)
     
     request_data = request.get_json()
     
+    # item_filter = filter.create(request_data)
     item_filter = filter.create(request_data)
     
     try:
