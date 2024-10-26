@@ -7,7 +7,7 @@ class calculations:
 
     def __init__(self, _type: format_transaction):
         validator.validate(_type, format_transaction)
-        self.transaction = getattr(self, _type.value.lower())
+        self.transaction = getattr(self, _type.name.lower())
 
 
     def income(self, turnover: int, quantity: int) -> int:
