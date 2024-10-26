@@ -7,7 +7,10 @@ from Src.Reports.report_factory import report_factory
 from Src.data_reposity import data_reposity
 from Src.settings_manager import settings_manager
 from Src.start_service import start_service
-
+from Src.Models.warehouse import warehouse_model
+from Src.Models.warehouse_transaction import warehouse_transaction
+from Src.Core.format_transaction import format_transaction
+from Src.Core.validator import validator
 
 app = connexion.FlaskApp(__name__)
 manager = settings_manager()
@@ -25,8 +28,6 @@ def filter_data(domain: str):
         return Response(f"Домен '{domain}'не найден!", 400)
     
     request_data = request.get_json()
-    
-    # item_filter = filter.create(request_data)
     item_filter = filter.create(request_data)
     
     try:
@@ -41,6 +42,39 @@ def filter_data(domain: str):
     
     report = report_factory(manager).create_default()
     report.create(prototype.data)
+    return report.result
+
+# пока не работает
+# @app.route("/api/transaction/filter/<domain>", methods=["POST"])
+# def filter_transaction(domain: str):
+    
+#     if domain not in [reposity.warehouse_key(), reposity.nomenclature_key()]:
+#         return Response(f"Домен '{domain}'не найден!", 400)
+    
+#     request_data = request.get_json()
+#     item_filter = filter.create(request_data)
+    
+#     try:
+#         # получение списка транзакций
+#         transactions = reposity.data[reposity.transaction_key()]
+#     except Exception as e:
+#         return Response(f"Нет данных!", 400)
+    
+    
+#     prototype = domain_prototype(data)
+#     prototype.create(data, item_filter)
+#     if not prototype.data:
+#         return {}
+    
+#     report = report_factory(manager).create_default()
+#     report.create(prototype.data)
+#     return report.result
+
+@app.route("/api/reports/transactions", methods=["GET"])
+def reports_transaction(format: str):
+    inner_format = format_reporting(format)
+    report = report_factory(manager).create(inner_format)
+    report.create( reposity.data[ data_reposity.transaction_key()] )
     return report.result
 
 

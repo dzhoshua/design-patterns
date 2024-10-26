@@ -1,20 +1,20 @@
-from Src.Core.base_models import base_model_name
+from Src.Core.base_models import base_model_code
 from Src.Models.warehouse import warehouse_model
 from Src.Models.nomenclature import nomenclature_model
 from Src.Models.range import range_model
 from Src.Core.format_transaction import format_transaction
 from Src.Core.validator import argument_exception, validator
 
-import datetime
+from datetime import datetime
 
 
-class warehouse_transaction(base_model_name):
+class warehouse_transaction(base_model_code):
     __warehouse: warehouse_model = None
     __nomenclature: nomenclature_model = None
     __range: range_model = None
     __quantity:int = 0
     __type = format_transaction
-    __period: datetime.datetime = None
+    __period: datetime = None
     
     
     """
@@ -77,11 +77,11 @@ class warehouse_transaction(base_model_name):
     Тип транзакции
     """ 
     @property
-    def type(self) -> format_transaction:
+    def _type(self) -> format_transaction:
         return self.__type
     
-    @type.setter
-    def type(self, value: format_transaction):
+    @_type.setter
+    def _type(self, value: format_transaction):
         validator.validate(value, format_transaction)
         self.__type = value
         
@@ -90,27 +90,31 @@ class warehouse_transaction(base_model_name):
     Период
     """
     @property
-    def period(self) -> datetime.datetime:
+    def period(self) -> datetime:
         return self.__period
     
     @period.setter
-    def period(self, value:datetime.datetime):
-        validator.validate(value, datetime.datetime)
-        '''
-        добавить проверку времени?
-        
-        if value <= :
-            raise argument_exception("Некорректный аргумент!")
-        '''
+    def period(self, value:datetime):
+        validator.validate(value, datetime)
         self.__period = value
         
+    def to_dict(self):
+        return {
+            "unique_code": self.unique_code,
+            "warehouse":self.warehouse.to_dict(),
+            "quantity": self.quantity,
+            "nomenclature":self.nomenclature.to_dict(),
+            "range":self.range.to_dict(),
+            "type": self._type.value,
+            "period": self.period.strftime("%Y-%m-%dT%H:%M:%SZ")
+        }
         
     """
     Фабричный метод
     """
     @staticmethod
     def create(warehouse: warehouse_model, nomenclature: nomenclature_model, range: range_model, 
-               quantity: int, type: format_transaction = format_transaction, period = datetime.datetime.now()):
+               quantity: int, _type: format_transaction = format_transaction):
         
         validator.validate(quantity, int)
         validator.validate(nomenclature, nomenclature_model)
@@ -121,7 +125,7 @@ class warehouse_transaction(base_model_name):
         item.quantity = quantity
         item.nomenclature = nomenclature
         item.range = range
-        item.type = type
-        item.period = period
+        item._type = _type
+        item.period = datetime.now()
         return item
         

@@ -18,6 +18,12 @@ class warehouse_model(base_model_name):
         validator.validate(value, str, 255)
         self.__location = value.strip()
         
+    def to_dict(self):
+        return {
+            "unique_code": self.unique_code,
+            "location": self.location
+        }
+        
         
     """
     Фабричный метод

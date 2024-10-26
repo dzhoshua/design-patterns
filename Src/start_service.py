@@ -136,7 +136,7 @@ class start_service(abstract_logic):
         # Формируем транзакцию
         transactions = []
         for i, value in enumerate(self.__nomenclatures.values()):
-            range = value[0].range.base or value[0].range
+            range = range_model.create("штука", 1)
             nomenclature = value[0]
             if i+1 % 2 == 0:
                 transaction = warehouse_transaction.create(

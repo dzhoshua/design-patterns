@@ -66,3 +66,22 @@ class warehouse_turnover(base_model_name):
         if value <= 0:
             raise argument_exception("Некорректный аргумент!")
         self.__turnover = value
+        
+        
+    """
+    Фабричный метод
+    """
+    @staticmethod
+    def create(warehouse: warehouse_model, nomenclature: nomenclature_model, range: range_model, 
+               turnover: int):
+        
+        validator.validate(turnover, int)
+        validator.validate(nomenclature, nomenclature_model)
+        validator.validate(range, range_model)
+
+        item = warehouse_turnover()
+        item.warehouse = warehouse
+        item.nomenclature = nomenclature
+        item.range = range
+        item.turnover = turnover
+        return item
