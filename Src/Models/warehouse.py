@@ -17,19 +17,16 @@ class warehouse_model(base_model_name):
     def location(self, value:str):
         validator.validate(value, str, 255)
         self.__location = value.strip()
-      
         
-    # "Фабричный метод"
-    # @staticmethod
-    # def create(name:str, value:int, base = None) -> 'range_model':
-    #     validator.validate(name, str, 255)
-    #     validator.validate(value, int)
         
-    #     item = range_model()
-    #     item.name = name
-    #     item.value = value
-    #     if base is not None:
-    #         item.base = base
-            
-    #     return item
+    """
+    Фабричный метод
+    """
+    @staticmethod
+    def create(location: str):
+        validator.validate(location, str)
+        
+        item = warehouse_model()
+        item.location = location
+        return item
     

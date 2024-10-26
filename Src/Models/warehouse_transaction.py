@@ -13,8 +13,8 @@ class warehouse_transaction(base_model_name):
     __nomenclature: nomenclature_model = None
     __range: range_model = None
     __quantity:int = 0
-    __type = format_transaction.INCOME
-    __period: datetime = None
+    __type = format_transaction
+    __period: datetime.datetime = None
     
     
     """
@@ -26,7 +26,7 @@ class warehouse_transaction(base_model_name):
     
 
     @warehouse.setter
-    def warehouse_location(self, value: warehouse_model):
+    def warehouse(self, value: warehouse_model):
         validator.validate(value, warehouse_model)
         self.__warehouse = value
       
@@ -90,12 +90,12 @@ class warehouse_transaction(base_model_name):
     Период
     """
     @property
-    def period(self) -> datetime:
+    def period(self) -> datetime.datetime:
         return self.__period
     
     @period.setter
-    def period(self, value:datetime):
-        validator.validate(value, datetime)
+    def period(self, value:datetime.datetime):
+        validator.validate(value, datetime.datetime)
         '''
         добавить проверку времени?
         
@@ -103,4 +103,25 @@ class warehouse_transaction(base_model_name):
             raise argument_exception("Некорректный аргумент!")
         '''
         self.__period = value
+        
+        
+    """
+    Фабричный метод
+    """
+    @staticmethod
+    def create(warehouse: warehouse_model, nomenclature: nomenclature_model, range: range_model, 
+               quantity: int, type: format_transaction = format_transaction, period = datetime.datetime.now()):
+        
+        validator.validate(quantity, int)
+        validator.validate(nomenclature, nomenclature_model)
+        validator.validate(range, range_model)
+
+        item = warehouse_transaction()
+        item.warehouse = warehouse
+        item.quantity = quantity
+        item.nomenclature = nomenclature
+        item.range = range
+        item.type = type
+        item.period = period
+        return item
         
