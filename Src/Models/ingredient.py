@@ -49,6 +49,7 @@ class ingredient_model(base_model_code):
         validator.validate(value, int)
         if value <= 0:
             raise argument_exception("Некорректный аргумент!")
+        self.__quantity = value
     
         
     """
