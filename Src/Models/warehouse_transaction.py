@@ -12,7 +12,7 @@ class warehouse_transaction(base_model_code):
     __warehouse: warehouse_model = None
     __nomenclature: nomenclature_model = None
     __range: range_model = None
-    __quantity:int = 0
+    __quantity:float = 0
     __type = format_transaction
     __period: datetime = None
     
@@ -62,12 +62,12 @@ class warehouse_transaction(base_model_code):
     Количество
     """
     @property
-    def quantity(self) -> int:
+    def quantity(self) -> float:
         return self.__quantity
     
     @quantity.setter
-    def quantity(self, value:int):
-        validator.validate(value, int)
+    def quantity(self, value:float):
+        validator.validate(value, float)
         if value <= 0:
             raise argument_exception("Некорректный аргумент!")
         self.__quantity = value
@@ -77,11 +77,11 @@ class warehouse_transaction(base_model_code):
     Тип транзакции
     """ 
     @property
-    def _type(self) -> format_transaction:
+    def type(self) -> format_transaction:
         return self.__type
     
-    @_type.setter
-    def _type(self, value: format_transaction):
+    @type.setter
+    def type(self, value: format_transaction):
         validator.validate(value, format_transaction)
         self.__type = value
         
@@ -105,8 +105,8 @@ class warehouse_transaction(base_model_code):
             "quantity": self.quantity,
             "nomenclature":self.nomenclature.to_dict(),
             "range":self.range.to_dict(),
-            "type": self._type.value,
-            "period": self.period.strftime("%Y-%m-%dT%H:%M:%SZ")
+            "type": self.type.value,
+            "period": self.period
         }
         
     """
@@ -114,9 +114,9 @@ class warehouse_transaction(base_model_code):
     """
     @staticmethod
     def create(warehouse: warehouse_model, nomenclature: nomenclature_model, range: range_model, 
-               quantity: int, _type: format_transaction = format_transaction):
+               quantity: float, type: format_transaction):
         
-        validator.validate(quantity, int)
+        validator.validate(quantity, float)
         validator.validate(nomenclature, nomenclature_model)
         validator.validate(range, range_model)
 
@@ -125,7 +125,7 @@ class warehouse_transaction(base_model_code):
         item.quantity = quantity
         item.nomenclature = nomenclature
         item.range = range
-        item._type = _type
+        item.type = type
         item.period = datetime.now()
         return item
         

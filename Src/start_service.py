@@ -140,19 +140,19 @@ class start_service(abstract_logic):
             nomenclature = value[0]
             if i+1 % 2 == 0:
                 transaction = warehouse_transaction.create(
-                    warehouse = self.__reposity.data[data_reposity.warehouse_key()][0],
-                    nomenclature = nomenclature,
-                    range = range,
-                    quantity = i+1,
-                    type = format_transaction.INCOME  
+                     self.__reposity.data[data_reposity.warehouse_key()][0],
+                    nomenclature,
+                    range,
+                    i+1.0,
+                    format_transaction.INCOME  
                 ) 
             else:
                 transaction = warehouse_transaction.create(
-                    warehouse = self.__reposity.data[data_reposity.warehouse_key()][0],
-                    nomenclature = nomenclature,
-                    range = range,
-                    quantity = i+1,
-                    type = format_transaction.EXPENDITURE
+                    self.__reposity.data[data_reposity.warehouse_key()][0],
+                    nomenclature,
+                    range,
+                    i+1.0,
+                    format_transaction.EXPENDITURE
                 )
             
             transactions.append(transaction)
