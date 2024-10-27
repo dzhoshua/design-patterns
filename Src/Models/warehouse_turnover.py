@@ -21,7 +21,7 @@ class warehouse_turnover(base_model_name):
     
 
     @warehouse.setter
-    def warehouse_location(self, value: warehouse_model):
+    def warehouse(self, value: warehouse_model):
         validator.validate(value, warehouse_model)
         self.__warehouse = value
       
@@ -63,7 +63,7 @@ class warehouse_turnover(base_model_name):
     @turnover.setter
     def turnover(self, value:int):
         validator.validate(value, int)
-        if value <= 0:
+        if value < 0:
             raise argument_exception("Некорректный аргумент!")
         self.__turnover = value
         
@@ -77,6 +77,7 @@ class warehouse_turnover(base_model_name):
         
         validator.validate(turnover, int)
         validator.validate(nomenclature, nomenclature_model)
+        validator.validate(warehouse, warehouse_model)
         validator.validate(range, range_model)
 
         item = warehouse_turnover()

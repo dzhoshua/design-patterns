@@ -7,6 +7,7 @@ class filter:
     __filter_name = format_filter.EQUALS
     __unique_code: str = ""
     __filter_unique_code = format_filter.EQUALS
+    
 
     @property
     def name(self) -> str:
@@ -49,7 +50,8 @@ class filter:
 
 
     @staticmethod
-    def create(data) -> filter:
+    def create(data: dict) -> filter:
+        validator.validate(data, dict)
         
         filter_name = data.get('filter_name').upper()
         filter_name = getattr(format_filter, filter_name)
@@ -61,7 +63,7 @@ class filter:
         filter_.unique_code = data.get('unique_code')
         filter_.filter_name = filter_name
         filter_.filter_unique_code = filter_unique_code
-
+        
         return filter_
     
     def __str__(self) -> str:

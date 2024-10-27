@@ -5,7 +5,9 @@ import xml.etree.ElementTree as ET
 from xml.dom import minidom
 
 
-
+"""
+Ответ формирует набор данных в формате XML
+"""
 class xml_report(abstract_report):
 
     def __init__(self) -> None:

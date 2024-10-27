@@ -29,7 +29,7 @@ class test_prototype(unittest.TestCase):
         prototype = domain_prototype(data)
 
         # Действие
-        prototype.create(data, item_filter)
+        prototype.create(item_filter)
 
         # Проверка
         assert len(prototype.data) == 1
@@ -47,7 +47,7 @@ class test_prototype(unittest.TestCase):
         prototype = domain_prototype(data)
         
         # Действие
-        prototype.create(data, item_filter)
+        prototype.create(item_filter)
 
         # Проверка
         assert len(prototype.data) == 1
@@ -68,7 +68,7 @@ class test_prototype(unittest.TestCase):
         prototype = domain_prototype(data)
         
         # Действие
-        prototype.create(data, item_filter)
+        prototype.create(item_filter)
         
         # Проверка
         assert len(prototype.data) == 4
@@ -87,7 +87,7 @@ class test_prototype(unittest.TestCase):
         prototype = domain_prototype(data)
 
         # Действие
-        prototype.create(data, item_filter)
+        prototype.create(item_filter)
         print(prototype)
         
         # Проверка

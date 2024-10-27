@@ -6,7 +6,7 @@ from datetime import datetime
 from enum import Enum
 
 """
-Ответ формирует набор данных в формате CSV
+Ответ формирует набор данных в формате JSON
 """
 class json_report(abstract_report):
 

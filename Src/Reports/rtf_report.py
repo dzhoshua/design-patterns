@@ -4,7 +4,7 @@ from Src.Core.validator import validator, operation_exception
 
 
 """
-Ответ формирует набор данных в формате CSV
+Ответ формирует набор данных в формате RTF
 """
 class rtf_report(abstract_report):
 

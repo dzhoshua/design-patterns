@@ -200,52 +200,90 @@ paths:
       description: Уникальный код формата
       required: true
       type: string
+
+  /reports/turnovers/{format}:
+    get:
+      tags:
+        - filter warehouse
+      summary: Получить отчет по оборотам
+      operationId: main.reports_turnover
+      produces:
+        - application/text
+      responses:
+        200:
+          description: OK
+          schema:
+            type: object
+        500:
+          description: Ошибка на сервере
+        default:
+          description: Неизвестная ошибка
+    parameters:
+    - name: format
+      in: path
+      description: Уникальный код формата
+      required: true
+      type: string
         
 
-# пока не работает
-  # /transaction/filter/{domain}:
-  #     post:
-  #       summary: Фильтрация данных по модели
-  #       operationId: main.filter_transaction
-  #       consumes:
-  #         - application/json
-  #       produces:
-  #         - application/json
-  #       parameters:
-  #         - name: domain
-  #           in: path
-  #           required: true
-  #           type: string
-  #           description: Доступные модели для фильтрации nomenclature, warehouse
-  #         - in: body
-  #           name: filter
-  #           description: Доступные фильтры EQUALS, LIKE
-  #           required: true
-  #           schema:
-  #             type: object
-  #             properties:
-  #               name:
-  #                 type: string
-  #                 default: ""
-  #               filter_name:
-  #                 type: string
-  #                 default: "EQUALS"
-  #               unique_code:
-  #                 type: string
-  #                 default: ""
-  #               filter_unique_code:
-  #                 type: string
-  #                 default: "EQUALS"
-  #       responses:
-  #         200:
-  #           description: OK
-  #           schema:
-  #             type: object
-  #         400:
-  #           description: Ошибка ввода данных
-  #           schema:
-  #             type: object
-  #         500:
-  #           description: Ошибка на сервере
-  #         default:
-  #           description: Неизвестная ошибка
+  /filter/transactions:
+      post:
+        tags:
+          - filter warehouse
+        summary: Фильтрация транзакций
+        operationId: main.filter_transactions
+        consumes:
+          - application/json
+        produces:
+          - application/json
+        parameters:
+          - in: body
+            name: filter
+            description: Доступные модели для фильтрации - nomenclature, warehouse. Доступные фильтры EQUALS, LIKE
+            required: true
+            schema:
+              type: object
+              properties:
+                warehouse: 
+                  type: object
+                  properties:
+                    name:
+                      type: string
+                      default: ""
+                    filter_name:
+                      type: string
+                      default: "EQUALS"
+                    unique_code:
+                      type: string
+                      default: ""
+                    filter_unique_code:
+                      type: string
+                      default: "EQUALS"
+                nomenclature: 
+                  type: object
+                  properties:
+                    name:
+                      type: string
+                      default: ""
+                    filter_name:
+                      type: string
+                      default: "EQUALS"
+                    unique_code:
+                      type: string
+                      default: ""
+                    filter_unique_code:
+                      type: string
+                      default: "EQUALS"
+        responses:
+          200:
+            description: OK
+            schema:
+              type: object
+          400:
+            description: Ошибка ввода данных
+            schema:
+              type: object
+          500:
+            description: Ошибка на сервере
+          default:
+            description: Неизвестная ошибка

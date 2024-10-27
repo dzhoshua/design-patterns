@@ -23,10 +23,11 @@ class test_prototype(unittest.TestCase):
     
     def test_create_warehouse(self):
         data = self.reposity.data[data_reposity.warehouse_key()]
+        assert data[0].name == "Склад1"
         assert data[0].location == "ул. Баумана 222"
         
         
     def test_create_transaction(self):
         data = self.reposity.data[data_reposity.transaction_key()]
         assert len(data) == 5
-        assert data[0].type.value == "Расход"
+        assert data[0].type.value == "Приход"

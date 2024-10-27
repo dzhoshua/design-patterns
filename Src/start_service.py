@@ -125,7 +125,7 @@ class start_service(abstract_logic):
     """    
     def __create_warehouse(self):
         # Формируем склад
-        warehouse = warehouse_model.create("ул. Баумана 222")
+        warehouse = warehouse_model.create("Склад1", "ул. Баумана 222")
         self.__reposity.data[data_reposity.warehouse_key()] = [warehouse]
     
     
@@ -136,13 +136,14 @@ class start_service(abstract_logic):
         # Формируем транзакцию
         transactions = []
         for i, value in enumerate(self.__nomenclatures.values()):
-            range = range_model.create("штука", 1)
+            range1 = range_model.create("штука", 2)
+            range2 = range_model.create("штука", 1)
             nomenclature = value[0]
-            if i+1 % 2 == 0:
+            if i+1 % 2 != 0:
                 transaction = warehouse_transaction.create(
                      self.__reposity.data[data_reposity.warehouse_key()][0],
                     nomenclature,
-                    range,
+                    range1,
                     i+1.0,
                     format_transaction.INCOME  
                 ) 
@@ -150,7 +151,7 @@ class start_service(abstract_logic):
                 transaction = warehouse_transaction.create(
                     self.__reposity.data[data_reposity.warehouse_key()][0],
                     nomenclature,
-                    range,
+                    range2,
                     i+1.0,
                     format_transaction.EXPENDITURE
                 )
