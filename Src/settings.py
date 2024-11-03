@@ -109,7 +109,7 @@ class settings:
         return self.__block_period
     
     @block_period.setter
-    def block_period(self, value: str):
-        validator.validate(value, 12)
-        self.__block_period = datetime.strptime(value, "%Y-%m-%d")
+    def block_period(self, value: datetime):
+        validator.validate(value, datetime)
+        self.__block_period = value
         

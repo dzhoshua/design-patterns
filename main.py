@@ -12,6 +12,7 @@ from Src.Models.warehouse_transaction import warehouse_transaction
 from Src.Core.format_transaction import format_transaction
 from Src.Processors.turnover_process import turnover_process
 from Src.Core.validator import validator
+from datetime import datetime
 
 
 app = connexion.FlaskApp(__name__)
@@ -77,6 +78,30 @@ def filter_transactions():
     # return report.result
 
 
+@app.route("/api/block_period/set", methods=["POST"])
+def set_block_period():
+    request_data = request.get_json()
+    new_block_period = request_data.get("block_period")
+    if new_block_period is None:
+        return Response("", 400)
+    
+    try:
+        new_block_period = datetime.strptime(new_block_period, "%Y-%m-%dT%H:%M:%SZ")
+    except Exception as e:
+        return Response("", 400)
+        
+    manager.settings.block_period = new_block_period
+    
+    # сохранение в settings.json (еще не сделано)
+    
+    return str(manager.settings.block_period)
+
+
+@app.route("/api/block_period/get", methods=["GET"])
+def get_block_period():
+    return str(manager.settings.block_period)
+
+
 @app.route("/api/reports/transactions", methods=["GET"])
 def reports_transaction(format: str):
     inner_format = format_reporting(format)
@@ -90,7 +115,7 @@ def reports_turnover(format: str):
     inner_format = format_reporting(format)
     report = report_factory(manager).create(inner_format)
     
-    process_turnover = processing_factory.create()
+    process_turnover = turnover_process.create()
     turnovers = process_turnover.processing(reposity.data[data_reposity.transaction_key()])
     
     format = format.upper()

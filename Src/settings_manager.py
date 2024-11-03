@@ -7,6 +7,7 @@ from Src.Core.format_reporting import format_reporting
 
 import json
 import os
+from datetime import datetime
 
 """
 Менеджер настроек
@@ -92,7 +93,7 @@ class settings_manager(abstract_logic):
         _settings.correspondent_account = "12345678901"
         _settings.bic = "123456789"
         _settings.organization_type = "12345"
-        _settings.block_period = "2024-01-01"
+        _settings.block_period =  datetime(2024, 1, 1)
         return _settings
     
     
