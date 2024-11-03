@@ -1,17 +1,22 @@
 from Src.Core.abstract_processing import abstract_processing
 from Src.Models.warehouse_transaction import warehouse_transaction
 from Src.Models.warehouse_turnover import warehouse_turnover
-from Src.Warehouse.calculations import calculations
-from Src.Core.format_transaction import format_transaction
+from Src.Processors.calculations import calculations
 from Src.Core.validator import validator, argument_exception
 from datetime import datetime, timedelta
+from Src.settings_manager import settings_manager
 
 """
 Класс для расчёта оборотов
 """
-class processing_factory(abstract_processing):
+class turnover_process(abstract_processing):
     __start_period: datetime = None
     __end_period: datetime = None  
+    
+    
+    def __init__(self, manager: settings_manager):
+        self.manager = manager
+        self.block_period = self.manager.settings.block_period
 
 
     """
@@ -62,30 +67,49 @@ class processing_factory(abstract_processing):
             argument_exception(start_period)
             argument_exception(end_period)
         
-        process = processing_factory()
+        process = turnover_process()
         process.start_period = start_period
         process.end_period = end_period
         return process
     
     
     def processing(self, transactions: list[warehouse_transaction]):
-        turnovers = [] 
+        
+        # получаем сохранённые обороты (сохранение ещё не сделано)
+        turnovers = {}
+        
         for transaction in transactions:
-            if self.start_period <= transaction.period <= self.end_period:
+            
+            if transaction.period > self.block_period:
+                key = (transaction.warehouse.unique_code, transaction.nomenclature.unique_code, transaction.range.unique_code)
                 quantity = 0
-                idx = -1
-                for i, tur in enumerate(turnovers):
-                    if transaction.nomenclature == tur.nomenclature and transaction.warehouse == tur.warehouse:
-                        quantity = tur.turnover
-                        idx = i
-                        break
-                
                 condition = calculations(transaction.type)
                 quantity = condition.transaction(quantity, transaction.quantity)
-                if idx != -1:
-                    turnovers[idx].turnover = int(quantity)
+                
+                if key not in turnovers:
+                    turnovers[key] = warehouse_turnover.create(
+                        warehouse=transaction.warehouse,
+                        nomenclature=transaction.nomenclature,
+                        range=transaction.range,
+                        turnover = int(quantity)
+                    )
                 else:
-                    turnover = warehouse_turnover.create(transaction.warehouse, transaction.nomenclature, transaction.range, int(quantity))
-                    turnovers.append(turnover)
+                    turnovers[key].turnover = int(quantity)
+            # if self.start_period <= transaction.period <= self.end_period:
+            #     quantity = 0
+            #     idx = -1
+            #     for i, tur in enumerate(turnovers):
+            #         if transaction.nomenclature == tur.nomenclature and transaction.warehouse == tur.warehouse:
+            #             quantity = tur.turnover
+            #             idx = i
+            #             break
+                
+            #     condition = calculations(transaction.type)
+            #     quantity = condition.transaction(quantity, transaction.quantity)
+            #     if idx != -1:
+            #         turnovers[idx].turnover = int(quantity)
+            #     else:
+            #         turnover = warehouse_turnover.create(transaction.warehouse, transaction.nomenclature, transaction.range, int(quantity))
+            #         turnovers.append(turnover)
 
         return turnovers

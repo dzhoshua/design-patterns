@@ -1,6 +1,6 @@
 from Src.Core.validator import validator
 from Src.Reports.report_factory import format_reporting
-
+from datetime import datetime
 
 """
 Настройки
@@ -13,6 +13,7 @@ class settings:
     __bic = ""
     __organization_type = ""
     __report_format = format_reporting.JSON
+    __block_period: datetime
 
     """
     Наименование организации
@@ -101,4 +102,14 @@ class settings:
     def report_format(self, value:str):
         validator.validate(value, format_reporting)
         self.__report_format = value
+        
+        
+    @property
+    def block_period(self):
+        return self.__block_period
+    
+    @block_period.setter
+    def block_period(self, value: str):
+        validator.validate(value, 12)
+        self.__block_period = datetime.strptime(value, "%Y-%m-%d")
         

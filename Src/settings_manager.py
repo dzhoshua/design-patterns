@@ -92,6 +92,7 @@ class settings_manager(abstract_logic):
         _settings.correspondent_account = "12345678901"
         _settings.bic = "123456789"
         _settings.organization_type = "12345"
+        _settings.block_period = "2024-01-01"
         return _settings
     
     

@@ -12,7 +12,7 @@ class warehouse_transaction(base_model_code):
     __warehouse: warehouse_model = None
     __nomenclature: nomenclature_model = None
     __range: range_model = None
-    __quantity:float = 0
+    __quantity:float = 0.0
     __type = format_transaction
     __period: datetime = None
     
