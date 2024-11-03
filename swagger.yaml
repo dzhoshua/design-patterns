@@ -291,7 +291,7 @@ paths:
   /block_period/get:
     get:
       tags:
-        - block peroid
+        - block period
       summary: Просмотр текущей даты блокировки
       operationId: main.get_block_period
       produces:
@@ -309,7 +309,7 @@ paths:
   /block_period/set:
     post:
       tags:
-        - block peroid
+        - block period
       summary: Изменение даты блокировки
       operationId: main.set_block_period
       consumes:
@@ -323,7 +323,7 @@ paths:
           schema:
             type: object
             properties:
-              date_block:
+              block_period:
                 type: string
                 format: date-time
                 default: "2024-10-01"

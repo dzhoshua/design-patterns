@@ -86,7 +86,7 @@ def set_block_period():
         return Response("", 400)
     
     try:
-        new_block_period = datetime.strptime(new_block_period, "%Y-%m-%dT%H:%M:%SZ")
+        new_block_period = datetime.strptime(new_block_period, "%Y-%m-%d")
     except Exception as e:
         return Response("", 400)
         
