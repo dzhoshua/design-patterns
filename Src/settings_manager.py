@@ -115,7 +115,7 @@ class settings_manager(abstract_logic):
             "inn": self.__settings.inn,
             "account": self.__settings.account,
             "correspondent_account": self.__settings.correspondent_account,
-            "biс": self.__settings.bik,
+            "biс": self.__settings.bic,
             "organization_type": self.__settings.organization_type,
             "block_period": self.__settings.block_period
         }
