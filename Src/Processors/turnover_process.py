@@ -20,11 +20,10 @@ class turnover_process(abstract_processing):
     
     def processing(self, transactions: list[warehouse_transaction]):
         
-        # reposity = data_reposity()
-        # if reposity.blocked_turnover_key():
-        #     blocked_turnovers = reposity.data[data_reposity.blocked_turnover_key()]
-        # else:
-        blocked_turnovers = {}
+        reposity = data_reposity()
+        if reposity.blocked_turnover_key() not in reposity.data:
+            reposity.data[data_reposity.blocked_turnover_key()] = {}
+        blocked_turnovers = reposity.data[data_reposity.blocked_turnover_key()]
         turnovers = {}
         
         for transaction in transactions:
