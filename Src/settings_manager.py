@@ -93,7 +93,7 @@ class settings_manager(abstract_logic):
         _settings.correspondent_account = "12345678901"
         _settings.bic = "123456789"
         _settings.organization_type = "12345"
-        _settings.block_period =  datetime(2024, 1, 1)
+        _settings.block_period =  "2024-01-01"
         return _settings
     
     
@@ -105,6 +105,27 @@ class settings_manager(abstract_logic):
         report_class = self.report_settings.get(format.name, None)
 
         return report_class()
+    
+    
+    def save(self):
+        file_path = os.path.join(os.curdir, self.__file_name)
+
+        settings_data = {
+            "organization_name": self.__settings.organization_name,
+            "inn": self.__settings.inn,
+            "account": self.__settings.account,
+            "correspondent_account": self.__settings.correspondent_account,
+            "biс": self.__settings.bik,
+            "organization_type": self.__settings.organization_type,
+            "block_period": self.__settings.block_period
+        }
+
+        try:
+            with open(file_path, 'w', encoding='utf-8') as stream:
+                json.dump(settings_data, stream, ensure_ascii=False, indent=4)
+        except Exception as ex:
+            self.set_exception(ex)
+            raise
     
     
     """

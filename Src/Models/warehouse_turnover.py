@@ -9,7 +9,7 @@ class warehouse_turnover(base_model_name):
     __warehouse: warehouse_model = None
     __nomenclature: nomenclature_model = None
     __range: range_model = None
-    __turnover: int = 0
+    __turnover: float = 0.0
     
     
     """
@@ -61,9 +61,9 @@ class warehouse_turnover(base_model_name):
         return self.__turnover
     
     @turnover.setter
-    def turnover(self, value:int):
-        validator.validate(value, int)
-        if value < 0:
+    def turnover(self, value:float):
+        validator.validate(value, float)
+        if value < 0.0:
             raise argument_exception("Некорректный аргумент!")
         self.__turnover = value
         
@@ -73,9 +73,9 @@ class warehouse_turnover(base_model_name):
     """
     @staticmethod
     def create(warehouse: warehouse_model, nomenclature: nomenclature_model, range: range_model, 
-               turnover: int):
+               turnover: float):
         
-        validator.validate(turnover, int)
+        validator.validate(turnover, float)
         validator.validate(nomenclature, nomenclature_model)
         validator.validate(warehouse, warehouse_model)
         validator.validate(range, range_model)

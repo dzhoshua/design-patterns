@@ -8,7 +8,7 @@ from Src.Core.format_filter import format_filter
 """
 Набор тестов для фильтрации
 """
-class test_prototype(unittest.TestCase):
+class test_filter(unittest.TestCase):
     
     reposity = data_reposity()
     start = start_service(reposity)

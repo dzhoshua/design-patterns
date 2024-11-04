@@ -141,7 +141,7 @@ class start_service(abstract_logic):
             nomenclature = value[0]
             if i+1 % 2 != 0:
                 transaction = warehouse_transaction.create(
-                     self.__reposity.data[data_reposity.warehouse_key()][0],
+                    self.__reposity.data[data_reposity.warehouse_key()][0],
                     nomenclature,
                     range1,
                     i+1.0,

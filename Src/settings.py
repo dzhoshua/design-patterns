@@ -13,7 +13,7 @@ class settings:
     __bic = ""
     __organization_type = ""
     __report_format = format_reporting.JSON
-    __block_period: datetime
+    __block_period = ""
 
     """
     Наименование организации
@@ -109,7 +109,7 @@ class settings:
         return self.__block_period
     
     @block_period.setter
-    def block_period(self, value: datetime):
-        validator.validate(value, datetime)
+    def block_period(self, value: str):
+        validator.validate(value, str)
         self.__block_period = value
         

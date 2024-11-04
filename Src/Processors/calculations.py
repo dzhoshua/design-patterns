@@ -10,16 +10,16 @@ class calculations:
         self.transaction = getattr(self, _type.name.lower())
 
 
-    def income(self, turnover: int, quantity: float) -> float:
-        validator.validate(turnover, int)
+    def income(self, turnover: float, quantity: float) -> float:
+        validator.validate(turnover, float)
         validator.validate(quantity, float)
 
         result = turnover + quantity
         return result
     
     
-    def expenditure(self, turnover: int, quantity: float) -> float:
-        validator.validate(turnover, int)
+    def expenditure(self, turnover: float, quantity: float) -> float:
+        validator.validate(turnover, float)
         validator.validate(quantity, float)
 
         result = turnover - quantity

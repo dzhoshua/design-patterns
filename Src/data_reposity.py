@@ -69,6 +69,14 @@ class data_reposity(abstract_logic):
         return "transaction"
     
     
+    """
+    Ключ для хранения заблокированных оборотов
+    """
+    @staticmethod
+    def blocked_turnover_key() -> str:
+        return "blocked_turnover"
+    
+    
     @staticmethod
     def keys() -> list:
         result = []

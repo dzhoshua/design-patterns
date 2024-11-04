@@ -13,6 +13,7 @@ from Src.Core.format_transaction import format_transaction
 from Src.Processors.turnover_process import turnover_process
 from Src.Core.validator import validator
 from datetime import datetime
+from Src.Processors.blocking_process import blocking_process
 
 
 app = connexion.FlaskApp(__name__)
@@ -83,18 +84,23 @@ def set_block_period():
     request_data = request.get_json()
     new_block_period = request_data.get("block_period")
     if new_block_period is None:
-        return Response("", 400)
-    
-    try:
-        new_block_period = datetime.strptime(new_block_period, "%Y-%m-%d")
-    except Exception as e:
-        return Response("", 400)
+        return Response("Дата блокировки не указана!", 400)
         
     manager.settings.block_period = new_block_period
+    manager.save()
     
-    # сохранение в settings.json (еще не сделано)
+    blocked_turnover_process = blocking_process(manager)
     
-    return str(manager.settings.block_period)
+    transactions = reposity.data[reposity.transaction_key()]
+    if not transactions:
+        return Response("Нет транзакций для пересчета.", 400)
+    blocked_turnovers = blocked_turnover_process.processing(transactions)
+
+    reposity.data[data_reposity.blocked_turnover_key()] = blocked_turnovers
+
+    return Response(f"new_block_period: {new_block_period}."
+                    f"count_of_blocked_turnovers: {len(blocked_turnovers)}",
+                    200)
 
 
 @app.route("/api/block_period/get", methods=["GET"])
