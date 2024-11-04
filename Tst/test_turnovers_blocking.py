@@ -52,10 +52,6 @@ class test_blocking(unittest.TestCase):
             for i in range(len(block_dates)):
                 f.write(f"| {block_dates[i]} | {elapsed_time[i]:.4f} |\n")
             
-            
-            
-        
-        
         
     def create_transactions(self, count: int):
         transactions = []
