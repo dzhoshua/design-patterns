@@ -11,7 +11,7 @@ from Src.settings_manager import settings_manager
 
 
 """
-Набор тестов для фильтрации
+Набор тестов для склада и оборотов
 """
 class test_warehouse(unittest.TestCase):
     
@@ -63,8 +63,6 @@ class test_warehouse(unittest.TestCase):
         
     
     def test_calculations(self):
-        
-        
         turnover = self._turnover_process.processing(self.transactions)
         expected_turnover = 100.0 - 50.0 - 25.0
         actual_turnover = turnover[0].turnover
