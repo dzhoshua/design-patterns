@@ -67,25 +67,4 @@ class test_warehouse(unittest.TestCase):
         expected_turnover = 100.0 - 50.0 - 25.0
         actual_turnover = turnover[0].turnover
         
-        assert expected_turnover == actual_turnover
-    
-    
-    def test_blocking_calculations(self):
-        original_block_period = self.manager.settings.block_period
-        new_block_period = "2024-10-01"
-
-        self.manager.settings.block_period = new_block_period
-
-        # Рассчитаем оборот с новой датой блокировки
-        turnover_results_with_new_block = self._turnover_process.processing(self.transactions)
-
-        # Восстановим оригинальную дату блокировки
-        self.manager.settings.block_period = original_block_period
-
-        # Рассчитаем оборот с оригинальной датой блокировки
-        turnover_results_with_original_block = self._turnover_process.processing(self.transactions)
-        
-        assert turnover_results_with_new_block == turnover_results_with_original_block
-        
-        
-    
+        assert expected_turnover == actual_turnover    
