@@ -4,5 +4,6 @@
     "account": "11111111111",
     "correspondent_account": "11111111111",
     "bic": "123456789",
-    "organization_type": "12345"
+    "organization_type": "12345",
+    "block_period": "2024-10-01"
 }

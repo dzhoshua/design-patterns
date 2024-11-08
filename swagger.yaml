@@ -287,3 +287,60 @@ paths:
             description: Ошибка на сервере
           default:
             description: Неизвестная ошибка
+
+  /block_period/get:
+    get:
+      tags:
+        - block period
+      summary: Просмотр текущей даты блокировки
+      operationId: main.get_block_period
+      produces:
+        - application/text
+      responses:
+        200:
+          description: OK
+          schema:
+            type: object
+        500:
+          description: Ошибка на сервере
+        default:
+          description: Неизвестная ошибка
+  
+  /block_period/set:
+    post:
+      tags:
+        - block period
+      summary: Изменение даты блокировки
+      operationId: main.set_block_period
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - in: body
+          name: set_block_period
+          required: true
+          schema:
+            type: object
+            properties:
+              block_period:
+                type: string
+                format: date-time
+                default: "2024-10-01"
+      responses:
+        200:
+          description: OK
+          schema:
+            type: object
+        400:
+          description: Ошибка записи оборотов в файл
+          schema:
+            type: object
+        404:
+          description: Данных для фильтрации по модели нет.
+          schema:
+            type: object
+        500:
+          description: Неверный формат даты блокировки
+        default:
+          description: Неизвестная ошибка

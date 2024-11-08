@@ -62,11 +62,19 @@ class data_reposity(abstract_logic):
     
     
     """
-    Ключ для хранения склада
+    Ключ для хранения транзакций
     """
     @staticmethod
     def transaction_key() -> str:
         return "transaction"
+    
+    
+    """
+    Ключ для хранения заблокированных оборотов
+    """
+    @staticmethod
+    def blocked_turnover_key() -> str:
+        return "blocked_turnover"
     
     
     @staticmethod

@@ -12,7 +12,7 @@ class warehouse_transaction(base_model_code):
     __warehouse: warehouse_model = None
     __nomenclature: nomenclature_model = None
     __range: range_model = None
-    __quantity:float = 0
+    __quantity:float = 0.0
     __type = format_transaction
     __period: datetime = None
     
@@ -114,7 +114,7 @@ class warehouse_transaction(base_model_code):
     """
     @staticmethod
     def create(warehouse: warehouse_model, nomenclature: nomenclature_model, range: range_model, 
-               quantity: float, type: format_transaction):
+               quantity: float, type: format_transaction, period: datetime = datetime.now()):
         
         validator.validate(quantity, float)
         validator.validate(nomenclature, nomenclature_model)
@@ -126,6 +126,6 @@ class warehouse_transaction(base_model_code):
         item.nomenclature = nomenclature
         item.range = range
         item.type = type
-        item.period = datetime.now()
+        item.period = period
         return item
         

@@ -10,8 +10,10 @@ from Src.start_service import start_service
 from Src.Models.warehouse import warehouse_model
 from Src.Models.warehouse_transaction import warehouse_transaction
 from Src.Core.format_transaction import format_transaction
-from Src.Warehouse.processing_factory import processing_factory
+from Src.Processors.turnover_process import turnover_process
 from Src.Core.validator import validator
+from datetime import datetime
+from Src.Processors.blocking_process import blocking_process
 
 
 app = connexion.FlaskApp(__name__)
@@ -77,6 +79,35 @@ def filter_transactions():
     # return report.result
 
 
+@app.route("/api/block_period/set", methods=["POST"])
+def set_block_period():
+    request_data = request.get_json()
+    new_block_period = request_data.get("block_period")
+    if new_block_period is None:
+        return Response("Дата блокировки не указана!", 400)
+        
+    manager.settings.block_period = new_block_period
+    manager.save()
+    
+    blocked_turnover_process = blocking_process(manager)
+    
+    transactions = reposity.data[reposity.transaction_key()]
+    if not transactions:
+        return Response("Нет транзакций для пересчета.", 400)
+    blocked_turnovers = blocked_turnover_process.processing(transactions)
+
+    reposity.data[data_reposity.blocked_turnover_key()] = blocked_turnovers
+
+    return Response(f"new_block_period: {new_block_period}."
+                    f"count_of_blocked_turnovers: {len(blocked_turnovers)}",
+                    200)
+
+
+@app.route("/api/block_period/get", methods=["GET"])
+def get_block_period():
+    return str(manager.settings.block_period)
+
+
 @app.route("/api/reports/transactions", methods=["GET"])
 def reports_transaction(format: str):
     inner_format = format_reporting(format)
@@ -90,7 +121,7 @@ def reports_turnover(format: str):
     inner_format = format_reporting(format)
     report = report_factory(manager).create(inner_format)
     
-    process_turnover = processing_factory.create()
+    process_turnover = turnover_process.create()
     turnovers = process_turnover.processing(reposity.data[data_reposity.transaction_key()])
     
     format = format.upper()
