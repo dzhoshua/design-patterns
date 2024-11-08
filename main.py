@@ -7,6 +7,11 @@ from Src.Reports.report_factory import report_factory
 from Src.data_reposity import data_reposity
 from Src.settings_manager import settings_manager
 from Src.start_service import start_service
+from Src.Models.warehouse import warehouse_model
+from Src.Models.warehouse_transaction import warehouse_transaction
+from Src.Core.format_transaction import format_transaction
+from Src.Warehouse.processing_factory import processing_factory
+from Src.Core.validator import validator
 
 
 app = connexion.FlaskApp(__name__)
@@ -17,16 +22,12 @@ start = start_service(reposity)
 start.create()
 
 
-
-
 @app.route("/api/filter/<domain>", methods=["POST"])
 def filter_data(domain: str):
     if domain not in reposity.keys():
         return Response(f"Домен '{domain}'не найден!", 400)
     
     request_data = request.get_json()
-    
-    # item_filter = filter.create(request_data)
     item_filter = filter.create(request_data)
     
     try:
@@ -35,12 +36,68 @@ def filter_data(domain: str):
         return Response(f"Нет данных!", 400)
     
     prototype = domain_prototype(data)
-    prototype.create(data, item_filter)
+    prototype.create(item_filter)
     if not prototype.data:
         return {}
     
     report = report_factory(manager).create_default()
     report.create(prototype.data)
+    return report.result
+
+
+@app.route("/api/filter/transactions", methods=["POST"])
+def filter_transactions():
+    try:
+        # получение списка транзакций
+        transactions = reposity.data[reposity.transaction_key()]
+    except Exception as e:
+        return Response(f"Нет данных!", 400)
+    
+    request_data = request.get_json()
+    
+    try:
+        warehouse = request_data.get("warehouse")
+        nomenclature = request_data.get("nomenclature")
+    except Exception as e:
+        return Response(f"Ключи warehouse или nomenclature не найдены!", 400)
+    print(warehouse)
+    
+    warehouse_filter = filter.create(warehouse)
+    nomenclature_filter = filter.create(nomenclature)
+    
+    # prototype = domain_prototype(transactions)
+    # prototype.create(warehouse_filter)
+    # prototype.create(nomenclature_filter)
+    
+    # if not prototype.data:
+    #     return {}
+    
+    # report = report_factory(manager).create_default()
+    # report.create(prototype.data)
+    # return report.result
+
+
+@app.route("/api/reports/transactions", methods=["GET"])
+def reports_transaction(format: str):
+    inner_format = format_reporting(format)
+    report = report_factory(manager).create(inner_format)
+    report.create( reposity.data[ data_reposity.transaction_key()] )
+    return report.result
+
+
+@app.route("/api/reports/turnovers", methods=["GET"])
+def reports_turnover(format: str):
+    inner_format = format_reporting(format)
+    report = report_factory(manager).create(inner_format)
+    
+    process_turnover = processing_factory.create()
+    turnovers = process_turnover.processing(reposity.data[data_reposity.transaction_key()])
+    
+    format = format.upper()
+    inner_format = format_reporting(format)
+    report = report_factory(manager).create(inner_format)
+    report.create(turnovers)
+
     return report.result
 
 

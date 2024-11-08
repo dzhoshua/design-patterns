@@ -12,8 +12,7 @@ class domain_prototype(abstract_filter):
         super().__init__(source)
 
 
-    def create(self, data: list, filterDTO: filter):
-        validator.validate(data, list)
+    def create(self, filterDTO: filter):
         validator.validate(filterDTO, filter)
 
         self.data = self.get_filtered_name(filterDTO)
@@ -61,3 +60,4 @@ class domain_prototype(abstract_filter):
                     result.append(item)
 
         return result
+    

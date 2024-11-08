@@ -2,9 +2,11 @@ from Src.Core.format_reporting import format_reporting
 from Src.Core.abstract_report import abstract_report
 from Src.Core.validator import validator, operation_exception
 import json
+from datetime import datetime
+from enum import Enum
 
 """
-Ответ формирует набор данных в формате CSV
+Ответ формирует набор данных в формате JSON
 """
 class json_report(abstract_report):
 
@@ -43,5 +45,9 @@ class json_report(abstract_report):
             return {key: self.__serialize(val) for key, val in value.__dict__.items() if not key.startswith("_")}
         elif isinstance(value, dict):
              return {key: self.__serialize(val) for key, val in value.items() if not key.startswith("_")}
+        elif isinstance(value, datetime):
+            return datetime.timestamp(value)
+        elif isinstance(value, Enum):
+            return value.value
         else:
             return value

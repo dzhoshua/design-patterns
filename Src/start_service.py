@@ -7,6 +7,12 @@ from Src.Models.nomenclature import nomenclature_model
 from Src.Models.receipt import receipt_model
 from Src.Models.ingredient import ingredient_model
 
+from Src.Models.warehouse import warehouse_model
+from Src.Models.warehouse_transaction import warehouse_transaction
+from Src.Core.format_transaction import format_transaction
+
+import datetime
+
 """
 Сервис для реализации первого старта приложения
 """
@@ -111,7 +117,49 @@ class start_service(abstract_logic):
                                          "Пеките вафли несколько минут до золотистого цвета. Осторожно откройте вафельницу, она очень горячая! Снимите вафлю лопаткой. Горячая она очень мягкая, как блинчик."],
                                          10, 10)
                                         
-        self.__reposity.data[data_reposity.receipt_key()] = [receipt]          
+        self.__reposity.data[data_reposity.receipt_key()] = [receipt]  
+        
+    
+    """
+    Сформировать склады
+    """    
+    def __create_warehouse(self):
+        # Формируем склад
+        warehouse = warehouse_model.create("Склад1", "ул. Баумана 222")
+        self.__reposity.data[data_reposity.warehouse_key()] = [warehouse]
+    
+    
+    """
+    Сформировать транзакции
+    """    
+    def __create_transaction(self):
+        # Формируем транзакцию
+        transactions = []
+        for i, value in enumerate(self.__nomenclatures.values()):
+            range1 = range_model.create("штука", 2)
+            range2 = range_model.create("штука", 1)
+            nomenclature = value[0]
+            if i+1 % 2 != 0:
+                transaction = warehouse_transaction.create(
+                     self.__reposity.data[data_reposity.warehouse_key()][0],
+                    nomenclature,
+                    range1,
+                    i+1.0,
+                    format_transaction.INCOME  
+                ) 
+            else:
+                transaction = warehouse_transaction.create(
+                    self.__reposity.data[data_reposity.warehouse_key()][0],
+                    nomenclature,
+                    range2,
+                    i+1.0,
+                    format_transaction.EXPENDITURE
+                )
+            
+            transactions.append(transaction)
+            
+        self.__reposity.data[data_reposity.transaction_key()] = transactions
+     
 
 
     """
@@ -123,9 +171,13 @@ class start_service(abstract_logic):
             self.__create_ranges()
             self.__create_nomenclatures()
             self.__create_receipts()
-
+            
+            self.__create_warehouse()
+            self.__create_transaction()
+            
             return True
         except Exception as ex :
+            print(ex)
             self.set_exception(ex)
             return False    
 

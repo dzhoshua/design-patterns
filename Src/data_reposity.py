@@ -12,12 +12,14 @@ class data_reposity(abstract_logic):
             cls.instance = super(data_reposity, cls).__new__(cls)
         return cls.instance 
 
+
     """
     Набор данных
     """
     @property
     def data(self) :
         return self.__data
+
 
     """
     Ключ для хранения групп номенклатуры
@@ -26,12 +28,14 @@ class data_reposity(abstract_logic):
     def group_key() -> str:
         return "group"
     
+    
     """
     Ключ для хранения номенклатуры
     """
     @staticmethod
     def nomenclature_key() -> str:
         return "nomenclature"
+    
     
     """
     Ключ для хранения единиц измерения
@@ -40,12 +44,29 @@ class data_reposity(abstract_logic):
     def range_key() -> str:
         return "range"
     
+    
     """
     Ключ для хранения рецептов
     """
     @staticmethod
     def receipt_key() -> str:
         return "receipt"
+    
+    
+    """
+    Ключ для хранения склада
+    """
+    @staticmethod
+    def warehouse_key() -> str:
+        return "warehouse"
+    
+    
+    """
+    Ключ для хранения склада
+    """
+    @staticmethod
+    def transaction_key() -> str:
+        return "transaction"
     
     
     @staticmethod
