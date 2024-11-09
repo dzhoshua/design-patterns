@@ -21,7 +21,7 @@ class filter:
         
 
     @property
-    def filter_name(self) -> str:
+    def filter_name(self) -> format_filter:
         return self.__filter_name
     
     @filter_name.setter
