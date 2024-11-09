@@ -1,3 +1,4 @@
+from Src.Core.event_type import event_type
 from Src.settings import settings
 from Src.Core.abstract_logic import abstract_logic
 from Src.Core.abstract_report import abstract_report
@@ -33,6 +34,10 @@ class settings_manager(abstract_logic):
     def __init__(self) -> None:
         if self.__settings is None:
             self.__settings = self.__default_setting()
+            
+    
+    def handle_event(self, type: event_type, params):
+        return super().handle_event(type, params)
         
 
     """

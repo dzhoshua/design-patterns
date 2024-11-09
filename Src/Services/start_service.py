@@ -1,4 +1,5 @@
 from Src.Core.abstract_logic import abstract_logic
+from Src.Core.event_type import event_type
 from Src.data_reposity import data_reposity
 from Src.Core.validator import operation_exception, validator
 from Src.Models.group import group_model
@@ -24,6 +25,10 @@ class start_service(abstract_logic):
         super().__init__()
         validator.validate(reposity, data_reposity)
         self.__reposity = reposity
+        
+        
+    def handle_event(self, type: event_type, params):
+        return super().handle_event(type, params)
 
     """
     Сформировать стартовый набор групп номенклатуры

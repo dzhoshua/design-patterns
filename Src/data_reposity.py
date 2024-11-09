@@ -1,4 +1,5 @@
 from Src.Core.abstract_logic import abstract_logic
+from Src.Core.event_type import event_type
 
 
 """
@@ -87,6 +88,10 @@ class data_reposity(abstract_logic):
             result.append(key)
 
         return result
+    
+    
+    def handle_event(self, type: event_type, params):
+        return super().handle_event(type, params)
 
     
     """

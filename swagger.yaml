@@ -344,3 +344,127 @@ paths:
           description: Неверный формат даты блокировки
         default:
           description: Неизвестная ошибка
+
+
+  /api/nomenclature:
+    get:
+      tags:
+        - nomenclature
+      summary: Получить номенклатуру
+      produces:
+        - text/html
+      operationId: main.get_nomenclature
+      description: Возвращает информацию о номенклатуре по уникальному коду.
+      parameters:
+        - name: unique_code
+          in: query
+          description: Уникальный код номенклатуры
+          required: true
+          type: string
+      responses:
+        200:
+          description: OK
+        400:
+          description: Ошибка ввода данных
+        
+        500:
+          description: Неверный формат
+        default:
+          description: Неизвестная ошибка
+
+    put:
+      summary: Добавить номенклатуру
+      tags:
+        - nomenclature
+      produces:
+        - text/html
+      operationId: main.put_nomenclature
+      description: Создает новую номенклатуру.
+      parameters:
+        - in: body
+          name: body
+          description: Данные новой номенклатуры
+          required: true
+          schema:
+            type: object
+            properties:
+              name:
+                type: string
+              group_id:
+                type: string
+              range_id:
+                type: string
+      responses:
+        200:
+          description: OK
+        400:
+          description: Ошибка ввода данных
+        
+        500:
+          description: Неверный формат
+        default:
+          description: Неизвестная ошибка
+    
+    patch:
+      summary: Обновить номенклатуру
+      tags:
+        - nomenclature
+      produces:
+        - text/html
+      operationId: main.patch_nomenclature
+      description: Обновляет существующую номенклатуру.
+      parameters:
+        - in: body
+          name: body
+          description: Данные для обновления номенклатуры
+          required: true
+          schema:
+            type: object
+            properties:
+              unique_code:
+                type: string
+              name:
+                type: string
+              group_id:
+                type: string
+              range_id:
+                type: string
+      responses:
+        200:
+          description: OK
+        400:
+          description: Ошибка ввода данных
+        
+        500:
+          description: Неверный формат
+        default:
+          description: Неизвестная ошибка
+
+    delete:
+      summary: Удалить номенклатуру
+      tags:
+        - nomenclature
+      produces:
+        - text/html
+      operationId: main.delete_nomenclature
+      description: Удаляет номенклатуру по уникальному коду.
+      parameters:
+        - in: body
+          name: body
+          description: Уникальный код номенклатуры
+          required: true
+          schema:
+            type: object
+            properties:
+              unique_code:
+                type: string
+      responses:
+        200:
+          description: OK
+        400:
+          description: Ошибка ввода данных
+        
+        500:
+          description: Неверный формат
+        default:
+          description: Неизвестная ошибка

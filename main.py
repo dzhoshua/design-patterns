@@ -15,13 +15,56 @@ from Src.Core.validator import validator
 from datetime import datetime
 from Src.Processors.blocking_process import blocking_process
 
+from Src.Services.observe_service import observe_service
+from Src.Services.nomenclature_service import nomenclature_service
+from Src.Core.event_type import event_type
+
+
 
 app = connexion.FlaskApp(__name__)
 manager = settings_manager()
 manager.open("settings.json")
 reposity = data_reposity()
+_nomenclature_service = nomenclature_service(reposity)
 start = start_service(reposity)
 start.create()
+
+
+
+@app.route("/api/nomenclature", methods=["GET"])
+def get_nomenclature(unique_code: str):
+    try:
+        data = reposity.data[data_reposity.nomenclature_key()]
+    except:
+        return Response("Нет данных!", 400)
+    
+    # для теста
+    print(data[0].name, data[0].unique_code)
+        
+    nomenclature = _nomenclature_service.get_nomenclature(data, unique_code)
+    if len(nomenclature) == 0:
+        
+        return Response("Номенклатура с таким кодом не найдена!", 400)
+        
+    
+    report = report_factory(manager).create_default()
+    report.create(nomenclature)
+    return report.result
+    
+    
+@app.route("/api/nomenclature", methods=["PUT"])
+def put_nomenclature(name: str):
+    pass
+
+
+@app.route("/api/nomenclature", methods=["PATCH"])
+def patch_nomenclature(unique_code: str):
+    pass
+
+
+@app.route("/api/nomenclature", methods=["DELETE"])
+def delete_nomenclature(unique_code: str):
+    pass
 
 
 @app.route("/api/filter/<domain>", methods=["POST"])

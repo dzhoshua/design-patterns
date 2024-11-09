@@ -1,5 +1,6 @@
 from Src.Core.abstract_logic import abstract_logic
 from Src.Core.abstract_report import abstract_report
+from Src.Core.event_type import event_type
 from Src.Core.format_reporting import format_reporting
 from Src.Reports.csv_report import csv_report
 from Src.Reports.json_report import json_report
@@ -29,6 +30,10 @@ class report_factory(abstract_logic):
         self.__reports[format_reporting.XML] = xml_report
         
         self.__settings_manager = manager
+        
+        
+    def handle_event(self, type: event_type, params):
+        return super().handle_event(type, params)
 
 
     """

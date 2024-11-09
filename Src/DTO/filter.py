@@ -15,12 +15,13 @@ class filter:
     
     @name.setter
     def name(self, name: str):
-        validator.validate(name, str)
+        if name:
+            validator.validate(name, str)
         self.__name = name
         
 
     @property
-    def filter_name(self) -> format_filter:
+    def filter_name(self) -> str:
         return self.__filter_name
     
     @filter_name.setter
@@ -35,7 +36,8 @@ class filter:
     
     @unique_code.setter
     def unique_code(self, unique_code: str):
-        validator.validate(unique_code, str)
+        if unique_code:
+            validator.validate(unique_code, str)
         self.__unique_code = unique_code
 
 
@@ -53,14 +55,14 @@ class filter:
     def create(data: dict) -> filter:
         validator.validate(data, dict)
         
-        filter_name = data.get('filter_name').upper()
+        filter_name = data.get('filter_name', format_filter.EQUALS.value).upper()
+        filter_unique_code = data.get('filter_unique_code', format_filter.EQUALS.value).upper()
         filter_name = getattr(format_filter, filter_name)
-        filter_unique_code = data.get('filter_unique_code').upper()
         filter_unique_code = getattr(format_filter, filter_unique_code)
 
         filter_ = filter()
-        filter_.name = data.get('name')
-        filter_.unique_code = data.get('unique_code')
+        filter_.name = data.get('name', "")
+        filter_.unique_code = data.get('unique_code', "")
         filter_.filter_name = filter_name
         filter_.filter_unique_code = filter_unique_code
         
