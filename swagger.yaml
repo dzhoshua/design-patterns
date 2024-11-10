@@ -449,15 +449,11 @@ paths:
       operationId: main.delete_nomenclature
       description: Удаляет номенклатуру по уникальному коду.
       parameters:
-        - in: body
-          name: body
+        - name: unique_code
+          in: query
           description: Уникальный код номенклатуры
           required: true
-          schema:
-            type: object
-            properties:
-              unique_code:
-                type: string
+          type: string
       responses:
         200:
           description: OK

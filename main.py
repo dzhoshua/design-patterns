@@ -64,19 +64,18 @@ def put_nomenclature():
 @app.route("/api/nomenclature", methods=["PATCH"])
 def patch_nomenclature():
     request_data = request.get_json()
-    unique_code = request_data.get("unique_code") 
-    name = request_data.get("name") 
-    group_id = request_data.get("group_id")
-    range_id = request_data.get("range_id")
     
-    result = _nomenclature_service.patch_nomenclature(unique_code, name, group_id, range_id)
+    result = observe_service.raise_event(event_type.CHANGE_NOMENCLATURE, request_data)
     
     return Response(result)
 
 
 @app.route("/api/nomenclature", methods=["DELETE"])
 def delete_nomenclature(unique_code: str):
-    pass
+    
+    result = observe_service.raise_event(event_type.DELETE_NOMENCLATURE, unique_code)
+    
+    return Response(result)
 
 
 @app.route("/api/filter/<domain>", methods=["POST"])

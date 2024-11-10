@@ -52,7 +52,12 @@ class nomenclature_service(abstract_logic):
     """
     Изменение свойств номенклатуры
     """
-    def patch_nomenclature(self, unique_code: str, name: str, group_id: str, range_id: str ):
+    def patch_nomenclature(self, data:dict):
+        unique_code = data.get("unique_code") 
+        name = data.get("name") 
+        group_id = data.get("group_id")
+        range_id = data.get("range_id")
+        
         nomenclature = self.__reposity.data[data_reposity.nomenclature_key()] or []
         group_ = self.__reposity.data[data_reposity.group_key()]
         range_ = self.__reposity.data[data_reposity.range_key()]
@@ -100,8 +105,23 @@ class nomenclature_service(abstract_logic):
     """
     Удаление номенклатуры
     """
-    def delete_nomenclature(self):
-        pass
+    def delete_nomenclature(self, unique_code: str):
+        nomenclature = self.__reposity.data[data_reposity.nomenclature_key()]
+        if not nomenclature:
+            return "База номенклатур пуста!"
+        
+        nom_data = self.get_filtered_data(nomenclature, unique_code, "unique_code")
+        if not nom_data:
+            return f'Номенклатура с кодом "{unique_code}" не существует!'
+        
+        # Проверка использования в рецептах (пока не реализовано)
+        
+        
+        self.__reposity.data[data_reposity.nomenclature_key()] = [
+            n for n in self.__reposity.data[data_reposity.nomenclature_key()] if n.unique_code != unique_code
+        ]
+        return "Номенклатура успешно удалена!"
+        
     
     def get_filtered_data(self,data: list, value:str, filter_name:str):
         item_filter = filter.create({filter_name: value})
@@ -112,7 +132,12 @@ class nomenclature_service(abstract_logic):
     
     
     def handle_event(self, type: event_type, params):
-        return super().handle_event(type, params)
+        super().handle_event(type, params)
+        
+        if type == event_type.DELETE_NOMENCLATURE:
+            return self.delete_nomenclature(params)
+        elif type == event_type.CHANGE_NOMENCLATURE:
+            return self.patch_nomenclature(params)
     
     
     def set_exception(self, ex: Exception):
