@@ -25,8 +25,35 @@ class nomenclature_service(abstract_logic):
     """
     Добавление номенклатуры
     """
-    def put_nomenclature(self):
-        pass
+    def put_nomenclature(self, name: str, group_id: str, range_id: str ):
+        nomenclature = self.__reposity.data[data_reposity.nomenclature_key()] or []
+        group_ = self.__reposity.data[data_reposity.group_key()]
+        range_ = self.__reposity.data[data_reposity.range_key()]
+        if nomenclature:
+            item_filter = filter.create({"name": name})
+            prototype = domain_prototype(nomenclature)
+            prototype.create(item_filter)
+            if prototype.data:
+                return f'Номенклатура с именем "{name}" уже существует!'
+            
+            item_filter = filter.create({"unique_code": group_id})
+            prototype = domain_prototype(group_)
+            prototype.create(item_filter)
+            if not prototype.data:
+                return f'Группа с кодом "{group_id}" не существует!'
+            group_value = prototype.data[0]
+            
+            
+            item_filter = filter.create({"unique_code": range_id})
+            prototype = domain_prototype(range_)
+            prototype.create(item_filter)
+            if not prototype.data:
+                return f'Единица измерения с кодом "{range_id}" не существует!'
+            range_value = prototype.data[0]
+        
+        self.__reposity.data[data_reposity.nomenclature_key()].append(
+            nomenclature_model.create(name, range_value, group_value))
+        return "Номенклатура успешно создана!"
     
     
     """

@@ -396,7 +396,7 @@ paths:
                 type: string
       responses:
         200:
-          description: OK
+          description: Номенклатура успешно создана!
         400:
           description: Ошибка ввода данных
         
