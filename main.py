@@ -37,11 +37,6 @@ def get_nomenclature(unique_code: str):
         data = reposity.data[data_reposity.nomenclature_key()]
     except:
         return Response("Нет данных!", 400)
-    
-    # для теста
-    print(data[0].name, data[0].unique_code)
-    print(data[0].range)
-    print(data[0].group)
         
     nomenclature = _nomenclature_service.get_nomenclature(data, unique_code)
     if len(nomenclature) == 0:
@@ -67,8 +62,16 @@ def put_nomenclature():
 
 
 @app.route("/api/nomenclature", methods=["PATCH"])
-def patch_nomenclature(unique_code: str):
-    pass
+def patch_nomenclature():
+    request_data = request.get_json()
+    unique_code = request_data.get("unique_code") 
+    name = request_data.get("name") 
+    group_id = request_data.get("group_id")
+    range_id = request_data.get("range_id")
+    
+    result = _nomenclature_service.patch_nomenclature(unique_code, name, group_id, range_id)
+    
+    return Response(result)
 
 
 @app.route("/api/nomenclature", methods=["DELETE"])
