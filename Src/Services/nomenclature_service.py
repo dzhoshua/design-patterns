@@ -52,7 +52,7 @@ class nomenclature_service(abstract_logic):
     """
     Изменение свойств номенклатуры
     """
-    def patch_nomenclature(self, data:dict):
+    def patch_nomenclature(self, data: dict):
         unique_code = data.get("unique_code") 
         name = data.get("name") 
         group_id = data.get("group_id")
