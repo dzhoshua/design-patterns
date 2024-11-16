@@ -9,7 +9,7 @@ from Src.Services.observe_service import observe_service
 from Src.DTO.domain_prototype import domain_prototype
 from Src.DTO.filter import filter
 from Src.Reports.report_factory import report_factory
-from Src.settings_manager import settings_manager
+from Src.Managers.settings_manager import settings_manager
 
 
 """

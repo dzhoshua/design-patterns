@@ -181,7 +181,7 @@ paths:
     get:
       tags:
         - filter warehouse
-      summary: Получить список рецептов
+      summary: Получить отчет по транзакциям
       operationId: main.reports_transaction
       produces:
         - application/text
@@ -464,3 +464,74 @@ paths:
           description: Неверный формат
         default:
           description: Неизвестная ошибка
+
+  
+  /reports/balanse_sheet/{format}:
+    get:
+      tags:
+        - turnover balance sheet
+      summary: Получить отчет ОСВ
+      operationId: main.reports_balanse_sheet
+      parameters:
+        - in: body
+          name: body
+          description: Параметры
+          required: true
+          schema:
+            type: object
+            properties:
+              date_start:
+                type: string
+              date_end:
+                type: string
+              warehouse_name:
+                type: string
+      produces:
+        - application/text
+      responses:
+        200:
+          description: OK
+          schema:
+            type: object
+        500:
+          description: Ошибка на сервере
+        default:
+          description: Неизвестная ошибка
+
+
+  /api/reposity/save:
+    post:
+      tags:
+        - turnover balance sheet
+      summary: Сохранить данные в файл
+      operationId: main.save_reposity
+      produces:
+        - application/text
+      responses:
+        200:
+          description: OK
+          schema:
+            type: object
+        500:
+          description: Ошибка на сервере
+        default:
+          description: Неизвестная ошибка
+
+  /api/reposity/restore:
+    post:
+      tags:
+        - turnover balance sheet
+      summary: Загрузить данные из файла
+      operationId: main.restore_reposity
+      produces:
+        - application/text
+      responses:
+        200:
+          description: OK
+          schema:
+            type: object
+        500:
+          description: Ошибка на сервере
+        default:
+          description: Неизвестная ошибка
+        

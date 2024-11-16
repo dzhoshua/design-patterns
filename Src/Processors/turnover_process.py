@@ -3,9 +3,10 @@ from Src.Models.warehouse_transaction import warehouse_transaction
 from Src.Models.warehouse_turnover import warehouse_turnover
 from Src.Processors.calculations import calculations
 from Src.Core.validator import validator, argument_exception
-from datetime import datetime, timedelta
-from Src.settings_manager import settings_manager
+from datetime import datetime
+from Src.Managers.settings_manager import settings_manager
 from Src.data_reposity import data_reposity
+
 
 """
 Класс для расчёта оборотов
