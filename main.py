@@ -6,7 +6,7 @@ from Src.Core.format_reporting import format_reporting
 from Src.Reports.report_factory import report_factory
 from Src.data_reposity import data_reposity
 from Src.settings_manager import settings_manager
-from Src.start_service import start_service
+from Src.Services.start_service import start_service
 from Src.Models.warehouse import warehouse_model
 from Src.Models.warehouse_transaction import warehouse_transaction
 from Src.Core.format_transaction import format_transaction
@@ -15,13 +15,67 @@ from Src.Core.validator import validator
 from datetime import datetime
 from Src.Processors.blocking_process import blocking_process
 
+from Src.Services.observe_service import observe_service
+from Src.Services.nomenclature_service import nomenclature_service
+from Src.Core.event_type import event_type
+
+
 
 app = connexion.FlaskApp(__name__)
 manager = settings_manager()
 manager.open("settings.json")
 reposity = data_reposity()
+_nomenclature_service = nomenclature_service(reposity)
 start = start_service(reposity)
 start.create()
+
+
+
+@app.route("/api/nomenclature", methods=["GET"])
+def get_nomenclature(unique_code: str):
+    try:
+        data = reposity.data[data_reposity.nomenclature_key()]
+    except:
+        return Response("Нет данных!", 400)
+        
+    nomenclature = _nomenclature_service.get_nomenclature(data, unique_code)
+    if len(nomenclature) == 0:
+        return Response("Номенклатура с таким кодом не найдена!", 400)
+        
+    
+    report = report_factory(manager).create_default()
+    report.create(nomenclature)
+    return report.result
+    
+    
+@app.route("/api/nomenclature", methods=["PUT"])
+def put_nomenclature():
+    
+    request_data = request.get_json()
+    name = request_data.get("name") 
+    group_id = request_data.get("group_id")
+    range_id = request_data.get("range_id")
+    
+    result = _nomenclature_service.put_nomenclature(name, group_id, range_id)
+    
+    return Response(result)
+
+
+@app.route("/api/nomenclature", methods=["PATCH"])
+def patch_nomenclature():
+    request_data = request.get_json()
+    
+    result = observe_service.raise_event(event_type.CHANGE_NOMENCLATURE, request_data)
+    
+    return Response(result)
+
+
+@app.route("/api/nomenclature", methods=["DELETE"])
+def delete_nomenclature(unique_code: str):
+    
+    result = observe_service.raise_event(event_type.DELETE_NOMENCLATURE, unique_code)
+    
+    return Response(result)
 
 
 @app.route("/api/filter/<domain>", methods=["POST"])

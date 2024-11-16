@@ -1,9 +1,9 @@
 {
-    "organization_name" : "Ромашка",
-    "inn": "38093093498",
-    "account": "11111111111",
-    "correspondent_account": "11111111111",
-    "bic": "123456789",
+    "organization_name": "Рога и копыта (default)",
+    "inn": "380080920202",
+    "account": "98745632107",
+    "correspondent_account": "12345678901",
+    "biс": "123456789",
     "organization_type": "12345",
-    "block_period": "2024-10-01"
+    "block_period": "2024-11-01"
 }
