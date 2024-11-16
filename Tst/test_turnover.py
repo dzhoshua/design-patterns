@@ -7,7 +7,7 @@ from Src.data_reposity import data_reposity
 from Src.Models.warehouse_transaction import warehouse_transaction
 from Src.Core.format_transaction import format_transaction
 from Src.Processors.turnover_process import turnover_process
-from Src.settings_manager import settings_manager
+from Src.Managers.settings_manager import settings_manager
 
 
 """

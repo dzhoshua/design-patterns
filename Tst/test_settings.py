@@ -1,6 +1,6 @@
                                                                         
 import unittest
-from Src.settings_manager import settings_manager
+from Src.Managers.settings_manager import settings_manager
 
 """
 Набор тестов для проверки работы с настройками

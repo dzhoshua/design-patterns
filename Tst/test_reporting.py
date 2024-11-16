@@ -7,7 +7,7 @@ from Src.Reports.rtf_report import rtf_report
 from Src.Reports.markdown_report import markdown_report
 from Src.Reports.report_factory import report_factory
 from Src.Core.format_reporting import format_reporting
-from Src.settings_manager import settings_manager
+from Src.Managers.settings_manager import settings_manager
 
 from Src.Reports.json_deserializer import json_deserializer
 from Src.Models.range import range_model

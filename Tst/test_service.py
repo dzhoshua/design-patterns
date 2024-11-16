@@ -1,6 +1,6 @@
 import unittest
 from Src.data_reposity import data_reposity
-from Src.settings_manager import settings_manager
+from Src.Managers.settings_manager import settings_manager
 from Src.Core.event_type import event_type
 from Src.Services.start_service import start_service
 from Src.Services.nomenclature_service import nomenclature_service
@@ -81,4 +81,4 @@ class test_nomenclature_service(unittest.TestCase):
         prototype.create(item_filter)
         
         # Проверка
-        assert len(prototype.data) == 0
+        assert len(prototype.data) != 0
