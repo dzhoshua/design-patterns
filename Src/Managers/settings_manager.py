@@ -14,7 +14,7 @@ from datetime import datetime
 """
 class settings_manager(abstract_logic):
     __file_name = "settings.json"
-    __settings:settings = None
+    __settings: settings = None
     __report_settings = {
         "CSV": "csv_report",
         "MARKDOWN": "markdown_report",
@@ -33,10 +33,18 @@ class settings_manager(abstract_logic):
     def __init__(self) -> None:
         if self.__settings is None:
             self.__settings = self.__default_setting()
-            
     
-    def handle_event(self, type: event_type, params):
-        return super().handle_event(type, params)
+
+    """
+    Загруженные настройки
+    """
+    @property
+    def settings(self) -> settings:
+        return self.__settings
+    
+    @property
+    def report_settings(self):
+        return self.__report_settings
         
 
     """
@@ -55,7 +63,6 @@ class settings_manager(abstract_logic):
             stream = open(full_name)
             data = json.load(stream)
 
-
             # Список полей от типа назначения    
             fields = list(filter(lambda x: not x.startswith("_"), dir(self.__settings.__class__)))
 
@@ -68,23 +75,34 @@ class settings_manager(abstract_logic):
                     # Если обычное свойство - заполняем.
                     if not isinstance(value, list) and not isinstance(value, dict):
                         setattr(self.__settings, field, value)
-
             return True
         except Exception as ex :
             self.__settings = self.__default_setting()
             self.set_exception(ex)
             return False
-
-    """
-    Загруженные настройки
-    """
-    @property
-    def settings(self) -> settings:
-        return self.__settings
+        
     
-    @property
-    def report_settings(self):
-        return self.__report_settings
+    def save(self):
+        file_path = os.path.join(os.curdir, self.__file_name)
+
+        settings_data = {
+            "organization_name": self.__settings.organization_name,
+            "inn": self.__settings.inn,
+            "account": self.__settings.account,
+            "correspondent_account": self.__settings.correspondent_account,
+            "biс": self.__settings.bic,
+            "organization_type": self.__settings.organization_type,
+            "block_period": self.__settings.block_period,
+            "first_start" : self.__settings.first_start
+        }
+
+        try:
+            with open(file_path, 'w', encoding='utf-8') as stream:
+                json.dump(settings_data, stream, ensure_ascii=False, indent=4)
+        except Exception as ex:
+            self.set_exception(ex)
+            raise
+    
     
     """
     Набор настроек по умолчанию
@@ -97,7 +115,8 @@ class settings_manager(abstract_logic):
         _settings.correspondent_account = "12345678901"
         _settings.bic = "123456789"
         _settings.organization_type = "12345"
-        _settings.block_period =  "2024-01-01"
+        _settings.block_period = "2024-01-01"
+        _settings.first_start = True
         return _settings
     
     
@@ -109,27 +128,10 @@ class settings_manager(abstract_logic):
         report_class = self.report_settings.get(format.name, None)
 
         return report_class()
+          
     
-    
-    def save(self):
-        file_path = os.path.join(os.curdir, self.__file_name)
-
-        settings_data = {
-            "organization_name": self.__settings.organization_name,
-            "inn": self.__settings.inn,
-            "account": self.__settings.account,
-            "correspondent_account": self.__settings.correspondent_account,
-            "biс": self.__settings.bic,
-            "organization_type": self.__settings.organization_type,
-            "block_period": self.__settings.block_period
-        }
-
-        try:
-            with open(file_path, 'w', encoding='utf-8') as stream:
-                json.dump(settings_data, stream, ensure_ascii=False, indent=4)
-        except Exception as ex:
-            self.set_exception(ex)
-            raise
+    def handle_event(self, type: event_type, params):
+        return super().handle_event(type, params)
     
     
     """

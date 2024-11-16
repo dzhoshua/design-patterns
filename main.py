@@ -18,6 +18,7 @@ from Src.Processors.blocking_process import blocking_process
 from Src.Services.observe_service import observe_service
 from Src.Services.nomenclature_service import nomenclature_service
 from Src.Core.event_type import event_type
+from Src.Processors.turnover_balanse_sheet import turnover_balanse_sheet
 
 
 
@@ -26,6 +27,7 @@ manager = settings_manager()
 manager.open("settings.json")
 reposity = data_reposity()
 _nomenclature_service = nomenclature_service(reposity)
+_balanse_sheet = turnover_balanse_sheet(manager)
 start = start_service(reposity)
 start.create()
 
@@ -84,25 +86,36 @@ def reports_balanse_sheet():
     
     transactions = reposity.data[reposity.transaction_key()]
     if not transactions:
-        return Response("Нет транзакций для пересчета.", 400)
+        return Response("Нет транзакций для расчета.", 400)
     
-    balanse_sheet = []
+    item_filter = filter.create({"name": warehouse_name})
+    prototype = domain_prototype(transactions)
+    prototype.create(item_filter)
     
-    report = report_factory(manager).create_default()
-    report.create(balanse_sheet)
-    return report.result
+    filtered_transactions = prototype.data
+    
+    balanse_sheet = _balanse_sheet.processing(filtered_transactions)
 
 
 @app.route("/api/reposity/save", methods=["POST"])
 def save_reposity():
-    result = observe_service.raise_event(event_type.SAVE_DATA_REPOSITY, {})
-    return Response(result)
-
+    try:
+        observe_service.raise_event(event_type.SAVE_DATA_REPOSITY, {})
+        if manager.settings.first_start:
+            manager.settings.first_start = False
+            manager.save()
+        return Response("Данные сохранены!")
+    except Exception as ex:
+        return Response(f'Ошибка при сохранении данных! {ex}', 500)
+        
 
 @app.route("/api/reposity/restore", methods=["POST"])
 def restore_reposity():
-    result = observe_service.raise_event(event_type.RESTORE_DATA_REPOSITY, {})
-    return Response(result)
+    try:
+        observe_service.raise_event(event_type.RESTORE_DATA_REPOSITY, {})
+        return Response("Данные загружены!")
+    except Exception as ex:
+        return Response(f'Ошибка при загрузке данных! {ex}', 500)
 
 
 @app.route("/api/filter/<domain>", methods=["POST"])

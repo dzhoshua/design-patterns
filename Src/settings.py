@@ -6,14 +6,15 @@ from datetime import datetime
 Настройки
 """
 class settings:
-    __organization_name = ""
-    __inn = ""
-    __account = ""
-    __correspondent_account = ""
-    __bic = ""
-    __organization_type = ""
-    __report_format = format_reporting.JSON
-    __block_period = ""
+    __organization_name: str = ""
+    __inn: str = ""
+    __account: str = ""
+    __correspondent_account: str = ""
+    __bic: str = ""
+    __organization_type: str = ""
+    __report_format: format_reporting = format_reporting.JSON
+    __block_period: str = ""
+    __first_start: bool = True
 
     """
     Наименование организации
@@ -113,3 +114,12 @@ class settings:
         validator.validate(value, str)
         self.__block_period = value
         
+        
+    @property
+    def first_start(self):
+        return self.__first_start
+    
+    @first_start.setter
+    def first_start(self, value: bool):
+        validator.validate(value, bool)
+        self.__first_start = value

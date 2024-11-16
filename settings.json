@@ -5,5 +5,6 @@
     "correspondent_account": "12345678901",
     "biс": "123456789",
     "organization_type": "12345",
-    "block_period": "2024-11-01"
+    "block_period": "2024-11-01",
+    "first_start": true
 }
