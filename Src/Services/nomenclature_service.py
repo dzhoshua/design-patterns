@@ -20,6 +20,21 @@ class nomenclature_service(abstract_logic):
     def __init__(self, reposity: data_reposity):
         observe_service.append(self)
         self.__reposity = reposity
+    
+    
+    """
+    Получение номенклатуры
+    """
+    def get_nomenclature(self, data: list[nomenclature_model], unique_code: str):
+        
+        item_filter = filter.create({"unique_code": unique_code})
+        
+        prototype = domain_prototype(data)
+        prototype.create(item_filter)
+        if not prototype.data:
+            return []
+        
+        return prototype.data
         
         
     """
@@ -80,26 +95,20 @@ class nomenclature_service(abstract_logic):
             return f'Единица измерения с кодом "{range_id}" не существует!'
         range_value = range_data[0]
         
+        # Изменение номенклатуры в data_reposity
         nom_value.name = name
         nom_value.range = range_value
         nom_value.group = group_value
         
+        # Изменение номенклатуры в рецептах
+        recipes = self.__reposity.data[data_reposity.receipt_key()]
+        self.find_nomenclature_in_recipes(recipes, unique_code, nom_value, True)
+        
+        # Изменение номенклатуры в сохранённых оборотах
+        transactions = self.__reposity.data[data_reposity.transaction_key()]
+        self.find_nomenclature_in_transactions(transactions, unique_code, nom_value, True)
+        
         return "Номенклатура успешно обновлена!"
-    
-    
-    """
-    Получение номенклатуры
-    """
-    def get_nomenclature(self, data: list[nomenclature_model], unique_code: str):
-        
-        item_filter = filter.create({"unique_code": unique_code})
-        
-        prototype = domain_prototype(data)
-        prototype.create(item_filter)
-        if not prototype.data:
-            return []
-        
-        return prototype.data
     
     
     """
@@ -114,9 +123,16 @@ class nomenclature_service(abstract_logic):
         if not nom_data:
             return f'Номенклатура с кодом "{unique_code}" не существует!'
         
-        # Проверка использования в рецептах (пока не реализовано)
+        # Проверка использования в рецептах и в сохраненных оборотах
+        recipes = self.__reposity.data[data_reposity.receipt_key()]
+        transactions = self.__reposity.data[data_reposity.transaction_key()]
+        nom_in_recipes = self.find_nomenclature_in_recipes(recipes, unique_code)
+        nom_in_transactions = self.find_nomenclature_in_transactions(transactions, unique_code)
+    
+        if nom_in_recipes or nom_in_transactions:
+            return f'Номенклатура с кодом "{unique_code}" используется в рецептах или в сохраненных данных и не может быть удалена!'
         
-        
+        # Удаление
         self.__reposity.data[data_reposity.nomenclature_key()] = [
             n for n in self.__reposity.data[data_reposity.nomenclature_key()] if n.unique_code != unique_code
         ]
@@ -131,6 +147,33 @@ class nomenclature_service(abstract_logic):
         return prototype.data
     
     
+    def find_nomenclature_in_recipes(self, data: list, unique_code: str, nom_data = None, is_patch = False):
+        for item in data:
+            for ingredient in item.ingredients:
+                if ingredient.nomenclature.unique_code == unique_code:
+                    if is_patch:
+                        self.set_nom_values(ingredient, nom_data)
+                    else:
+                        return True
+        return False
+    
+    
+    def find_nomenclature_in_transactions(self, data: list, unique_code: str, nom_data = None, is_patch = False):
+        for item in data:
+            if item.nomenclature.unique_code == unique_code:
+                if is_patch:
+                    self.set_nom_values(item, nom_data)
+                else:
+                    return True
+        return False
+    
+    def set_nom_values(self, item, new_item):
+        item.nomenclature.name = new_item.name
+        item.nomenclature.range = new_item.range
+        item.nomenclature.group = new_item.group
+        
+                    
+            
     def handle_event(self, type: event_type, params):
         super().handle_event(type, params)
         
