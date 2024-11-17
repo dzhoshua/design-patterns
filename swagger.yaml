@@ -466,7 +466,7 @@ paths:
           description: Неизвестная ошибка
 
   
-  /reports/balanse_sheet/{date_start}/{date_end}/{warehouse_id}:
+  /reports/balanse_sheet/{date_start}/{date_end}/{warehouse_name}:
     get:
       tags:
         - turnover balance sheet
@@ -483,9 +483,9 @@ paths:
           description: Дата конца в формате 'YYYY-MM-DD'
           required: true
           type: string
-        - name: warehouse_id
+        - name: warehouse_name
           in: path
-          description: Код склада
+          description: Имя склада
           required: true
           type: string
       produces:

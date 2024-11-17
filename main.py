@@ -1,5 +1,5 @@
 import connexion
-from flask import Response, request
+from flask import Response, request, jsonify
 from Src.DTO.filter import filter
 from Src.DTO.domain_prototype import domain_prototype
 from Src.Core.format_reporting import format_reporting
@@ -20,7 +20,7 @@ from Src.Services.nomenclature_service import nomenclature_service
 from Src.Core.event_type import event_type
 from Src.Processors.turnover_balanse_sheet import turnover_balanse_sheet
 from Src.Managers.reposity_manager import reposity_manager
-
+import json
 
 
 app = connexion.FlaskApp(__name__)
@@ -82,8 +82,8 @@ def delete_nomenclature(unique_code: str):
     return Response(result)
 
 
-@app.route("/reports/balanse_sheet/<date_start>/<date_end>/<warehouse_id>", methods=["GET"])
-def reports_balanse_sheet(date_start:str, date_end:str, warehouse_id:str ):
+@app.route("/reports/balanse_sheet/<date_start>/<date_end>/<warehouse_name>", methods=["GET"])
+def reports_balanse_sheet(date_start:str, date_end:str, warehouse_name:str ):
     
     try:
         date_start = datetime.strptime(date_start, "%Y-%m-%d")
@@ -95,18 +95,12 @@ def reports_balanse_sheet(date_start:str, date_end:str, warehouse_id:str ):
     if not transactions:
         return Response("Нет транзакций для расчета.", 400)
     
-    balanse_sheet = _balanse_sheet.processing(transactions, date_start, date_end, warehouse_id)
-    data =  {
-        "income": balanse_sheet.income,
-        "expenditure": balanse_sheet.expenditure,
-        "opening_remainder": balanse_sheet.opening_remainder,
-        "remainder": balanse_sheet.remainder
-    }
+    balanse_sheet = _balanse_sheet.processing(transactions, date_start, date_end, warehouse_name)
     report = report_factory(manager).create_default()
-    for key, value in data.items():
-        print(len(value))
-        report.create(value)
-        data[key] = report.result
+    report.create([balanse_sheet])
+    data = report.result
+    with open("tbs_report.json", 'w', encoding='utf-8') as f:
+            f.write(data)
     return data
     
 

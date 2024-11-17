@@ -20,22 +20,15 @@ class turnover_balanse_sheet(abstract_processing):
         self._turnover_process = turnover_process(self.manager)
         
     
-    def processing(self, transactions: list[warehouse_transaction], date_start: datetime, date_end: datetime, warehouse_id: str):
+    def processing(self, transactions: list[warehouse_transaction], date_start: datetime, date_end: datetime, warehouse_name: str):
         
-        income = []
-        expenditure = []
         start_transactions = []
         period_transactions = []
         
         for transaction in transactions:
-            if transaction.warehouse.unique_code == warehouse_id:
+            if transaction.warehouse.name == warehouse_name:
                 if date_start <= transaction.period <= date_end:
                     period_transactions.append(transaction)
-                    
-                    if transaction.type == format_transaction.INCOME:
-                        income.append(transaction)
-                    elif transaction.type == format_transaction.EXPENDITURE:
-                        expenditure.append(transaction)
                         
                 if transaction.period <= date_start:
                     start_transactions.append(transaction)
@@ -43,5 +36,5 @@ class turnover_balanse_sheet(abstract_processing):
         remainder = self._turnover_process.processing(period_transactions)
         opening_remainder = self._turnover_process.processing(start_transactions)
         
-        balanse_sheet_ = balanse_sheet.create(income, expenditure, opening_remainder, remainder)
+        balanse_sheet_ = balanse_sheet.create(opening_remainder, remainder)
         return balanse_sheet_
