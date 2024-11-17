@@ -82,18 +82,33 @@ def delete_nomenclature(unique_code: str):
     return Response(result)
 
 
-@app.route("/api/reports/balanse_sheet", methods=["GET"])
-def reports_balanse_sheet():
-    request_data = request.get_json()
-    date_start = datetime.strptime(request_data.get("date_start"), "%Y-%m-%d")
-    date_end = datetime.strptime(request_data.get("date_end"), "%Y-%m-%d")
-    warehouse_id = request_data.get("warehouse_id")
+@app.route("/reports/balanse_sheet/<date_start>/<date_end>/<warehouse_id>", methods=["GET"])
+def reports_balanse_sheet(date_start:str, date_end:str, warehouse_id:str ):
+    
+    try:
+        date_start = datetime.strptime(date_start, "%Y-%m-%d")
+        date_end = datetime.strptime(date_end, "%Y-%m-%d")
+    except:
+        return Response(f"Неверно введены даты!", 400)
     
     transactions = reposity.data[reposity.transaction_key()]
     if not transactions:
         return Response("Нет транзакций для расчета.", 400)
     
     balanse_sheet = _balanse_sheet.processing(transactions, date_start, date_end, warehouse_id)
+    data =  {
+        "income": balanse_sheet.income,
+        "expenditure": balanse_sheet.expenditure,
+        "opening_remainder": balanse_sheet.opening_remainder,
+        "remainder": balanse_sheet.remainder
+    }
+    report = report_factory(manager).create_default()
+    for key, value in data.items():
+        print(len(value))
+        report.create(value)
+        data[key] = report.result
+    return data
+    
 
 
 @app.route("/api/reposity/save", methods=["POST"])

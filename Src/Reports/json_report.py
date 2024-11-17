@@ -20,6 +20,7 @@ class json_report(abstract_report):
         
         first_model = data[0]
         fields = self.get_class_fields(first_model)
+        print(fields)
         
         json_data = []
         

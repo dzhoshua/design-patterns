@@ -466,26 +466,28 @@ paths:
           description: Неизвестная ошибка
 
   
-  /reports/balanse_sheet/{format}:
+  /reports/balanse_sheet/{date_start}/{date_end}/{warehouse_id}:
     get:
       tags:
         - turnover balance sheet
       summary: Получить отчет ОСВ
       operationId: main.reports_balanse_sheet
       parameters:
-        - in: body
-          name: body
-          description: Параметры
+        - name: date_start
+          in: path
+          description: Дата начала в формате 'YYYY-MM-DD'
           required: true
-          schema:
-            type: object
-            properties:
-              date_start:
-                type: string
-              date_end:
-                type: string
-              warehouse_name:
-                type: string
+          type: string
+        - name: date_end
+          in: path
+          description: Дата конца в формате 'YYYY-MM-DD'
+          required: true
+          type: string
+        - name: warehouse_id
+          in: path
+          description: Код склада
+          required: true
+          type: string
       produces:
         - application/text
       responses:

@@ -181,7 +181,6 @@ class start_service(abstract_logic):
         self.__reposity.data[data_reposity.transaction_key()] = transactions
      
 
-
     """
     Первый старт
     """

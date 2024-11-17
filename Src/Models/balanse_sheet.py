@@ -1,94 +1,85 @@
 from Src.Core.base_models import base_model_code
-from Src.Models.warehouse import warehouse_model
-from Src.Models.nomenclature import nomenclature_model
-from Src.Models.range import range_model
 from Src.Core.validator import argument_exception, validator
 
 
 class balanse_sheet(base_model_code):
-    __warehouse: warehouse_model
+    __income: list = None
+    __expenditure: list = None
+    __opening_remainder: list = None
+    __remainder: list = None
     
     
     """
-    Склад
+    Приход
     """
     @property
-    def warehouse(self) -> warehouse_model:
-        return self.__warehouse
+    def income(self) -> list:
+        return self.__income
     
+    @income.setter
+    def income(self, value: list):
+        validator.validate(value, list)
+        self.__income = value
 
-    @warehouse.setter
-    def warehouse(self, value: warehouse_model):
-        validator.validate(value, warehouse_model)
-        self.__warehouse = value
-      
-        
-    """
-    Номенклатура
-    """
-    @property
-    def nomenclature(self) -> nomenclature_model:
-        return self.__nomenclature
-    
 
-    @nomenclature.setter
-    def nomenclature(self, value: nomenclature_model):
-        validator.validate(value, nomenclature_model)
-        self.__nomenclature = value
-        
-    
     """
-    Единица измерения
+    Расход
     """
     @property
-    def range(self) -> range_model:
-        return self.__range
+    def expenditure(self) -> list:
+        return self.__expenditure
     
-    @range.setter
-    def range(self, value: range_model):
-        validator.validate(value, range_model)
-        self.__range = value
+    @expenditure.setter
+    def expenditure(self, value: list):
+        validator.validate(value, list)
+        self.__expenditure = value
         
-    
+        
     """
-    Оборот
+    Начальные остатки
     """
     @property
-    def turnover(self) -> int:
-        return self.__turnover
+    def opening_remainder(self) -> list:
+        return self.__opening_remainder
     
-    @turnover.setter
-    def turnover(self, value:float):
-        validator.validate(value, float)
-        if value < 0.0:
-            raise argument_exception("Некорректный аргумент!")
-        self.__turnover = value
+    @opening_remainder.setter
+    def opening_remainder(self, value: list):
+        validator.validate(value, list)
+        self.__opening_remainder = value
+        
+        
+    """
+    Обороты
+    """
+    @property
+    def remainder(self) -> list:
+        return self.__remainder
+    
+    @remainder.setter
+    def remainder(self, value: list):
+        validator.validate(value, list)
+        self.__remainder = value
+
+   
+    def to_dict(self):
+        return {
+            "unique_code": self.unique_code,
+            "opening_remainder": self.opening_remainder,
+            "income": self.income,
+            "expenditure": self.expenditure,
+            "remainder": self.remainder,
+        }
         
         
     """
     Фабричный метод
     """
-    # @staticmethod
-    # def create(warehouse: warehouse_model, start_turnover: float):
-        
-    #     # validator.validate(turnover, float)
-    #     # validator.validate(nomenclature, nomenclature_model)
-    #     # validator.validate(warehouse, warehouse_model)
-    #     # validator.validate(range, range_model)
+    @staticmethod
+    def create(income: list, expenditure: list, opening_remainder: list, remainder:list):
 
-    #     # item = balanse_sheet()
-    #     # item.warehouse = warehouse
-    #     # item.nomenclature = nomenclature
-    #     # item.range = range
-    #     # item.turnover = turnover
-    #     return item
-    
-    
-    def to_dict(self):
-        return {
-            "unique_code": self.unique_code,
-            "warehouse": self.warehouse.to_dict(),
-            "nomenclature": self.nomenclature.to_dict(),
-            "range": self.range.to_dict(),
-            "turnover": self.turnover
-        }
+        item = balanse_sheet()
+        item.income = income
+        item.expenditure = expenditure
+        item.opening_remainder = opening_remainder
+        item.remainder = remainder
+        return item
