@@ -15,6 +15,8 @@ from Src.Models.warehouse_transaction import warehouse_transaction
 from Src.Core.format_transaction import format_transaction
 from Src.Services.observe_service import observe_service
 
+from datetime import datetime, timedelta
+import random
 
 """
 Сервис для реализации первого старта приложения
@@ -151,30 +153,30 @@ class start_service(abstract_logic):
     Сформировать транзакции
     """    
     def __create_transaction(self):
-        # Формируем транзакцию
+        # Формируем транзакции
+        count = 100
         transactions = []
-        for i, value in enumerate(self.__nomenclatures.values()):
-            range1 = range_model.create("штука", 2)
-            range2 = range_model.create("штука", 1)
-            nomenclature = value[0]
-            if i+1 % 2 != 0:
+        warehouses = self.__reposity.data[data_reposity.warehouse_key()]
+        nomenclatures = self.__reposity.data[data_reposity.nomenclature_key()]
+        
+        count_iter = count // len(nomenclatures)
+        for i in range(count_iter):
+            for nomenclature in nomenclatures:
+                range1 = nomenclature.range
+                date = datetime.now() - timedelta(days=random.randint(0, 365))
+                random_quantity = random.randint(10, 300)
+                random_transaction_type = random.choice(list(format_transaction)) 
+                random_warehouse = random.choice(warehouses)
+
                 transaction = warehouse_transaction.create(
-                    self.__reposity.data[data_reposity.warehouse_key()][0],
+                    random_warehouse,
                     nomenclature,
                     range1,
-                    i+1.0,
-                    format_transaction.INCOME  
-                ) 
-            else:
-                transaction = warehouse_transaction.create(
-                    self.__reposity.data[data_reposity.warehouse_key()][0],
-                    nomenclature,
-                    range2,
-                    i+1.0,
-                    format_transaction.EXPENDITURE
+                    float(random_quantity),
+                    random_transaction_type,
+                    date 
                 )
-            
-            transactions.append(transaction)
+                transactions.append(transaction)
             
         self.__reposity.data[data_reposity.transaction_key()] = transactions
      

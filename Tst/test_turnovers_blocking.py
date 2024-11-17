@@ -50,9 +50,7 @@ class test_blocking(unittest.TestCase):
     Нагрузочный тест
     """
     def test_load_blocking(self):
-        count = 100000
-        transactions = self.create_transactions(count)
-        assert len(transactions) == count
+        transactions = self.transactions
         
         block_dates = [
             "2024-02-01",
@@ -79,32 +77,3 @@ class test_blocking(unittest.TestCase):
             f.write("|------------------|-------------------|\n")
             for i in range(len(block_dates)):
                 f.write(f"| {block_dates[i]} | {elapsed_time[i]:.4f} |\n")
-            
-        
-    def create_transactions(self, count: int):
-        transactions = []
-        warehouse = self.reposity.data[data_reposity.warehouse_key()][0] 
-        nomenclatures = self.reposity.data[data_reposity.nomenclature_key()]
-        
-        count_iter = count // len(nomenclatures)
-        for i in range(count_iter):
-            for nomenclature in nomenclatures:
-                range1 = nomenclature.range
-
-                date = datetime.now() - timedelta( minutes=(count_iter-i) * len(nomenclatures) )
-                if i * len(nomenclatures) > count // 1.2:
-                    date = datetime.now() + timedelta( minutes=i * len(nomenclatures) )
-                
-                random_quantity = random.randint(10, 300)
-                random_transaction_type = random.choice(list(format_transaction)) 
-
-                transaction = warehouse_transaction.create(
-                    warehouse,
-                    nomenclature,
-                    range1,
-                    float(random_quantity),
-                    random_transaction_type,
-                    date 
-                )
-                transactions.append(transaction)
-        return transactions
