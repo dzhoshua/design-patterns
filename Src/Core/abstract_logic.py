@@ -58,7 +58,7 @@ class abstract_logic(ABC):
         path = f"./**/{file_name}"
         full_path = glob.glob(path, recursive=True)[0]
         
-        validator.validatet(full_path, str)
+        validator.validate(full_path, str)
 
         return full_path
        

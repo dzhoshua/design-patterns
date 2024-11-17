@@ -30,7 +30,7 @@ reposity = data_reposity()
 _nomenclature_service = nomenclature_service(reposity)
 _reposity_manager = reposity_manager(reposity, manager)
 _balanse_sheet = turnover_balanse_sheet(manager)
-start = start_service(reposity)
+start = start_service(reposity, manager)
 start.create()
 
 

@@ -1,5 +1,6 @@
 from Src.Core.abstract_logic import abstract_logic
 from Src.settings import settings
+from Src.Managers.settings_manager import settings_manager
 from Src.Core.event_type import event_type
 from Src.data_reposity import data_reposity
 from Src.Core.validator import operation_exception, validator
@@ -21,16 +22,24 @@ from Src.Services.observe_service import observe_service
 class start_service(abstract_logic):
     __reposity: data_reposity = None
     __nomenclatures:dict = {}
+    __settings_manager: settings_manager = None
 
 
-    def __init__(self, reposity: data_reposity) -> None:
+    def __init__(self, reposity: data_reposity, manager: settings_manager) -> None:
         super().__init__()
         validator.validate(reposity, data_reposity)
         self.__reposity = reposity
+        self.__settings_manager = manager
         
         
     def handle_event(self, type: event_type, params):
         return super().handle_event(type, params)
+    
+    
+    @property 
+    def settings(self) -> settings:
+        return self.__settings_manager.settings
+    
 
     """
     Сформировать стартовый набор групп номенклатуры
@@ -176,7 +185,7 @@ class start_service(abstract_logic):
     """
     def create(self) -> bool:
         try:
-            if settings.first_start:
+            if self.settings.first_start:
                 self.__create_nomenclature_groups()
                 self.__create_ranges()
                 self.__create_nomenclatures()

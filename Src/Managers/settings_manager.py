@@ -51,15 +51,12 @@ class settings_manager(abstract_logic):
     Открыть и загрузить настройки
     """
     def open(self, file_name:str = ""):
-        validator.validate(file_name, str)
-        
         if file_name != "":
+            validator.validate(file_name, str)
             self.__file_name = file_name
 
         try:
-            current_path_info = os.path.split(__file__)
-            current_path = current_path_info[0]
-            full_name = f"{current_path}{os.sep}{self.__file_name}"
+            full_name = self.file_search(self.__file_name)
             stream = open(full_name)
             data = json.load(stream)
 
