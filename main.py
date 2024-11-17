@@ -19,6 +19,7 @@ from Src.Services.observe_service import observe_service
 from Src.Services.nomenclature_service import nomenclature_service
 from Src.Core.event_type import event_type
 from Src.Processors.turnover_balanse_sheet import turnover_balanse_sheet
+from Src.Managers.reposity_manager import reposity_manager
 
 
 
@@ -27,6 +28,7 @@ manager = settings_manager()
 manager.open("settings.json")
 reposity = data_reposity()
 _nomenclature_service = nomenclature_service(reposity)
+_reposity_manager = reposity_manager(reposity, manager)
 _balanse_sheet = turnover_balanse_sheet(manager)
 start = start_service(reposity)
 start.create()
@@ -67,6 +69,8 @@ def put_nomenclature():
 def patch_nomenclature():
     request_data = request.get_json()
     result = observe_service.raise_event(event_type.CHANGE_NOMENCLATURE, request_data)
+    result = result[type(_nomenclature_service).__name__]
+    
     return Response(result)
 
 
@@ -74,48 +78,40 @@ def patch_nomenclature():
 def delete_nomenclature(unique_code: str):
     
     result = observe_service.raise_event(event_type.DELETE_NOMENCLATURE, unique_code)
+    result = result[type(_nomenclature_service).__name__]
     return Response(result)
 
 
 @app.route("/api/reports/balanse_sheet", methods=["GET"])
 def reports_balanse_sheet():
     request_data = request.get_json()
-    date_start = request_data.get("date_start")
-    date_end = request_data.get("date_end")
-    warehouse_name = request_data.get("warehouse_name")
+    date_start = datetime.strptime(request_data.get("date_start"), "%Y-%m-%d")
+    date_end = datetime.strptime(request_data.get("date_end"), "%Y-%m-%d")
+    warehouse_id = request_data.get("warehouse_id")
     
     transactions = reposity.data[reposity.transaction_key()]
     if not transactions:
         return Response("Нет транзакций для расчета.", 400)
     
-    item_filter = filter.create({"name": warehouse_name})
-    prototype = domain_prototype(transactions)
-    prototype.create(item_filter)
-    
-    filtered_transactions = prototype.data
-    
-    balanse_sheet = _balanse_sheet.processing(filtered_transactions)
+    balanse_sheet = _balanse_sheet.processing(transactions, date_start, date_end, warehouse_id)
 
 
 @app.route("/api/reposity/save", methods=["POST"])
 def save_reposity():
-    try:
-        observe_service.raise_event(event_type.SAVE_DATA_REPOSITY, {})
-        if manager.settings.first_start:
-            manager.settings.first_start = False
-            manager.save()
-        return Response("Данные сохранены!")
-    except Exception as ex:
-        return Response(f'Ошибка при сохранении данных! {ex}', 500)
+    result = observe_service.raise_event(event_type.SAVE_DATA_REPOSITY, {})
+    
+    result = result[type(_reposity_manager).__name__]
+    if manager.settings.first_start:
+        manager.settings.first_start = False
+        manager.save()
+    return Response(result)
         
 
 @app.route("/api/reposity/restore", methods=["POST"])
 def restore_reposity():
-    try:
-        observe_service.raise_event(event_type.RESTORE_DATA_REPOSITY, {})
-        return Response("Данные загружены!")
-    except Exception as ex:
-        return Response(f'Ошибка при загрузке данных! {ex}', 500)
+    result = observe_service.raise_event(event_type.RESTORE_DATA_REPOSITY, {})
+    result = result[type(_reposity_manager).__name__]
+    return Response(result)
 
 
 @app.route("/api/filter/<domain>", methods=["POST"])

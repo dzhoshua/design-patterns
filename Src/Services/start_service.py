@@ -1,4 +1,5 @@
 from Src.Core.abstract_logic import abstract_logic
+from Src.settings import settings
 from Src.Core.event_type import event_type
 from Src.data_reposity import data_reposity
 from Src.Core.validator import operation_exception, validator
@@ -11,6 +12,7 @@ from Src.Models.ingredient import ingredient_model
 from Src.Models.warehouse import warehouse_model
 from Src.Models.warehouse_transaction import warehouse_transaction
 from Src.Core.format_transaction import format_transaction
+from Src.Services.observe_service import observe_service
 
 
 """
@@ -129,8 +131,11 @@ class start_service(abstract_logic):
     """    
     def __create_warehouse(self):
         # Формируем склад
-        warehouse = warehouse_model.create("Склад1", "ул. Баумана 222")
-        self.__reposity.data[data_reposity.warehouse_key()] = [warehouse]
+        warehouses = [
+            warehouse_model.create("Склад1", "ул. Баумана 222"),
+            warehouse_model.create("Склад2", "ул. Ленина 111")
+            ]
+        self.__reposity.data[data_reposity.warehouse_key()] = warehouses
     
     
     """
@@ -171,14 +176,16 @@ class start_service(abstract_logic):
     """
     def create(self) -> bool:
         try:
-            self.__create_nomenclature_groups()
-            self.__create_ranges()
-            self.__create_nomenclatures()
-            self.__create_receipts()
-            
-            self.__create_warehouse()
-            self.__create_transaction()
-            
+            if settings.first_start:
+                self.__create_nomenclature_groups()
+                self.__create_ranges()
+                self.__create_nomenclatures()
+                self.__create_receipts()
+                
+                self.__create_warehouse()
+                self.__create_transaction()
+            else:
+                observe_service.raise_event(event_type.RESTORE_DATA_REPOSITY, {})
             return True
         except Exception as ex :
             print(ex)

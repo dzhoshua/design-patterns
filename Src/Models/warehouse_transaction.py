@@ -105,9 +105,19 @@ class warehouse_transaction(base_model_code):
             "quantity": self.quantity,
             "nomenclature":self.nomenclature.to_dict(),
             "range":self.range.to_dict(),
-            "type": self.type.value,
+            "type": self.type,
             "period": self.period
         }
+        
+    
+    @property
+    def attribute_class(self) -> dict:
+        return {
+            "warehouse": warehouse_model,
+            "nomenclature": nomenclature_model,
+            "range": range_model
+            }
+        
         
     """
     Фабричный метод

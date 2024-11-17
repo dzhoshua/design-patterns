@@ -1,5 +1,11 @@
 from Src.Core.abstract_logic import abstract_logic
 from Src.Core.event_type import event_type
+from Src.Models.group import group_model
+from Src.Models.range import range_model
+from Src.Models.nomenclature import nomenclature_model
+from Src.Models.receipt import receipt_model
+from Src.Models.warehouse import warehouse_model
+from Src.Models.warehouse_transaction import warehouse_transaction
 
 
 """
@@ -88,6 +94,18 @@ class data_reposity(abstract_logic):
             result.append(key)
 
         return result
+    
+    
+    @staticmethod
+    def keys_and_models() -> dict:
+        return {
+            data_reposity.group_key(): group_model,
+            data_reposity.nomenclature_key(): nomenclature_model,
+            data_reposity.range_key(): range_model,
+            data_reposity.receipt_key(): receipt_model,
+            data_reposity.warehouse_key(): warehouse_model,
+            data_reposity.transaction_key(): warehouse_transaction
+        }
     
     
     def handle_event(self, type: event_type, params):

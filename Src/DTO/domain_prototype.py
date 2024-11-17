@@ -17,8 +17,20 @@ class domain_prototype(abstract_filter):
 
         self.data = self.get_filtered_name(filterDTO)
         self.data = self.get_filtered_id(filterDTO)
+        self.data = self.get_filtered_period(filterDTO)
         domains = domain_prototype(self.data)
         return domains
+    
+    
+    def get_filtered_period(self, filterDTO: filter) -> list:
+        if filterDTO.period is None:
+            return self.data
+        
+        result = []
+        for item in self.data:
+            if filterDTO.period[0] <= item.period <= filterDTO.period[1]:
+                result.append(item)
+        return result
     
     
     def get_filtered_name(self, filterDTO: filter) -> list:

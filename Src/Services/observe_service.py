@@ -24,7 +24,11 @@ class observe_service:
             observe_service.observers.append( service )
 
     @staticmethod
-    def raise_event( type: event_type, params):
+    def raise_event( type_: event_type, params):
+        result = {}
         for instance in observe_service.observers:
             if instance is not None:
-                return instance.handle_event( type, params)  
+                class_name = type(instance).__name__
+                value = instance.handle_event( type_, params)  
+                result[class_name] = value
+        return result

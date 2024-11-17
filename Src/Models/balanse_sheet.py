@@ -1,15 +1,12 @@
-from Src.Core.base_models import base_model_name
+from Src.Core.base_models import base_model_code
 from Src.Models.warehouse import warehouse_model
 from Src.Models.nomenclature import nomenclature_model
 from Src.Models.range import range_model
 from Src.Core.validator import argument_exception, validator
 
 
-class warehouse_turnover(base_model_name):
-    __warehouse: warehouse_model = None
-    __nomenclature: nomenclature_model = None
-    __range: range_model = None
-    __turnover: float = 0.0
+class balanse_sheet(base_model_code):
+    __warehouse: warehouse_model
     
     
     """
@@ -71,21 +68,20 @@ class warehouse_turnover(base_model_name):
     """
     Фабричный метод
     """
-    @staticmethod
-    def create(warehouse: warehouse_model, nomenclature: nomenclature_model, range: range_model, 
-               turnover: float):
+    # @staticmethod
+    # def create(warehouse: warehouse_model, start_turnover: float):
         
-        validator.validate(turnover, float)
-        validator.validate(nomenclature, nomenclature_model)
-        validator.validate(warehouse, warehouse_model)
-        validator.validate(range, range_model)
+    #     # validator.validate(turnover, float)
+    #     # validator.validate(nomenclature, nomenclature_model)
+    #     # validator.validate(warehouse, warehouse_model)
+    #     # validator.validate(range, range_model)
 
-        item = warehouse_turnover()
-        item.warehouse = warehouse
-        item.nomenclature = nomenclature
-        item.range = range
-        item.turnover = turnover
-        return item
+    #     # item = balanse_sheet()
+    #     # item.warehouse = warehouse
+    #     # item.nomenclature = nomenclature
+    #     # item.range = range
+    #     # item.turnover = turnover
+    #     return item
     
     
     def to_dict(self):
@@ -96,13 +92,3 @@ class warehouse_turnover(base_model_name):
             "range": self.range.to_dict(),
             "turnover": self.turnover
         }
-        
-        
-    @property
-    def attribute_class(self) -> dict:
-        return {
-            "warehouse": warehouse_model,
-            "nomenclature": nomenclature_model,
-            "range": range_model
-            }
-        
