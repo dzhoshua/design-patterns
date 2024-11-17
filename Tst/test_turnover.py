@@ -16,8 +16,8 @@ from Src.Managers.settings_manager import settings_manager
 class test_warehouse(unittest.TestCase):
     
     reposity = data_reposity()
-    start = start_service(reposity)
     manager = settings_manager()
+    start = start_service(reposity, manager)
     _turnover_process = turnover_process(manager)
     start.create()
     

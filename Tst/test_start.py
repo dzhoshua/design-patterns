@@ -1,5 +1,6 @@
 from Src.Services.start_service import start_service
 from Src.data_reposity import data_reposity
+from Src.Managers.settings_manager import settings_manager
 import unittest
 
 
@@ -7,6 +8,7 @@ import unittest
 Набор тестов для проверки работы старта приложения
 """
 class test_start(unittest.TestCase):
+    manager = settings_manager()
     
     """
     Проверить создание инстанса start_service
@@ -16,7 +18,7 @@ class test_start(unittest.TestCase):
         reposity = data_reposity()
 
         # Действие
-        start = start_service(reposity)
+        start = start_service(reposity, self.manager)
 
         # Проверки
         assert start is not None
@@ -27,7 +29,7 @@ class test_start(unittest.TestCase):
     def test_start_service_create(self):
         # Подготовка
         reposity = data_reposity()
-        start = start_service(reposity)
+        start = start_service(reposity, self.manager)
 
         # Действие
         result = start.create()
@@ -43,7 +45,7 @@ class test_start(unittest.TestCase):
     def test_start_service_consists_range(self):
         # Подготовка
         reposity = data_reposity()
-        start = start_service(reposity)
+        start = start_service(reposity, self.manager)
         start.create()
 
         # Действие
@@ -59,7 +61,7 @@ class test_start(unittest.TestCase):
     def test_start_service_consists_nomenclature(self):
         # Подготовка
         reposity = data_reposity()
-        start = start_service(reposity)
+        start = start_service(reposity, self.manager)
         start.create()
 
         # Действие

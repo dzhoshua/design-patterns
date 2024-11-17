@@ -32,7 +32,8 @@ class test_reporting(unittest.TestCase):
     report_rtf = rtf_report()
     
     reposity = data_reposity()
-    start = start_service(reposity)
+    manager = settings_manager()
+    start = start_service(reposity, manager)
     start.create()
     
     __reports_path = "./Tst/reports_res"

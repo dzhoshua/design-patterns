@@ -18,7 +18,7 @@ class test_blocking(unittest.TestCase):
     reposity = data_reposity()
     reposity.data[data_reposity.blocked_turnover_key()] = {}
     manager = settings_manager()
-    start = start_service(reposity)
+    start = start_service(reposity, manager)
     start.create()
     
     

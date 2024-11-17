@@ -13,8 +13,8 @@ from Src.DTO.domain_prototype import domain_prototype
 """
 class test_nomenclature_service(unittest.TestCase):
     reposity = data_reposity()
-    start = start_service(reposity)
     manager = settings_manager()
+    start = start_service(reposity, manager)
     _nomenclature_service = nomenclature_service(reposity)
     start.create()
     
