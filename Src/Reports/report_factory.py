@@ -8,7 +8,7 @@ from Src.Reports.xml_report import xml_report
 from Src.Reports.markdown_report import markdown_report
 from Src.Reports.rtf_report import rtf_report
 from Src.Core.validator import validator, operation_exception
-from Src.settings_manager import settings_manager
+from Src.Managers.settings_manager import settings_manager
 from Src.settings import settings
 
 

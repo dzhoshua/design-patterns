@@ -17,10 +17,7 @@ class json_report(abstract_report):
  
     def create(self, data: list):
         validator.validate(data, list)
-        if len(data) == 0:
-            raise operation_exception("Набор данных пуст!")
         
-
         first_model = data[0]
         fields = self.get_class_fields(first_model)
         
@@ -39,6 +36,8 @@ class json_report(abstract_report):
     def __serialize(self, value):
         if isinstance(value, list):
             return [self.__serialize(item) for item in value]
+        elif isinstance(value, Enum):
+            return value.value
         elif hasattr(value, "to_dict"):
             return value.to_dict()
         elif hasattr(value, "__dict__"):
@@ -47,7 +46,5 @@ class json_report(abstract_report):
              return {key: self.__serialize(val) for key, val in value.items() if not key.startswith("_")}
         elif isinstance(value, datetime):
             return datetime.timestamp(value)
-        elif isinstance(value, Enum):
-            return value.value
         else:
             return value

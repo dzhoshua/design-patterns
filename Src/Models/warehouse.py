@@ -53,3 +53,10 @@ class warehouse_model(base_model_name):
         item.name = name
         return item
     
+    
+    def to_dict(self):
+        return {
+            "unique_code": self.unique_code,
+            "location": self.location,
+            "name": self.name
+        }

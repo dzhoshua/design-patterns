@@ -2,14 +2,10 @@ from Src.Core.abstract_logic import abstract_logic
 from Src.Core.event_type import event_type
 from Src.data_reposity import data_reposity
 from Src.Core.validator import operation_exception, validator
-from Src.Models.group import group_model
-from Src.Models.range import range_model
 from Src.Models.nomenclature import nomenclature_model
 from Src.Services.observe_service import observe_service
 from Src.DTO.domain_prototype import domain_prototype
 from Src.DTO.filter import filter
-from Src.Reports.report_factory import report_factory
-from Src.settings_manager import settings_manager
 
 
 """

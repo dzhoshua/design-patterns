@@ -1,4 +1,6 @@
 from Src.Core.abstract_logic import abstract_logic
+from Src.settings import settings
+from Src.Managers.settings_manager import settings_manager
 from Src.Core.event_type import event_type
 from Src.data_reposity import data_reposity
 from Src.Core.validator import operation_exception, validator
@@ -11,7 +13,10 @@ from Src.Models.ingredient import ingredient_model
 from Src.Models.warehouse import warehouse_model
 from Src.Models.warehouse_transaction import warehouse_transaction
 from Src.Core.format_transaction import format_transaction
+from Src.Services.observe_service import observe_service
 
+from datetime import datetime, timedelta
+import random
 
 """
 Сервис для реализации первого старта приложения
@@ -19,16 +24,24 @@ from Src.Core.format_transaction import format_transaction
 class start_service(abstract_logic):
     __reposity: data_reposity = None
     __nomenclatures:dict = {}
+    __settings_manager: settings_manager = None
 
 
-    def __init__(self, reposity: data_reposity) -> None:
+    def __init__(self, reposity: data_reposity, manager: settings_manager) -> None:
         super().__init__()
         validator.validate(reposity, data_reposity)
         self.__reposity = reposity
+        self.__settings_manager = manager
         
         
     def handle_event(self, type: event_type, params):
         return super().handle_event(type, params)
+    
+    
+    @property 
+    def settings(self) -> settings:
+        return self.__settings_manager.settings
+    
 
     """
     Сформировать стартовый набор групп номенклатуры
@@ -129,56 +142,60 @@ class start_service(abstract_logic):
     """    
     def __create_warehouse(self):
         # Формируем склад
-        warehouse = warehouse_model.create("Склад1", "ул. Баумана 222")
-        self.__reposity.data[data_reposity.warehouse_key()] = [warehouse]
+        warehouses = [
+            warehouse_model.create("Склад1", "ул. Баумана 222"),
+            warehouse_model.create("Склад2", "ул. Ленина 111")
+            ]
+        self.__reposity.data[data_reposity.warehouse_key()] = warehouses
     
     
     """
     Сформировать транзакции
     """    
     def __create_transaction(self):
-        # Формируем транзакцию
+        # Формируем транзакции
+        count = 100
         transactions = []
-        for i, value in enumerate(self.__nomenclatures.values()):
-            range1 = range_model.create("штука", 2)
-            range2 = range_model.create("штука", 1)
-            nomenclature = value[0]
-            if i+1 % 2 != 0:
+        warehouses = self.__reposity.data[data_reposity.warehouse_key()]
+        nomenclatures = self.__reposity.data[data_reposity.nomenclature_key()]
+        
+        count_iter = count // len(nomenclatures)
+        for i in range(count_iter):
+            for nomenclature in nomenclatures:
+                range1 = nomenclature.range
+                date = datetime.now() - timedelta(days=random.randint(0, 365))
+                random_quantity = random.randint(10, 300)
+                random_transaction_type = random.choice(list(format_transaction)) 
+                random_warehouse = random.choice(warehouses)
+
                 transaction = warehouse_transaction.create(
-                    self.__reposity.data[data_reposity.warehouse_key()][0],
+                    random_warehouse,
                     nomenclature,
                     range1,
-                    i+1.0,
-                    format_transaction.INCOME  
-                ) 
-            else:
-                transaction = warehouse_transaction.create(
-                    self.__reposity.data[data_reposity.warehouse_key()][0],
-                    nomenclature,
-                    range2,
-                    i+1.0,
-                    format_transaction.EXPENDITURE
+                    float(random_quantity),
+                    random_transaction_type,
+                    date 
                 )
-            
-            transactions.append(transaction)
+                transactions.append(transaction)
             
         self.__reposity.data[data_reposity.transaction_key()] = transactions
      
-
 
     """
     Первый старт
     """
     def create(self) -> bool:
         try:
-            self.__create_nomenclature_groups()
-            self.__create_ranges()
-            self.__create_nomenclatures()
-            self.__create_receipts()
-            
-            self.__create_warehouse()
-            self.__create_transaction()
-            
+            if self.settings.first_start:
+                self.__create_nomenclature_groups()
+                self.__create_ranges()
+                self.__create_nomenclatures()
+                self.__create_receipts()
+                
+                self.__create_warehouse()
+                self.__create_transaction()
+            else:
+                observe_service.raise_event(event_type.RESTORE_DATA_REPOSITY, {})
             return True
         except Exception as ex :
             print(ex)

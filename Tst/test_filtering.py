@@ -4,6 +4,7 @@ from Src.DTO.filter import filter
 from Src.Services.start_service import start_service
 from Src.data_reposity import data_reposity
 from Src.Core.format_filter import format_filter
+from Src.Managers.settings_manager import settings_manager
 
 """
 Набор тестов для фильтрации
@@ -11,7 +12,8 @@ from Src.Core.format_filter import format_filter
 class test_filter(unittest.TestCase):
     
     reposity = data_reposity()
-    start = start_service(reposity)
+    manager = settings_manager()
+    start = start_service(reposity, manager)
     start.create()
     
     

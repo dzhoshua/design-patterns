@@ -86,3 +86,23 @@ class warehouse_turnover(base_model_name):
         item.range = range
         item.turnover = turnover
         return item
+    
+    
+    def to_dict(self):
+        return {
+            "unique_code": self.unique_code,
+            "warehouse": self.warehouse.to_dict(),
+            "nomenclature": self.nomenclature.to_dict(),
+            "range": self.range.to_dict(),
+            "turnover": self.turnover
+        }
+        
+        
+    @property
+    def attribute_class(self) -> dict:
+        return {
+            "warehouse": warehouse_model,
+            "nomenclature": nomenclature_model,
+            "range": range_model
+            }
+        

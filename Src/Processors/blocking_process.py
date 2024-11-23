@@ -2,7 +2,7 @@ from Src.Core.abstract_processing import abstract_processing
 from Src.Models.warehouse_transaction import warehouse_transaction
 from Src.Models.warehouse_turnover import warehouse_turnover
 from Src.Core.validator import validator
-from Src.settings_manager import settings_manager
+from Src.Managers.settings_manager import settings_manager
 from Src.Processors.calculations import calculations
 from datetime import datetime
 from Src.data_reposity import data_reposity

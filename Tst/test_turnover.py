@@ -7,7 +7,7 @@ from Src.data_reposity import data_reposity
 from Src.Models.warehouse_transaction import warehouse_transaction
 from Src.Core.format_transaction import format_transaction
 from Src.Processors.turnover_process import turnover_process
-from Src.settings_manager import settings_manager
+from Src.Managers.settings_manager import settings_manager
 
 
 """
@@ -16,8 +16,8 @@ from Src.settings_manager import settings_manager
 class test_warehouse(unittest.TestCase):
     
     reposity = data_reposity()
-    start = start_service(reposity)
     manager = settings_manager()
+    start = start_service(reposity, manager)
     _turnover_process = turnover_process(manager)
     start.create()
     

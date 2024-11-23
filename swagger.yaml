@@ -181,7 +181,7 @@ paths:
     get:
       tags:
         - filter warehouse
-      summary: Получить список рецептов
+      summary: Получить отчет по транзакциям
       operationId: main.reports_transaction
       produces:
         - application/text
@@ -464,3 +464,76 @@ paths:
           description: Неверный формат
         default:
           description: Неизвестная ошибка
+
+  
+  /reports/balanse_sheet/{date_start}/{date_end}/{warehouse_name}:
+    get:
+      tags:
+        - turnover balance sheet
+      summary: Получить отчет ОСВ
+      operationId: main.reports_balanse_sheet
+      parameters:
+        - name: date_start
+          in: path
+          description: Дата начала в формате 'YYYY-MM-DD'
+          required: true
+          type: string
+        - name: date_end
+          in: path
+          description: Дата конца в формате 'YYYY-MM-DD'
+          required: true
+          type: string
+        - name: warehouse_name
+          in: path
+          description: Имя склада
+          required: true
+          type: string
+      produces:
+        - application/text
+      responses:
+        200:
+          description: OK
+          schema:
+            type: object
+        500:
+          description: Ошибка на сервере
+        default:
+          description: Неизвестная ошибка
+
+
+  /api/reposity/save:
+    post:
+      tags:
+        - turnover balance sheet
+      summary: Сохранить данные в файл
+      operationId: main.save_reposity
+      produces:
+        - application/text
+      responses:
+        200:
+          description: OK
+          schema:
+            type: object
+        500:
+          description: Ошибка на сервере
+        default:
+          description: Неизвестная ошибка
+
+  /api/reposity/restore:
+    post:
+      tags:
+        - turnover balance sheet
+      summary: Загрузить данные из файла
+      operationId: main.restore_reposity
+      produces:
+        - application/text
+      responses:
+        200:
+          description: OK
+          schema:
+            type: object
+        500:
+          description: Ошибка на сервере
+        default:
+          description: Неизвестная ошибка
+        

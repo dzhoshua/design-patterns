@@ -1,11 +1,11 @@
 import connexion
-from flask import Response, request
+from flask import Response, request, jsonify
 from Src.DTO.filter import filter
 from Src.DTO.domain_prototype import domain_prototype
 from Src.Core.format_reporting import format_reporting
 from Src.Reports.report_factory import report_factory
 from Src.data_reposity import data_reposity
-from Src.settings_manager import settings_manager
+from Src.Managers.settings_manager import settings_manager
 from Src.Services.start_service import start_service
 from Src.Models.warehouse import warehouse_model
 from Src.Models.warehouse_transaction import warehouse_transaction
@@ -18,7 +18,9 @@ from Src.Processors.blocking_process import blocking_process
 from Src.Services.observe_service import observe_service
 from Src.Services.nomenclature_service import nomenclature_service
 from Src.Core.event_type import event_type
-
+from Src.Processors.turnover_balanse_sheet import turnover_balanse_sheet
+from Src.Managers.reposity_manager import reposity_manager
+import json
 
 
 app = connexion.FlaskApp(__name__)
@@ -26,7 +28,9 @@ manager = settings_manager()
 manager.open("settings.json")
 reposity = data_reposity()
 _nomenclature_service = nomenclature_service(reposity)
-start = start_service(reposity)
+_reposity_manager = reposity_manager(reposity, manager)
+_balanse_sheet = turnover_balanse_sheet(manager)
+start = start_service(reposity, manager)
 start.create()
 
 
@@ -64,8 +68,8 @@ def put_nomenclature():
 @app.route("/api/nomenclature", methods=["PATCH"])
 def patch_nomenclature():
     request_data = request.get_json()
-    
     result = observe_service.raise_event(event_type.CHANGE_NOMENCLATURE, request_data)
+    result = result[type(_nomenclature_service).__name__]
     
     return Response(result)
 
@@ -74,7 +78,48 @@ def patch_nomenclature():
 def delete_nomenclature(unique_code: str):
     
     result = observe_service.raise_event(event_type.DELETE_NOMENCLATURE, unique_code)
+    result = result[type(_nomenclature_service).__name__]
+    return Response(result)
+
+
+@app.route("/reports/balanse_sheet/<date_start>/<date_end>/<warehouse_name>", methods=["GET"])
+def reports_balanse_sheet(date_start:str, date_end:str, warehouse_name:str ):
     
+    try:
+        date_start = datetime.strptime(date_start, "%Y-%m-%d")
+        date_end = datetime.strptime(date_end, "%Y-%m-%d")
+    except:
+        return Response(f"Неверно введены даты!", 400)
+    
+    transactions = reposity.data[reposity.transaction_key()]
+    if not transactions:
+        return Response("Нет транзакций для расчета.", 400)
+    
+    balanse_sheet = _balanse_sheet.processing(transactions, date_start, date_end, warehouse_name)
+    report = report_factory(manager).create_default()
+    report.create([balanse_sheet])
+    data = report.result
+    with open("tbs_report.json", 'w', encoding='utf-8') as f:
+            f.write(data)
+    return data
+    
+
+
+@app.route("/api/reposity/save", methods=["POST"])
+def save_reposity():
+    result = observe_service.raise_event(event_type.SAVE_DATA_REPOSITY, {})
+    
+    result = result[type(_reposity_manager).__name__]
+    if manager.settings.first_start:
+        manager.settings.first_start = False
+        manager.save()
+    return Response(result)
+        
+
+@app.route("/api/reposity/restore", methods=["POST"])
+def restore_reposity():
+    result = observe_service.raise_event(event_type.RESTORE_DATA_REPOSITY, {})
+    result = result[type(_reposity_manager).__name__]
     return Response(result)
 
 
@@ -172,9 +217,6 @@ def reports_transaction(format: str):
 
 @app.route("/api/reports/turnovers", methods=["GET"])
 def reports_turnover(format: str):
-    inner_format = format_reporting(format)
-    report = report_factory(manager).create(inner_format)
-    
     process_turnover = turnover_process.create()
     turnovers = process_turnover.processing(reposity.data[data_reposity.transaction_key()])
     

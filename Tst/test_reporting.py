@@ -7,7 +7,7 @@ from Src.Reports.rtf_report import rtf_report
 from Src.Reports.markdown_report import markdown_report
 from Src.Reports.report_factory import report_factory
 from Src.Core.format_reporting import format_reporting
-from Src.settings_manager import settings_manager
+from Src.Managers.settings_manager import settings_manager
 
 from Src.Reports.json_deserializer import json_deserializer
 from Src.Models.range import range_model
@@ -32,7 +32,8 @@ class test_reporting(unittest.TestCase):
     report_rtf = rtf_report()
     
     reposity = data_reposity()
-    start = start_service(reposity)
+    manager = settings_manager()
+    start = start_service(reposity, manager)
     start.create()
     
     __reports_path = "./Tst/reports_res"
