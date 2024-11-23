@@ -49,9 +49,11 @@ class reposity_manager(abstract_logic):
     def restore_reposity_data(self):
         if not os.path.exists(self.file_name):
             return "Файл не найден. Сохраните данные."
-        
-        with open(self.file_name , 'r', encoding='utf-8') as f:
-            data = json.load(f)
+        try:
+            with open(self.file_name , 'r', encoding='utf-8') as f:
+                data = json.load(f)
+        except Exception as ex:
+            return ex
             
         models = data_reposity.keys_and_models()
         for key, list in data.items():
