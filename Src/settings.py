@@ -1,6 +1,7 @@
 from Src.Core.validator import validator
 from Src.Reports.report_factory import format_reporting
 from Src.Core.event_type import event_type
+from Src.Core.logger_level import logger_level
 from Src.Services.observe_service import observe_service
 from datetime import datetime
 
@@ -14,10 +15,10 @@ class settings:
     __correspondent_account: str = ""
     __bic: str = ""
     __organization_type: str = ""
-    __report_format: str= format_reporting.JSON
+    __report_format: format_reporting = format_reporting.JSON
     __block_period: str = ""
-    __first_start: bool = True,
-    __min_log_level: int = event_type.INFO,
+    __first_start: bool = True
+    __min_log_level:int = None
     __save_to_file: bool = True
 
 
@@ -130,7 +131,7 @@ class settings:
         return self.__report_format
 
     @report_format.setter
-    def report_format(self, value:str):
+    def report_format(self, value:format_reporting):
         try:
             validator.validate(value, format_reporting)
         except Exception as ex:
@@ -181,9 +182,13 @@ class settings:
         return self.__min_log_level
 
     @min_log_level.setter
-    def min_log_level(self, value:int):
-        validator.validate(value, event_type)
+    def min_log_level(self, value: int):
+        try:
+            validator.validate(value, int)
+        except Exception as ex:
+            observe_service.raise_event(event_type.ERROR, f"first_start: {ex}")
         self.__min_log_level = value
+        observe_service.raise_event(event_type.DEBUG, f"Минимальный уровень логирования (min_log_level): {value}")
         
         
     """

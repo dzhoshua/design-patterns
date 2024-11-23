@@ -4,6 +4,7 @@ from Src.Core.abstract_logic import abstract_logic
 from Src.Core.abstract_report import abstract_report
 from Src.Core.validator import validator, operation_exception, argument_exception
 from Src.Core.format_reporting import format_reporting
+from Src.Core.logger_level import logger_level
 import json
 import os
 from datetime import datetime
@@ -57,7 +58,7 @@ class settings_manager(abstract_logic):
 
         try:
             full_name = self.file_search(self.__file_name)
-            stream = open(full_name)
+            stream = open(full_name, encoding='utf-8')
             data = json.load(stream)
 
             # Список полей от типа назначения    
@@ -115,9 +116,10 @@ class settings_manager(abstract_logic):
         _settings.bic = "123456789"
         _settings.organization_type = "12345"
         _settings.block_period = "2024-01-01"
-        _settings.first_start = True,
-        _settings.min_log_level = "INFO",
+        _settings.first_start = True
         _settings.save_to_file = True
+        _settings.min_log_level = logger_level.INFO.value
+        
         return _settings
     
     

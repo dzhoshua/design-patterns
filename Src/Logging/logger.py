@@ -41,11 +41,11 @@ class logger(abstract_logic):
     def handle_event(self, type: event_type, params):
         super().handle_event(type, params)
         
-        if type == event_type.ERROR and type.value >= self.manager.settings.min_log_level:
+        if type == event_type.ERROR and logger_level.ERROR.value >= self.manager.settings.min_log_level:
             self.log_error(params)
-        if type == event_type.INFO and type.value >= self.manager.settings.min_log_level:
+        if type == event_type.INFO and logger_level.INFO.value >= self.manager.settings.min_log_level:
             self.log_info(params)
-        if type == event_type.DEBUG and type.value >= self.manager.settings.min_log_level:
+        if type == event_type.DEBUG and logger_level.DEBUG.value >= self.manager.settings.min_log_level:
             self.log_debug(params)
     
     
