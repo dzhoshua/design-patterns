@@ -1,12 +1,10 @@
 from Src.Core.abstract_logic import abstract_logic
 from Src.Core.event_type import event_type
 from Src.data_reposity import data_reposity
-from Src.Core.validator import operation_exception, validator
 from Src.Models.nomenclature import nomenclature_model
 from Src.Services.observe_service import observe_service
 from Src.DTO.domain_prototype import domain_prototype
 from Src.DTO.filter import filter
-from Src.Core.logger_level import logger_level
 
 
 """
@@ -45,20 +43,20 @@ class nomenclature_service(abstract_logic):
         if nomenclature:
             if self.get_filtered_data(nomenclature, name, "name"):
                 message = f'Номенклатура с именем "{name}" уже существует!'
-                observe_service.raise_event(logger_level.INFO, message)
+                observe_service.raise_event(event_type.INFO, message)
                 return message
             
             group_data = self.get_filtered_data(group_, group_id, "unique_code")
             if not group_data:
                 message = f'Группа с кодом "{group_id}" не существует!'
-                observe_service.raise_event(logger_level.ERROR, message)
+                observe_service.raise_event(event_type.ERROR, message)
                 return message
             group_value = group_data[0]
             
             range_data = self.get_filtered_data(range_, range_id, "unique_code")
             if not range_data:
                 message = f'Единица измерения с кодом "{range_id}" не существует!'
-                observe_service.raise_event(logger_level.ERROR, message)
+                observe_service.raise_event(event_type.ERROR, message)
                 return message
             range_value = range_data[0]
         
@@ -66,7 +64,7 @@ class nomenclature_service(abstract_logic):
             nomenclature_model.create(name, range_value, group_value))
         
         message = f"Номенклатура '{name}' успешно создана!"
-        observe_service.raise_event(logger_level.INFO, message)
+        observe_service.raise_event(event_type.INFO, message)
         return message
     
     
@@ -85,27 +83,27 @@ class nomenclature_service(abstract_logic):
         
         if not nomenclature:
             message = "База номенклатур пуста!"
-            observe_service.raise_event(logger_level.INFO, message)
+            observe_service.raise_event(event_type.INFO, message)
             return message
         
         nom_data = self.get_filtered_data(nomenclature, unique_code, "unique_code")
         if not nom_data:
             message = f'Номенклатура с кодом "{unique_code}" не существует!'
-            observe_service.raise_event(logger_level.ERROR, message)
+            observe_service.raise_event(event_type.ERROR, message)
             return message
         nom_value = nom_data[0]
         
         group_data = self.get_filtered_data(group_, group_id, "unique_code")
         if not group_data:
             message = f'Группа с кодом "{group_id}" не существует!'
-            observe_service.raise_event(logger_level.ERROR, message)
+            observe_service.raise_event(event_type.ERROR, message)
             return message
         group_value = group_data[0]
         
         range_data = self.get_filtered_data(range_, range_id, "unique_code")
         if not range_data:
             message = f'Единица измерения с кодом "{range_id}" не существует!'
-            observe_service.raise_event(logger_level.ERROR, message)
+            observe_service.raise_event(event_type.ERROR, message)
             return message
         range_value = range_data[0]
         
@@ -117,15 +115,15 @@ class nomenclature_service(abstract_logic):
         # Изменение номенклатуры в рецептах
         recipes = self.__reposity.data[data_reposity.receipt_key()]
         self.find_nomenclature_in_recipes(recipes, unique_code, nom_value, True)
-        observe_service.raise_event(logger_level.DEBUG, f"Номенклатура с кодом '{unique_code} была обновлена в рецептах.")
+        observe_service.raise_event(event_type.DEBUG, f"Номенклатура с кодом '{unique_code} была обновлена в рецептах.")
         
         # Изменение номенклатуры в сохранённых оборотах
         transactions = self.__reposity.data[data_reposity.transaction_key()]
         self.find_nomenclature_in_transactions(transactions, unique_code, nom_value, True)
-        observe_service.raise_event(logger_level.DEBUG, f"Номенклатура с кодом '{unique_code} была обновлена в сохранённых оборотах.")
+        observe_service.raise_event(event_type.DEBUG, f"Номенклатура с кодом '{unique_code} была обновлена в сохранённых оборотах.")
         
         message = f"Номенклатура с кодом '{unique_code}' успешно обновлена!"
-        observe_service.raise_event(logger_level.INFO, message)
+        observe_service.raise_event(event_type.INFO, message)
         return message
     
     
@@ -136,13 +134,13 @@ class nomenclature_service(abstract_logic):
         nomenclature = self.__reposity.data[data_reposity.nomenclature_key()]
         if not nomenclature:
             message = "База номенклатур пуста!"
-            observe_service.raise_event(logger_level.INFO, message)
+            observe_service.raise_event(event_type.INFO, message)
             return message
         
         nom_data = self.get_filtered_data(nomenclature, unique_code, "unique_code")
         if not nom_data:
             message = f'Номенклатура с кодом "{unique_code}" не существует!'
-            observe_service.raise_event(logger_level.ERROR, message)
+            observe_service.raise_event(event_type.ERROR, message)
             return message
         
         # Проверка использования в рецептах и в сохраненных оборотах
@@ -153,7 +151,7 @@ class nomenclature_service(abstract_logic):
     
         if nom_in_recipes or nom_in_transactions:
             message = f'Номенклатура с кодом "{unique_code}" используется в рецептах или в сохраненных данных и не может быть удалена!'
-            observe_service.raise_event(logger_level.ERROR, message)
+            observe_service.raise_event(event_type.ERROR, message)
             return message
         
         # Удаление
@@ -161,7 +159,7 @@ class nomenclature_service(abstract_logic):
             n for n in self.__reposity.data[data_reposity.nomenclature_key()] if n.unique_code != unique_code
         ]
         message = f"Номенклатура с кодом '{unique_code}' успешно удалена!"
-        observe_service.raise_event(logger_level.INFO, message)
+        observe_service.raise_event(event_type.INFO, message)
         return message
         
     

@@ -1,11 +1,7 @@
-from Src.Core.validator import validator
 from Src.Core.abstract_processing import abstract_processing
 from Src.Managers.settings_manager import settings_manager
 from Src.Models.warehouse_transaction import warehouse_transaction
-from Src.Core.format_transaction import format_transaction
 from Src.Models.balanse_sheet import balanse_sheet
-from Src.DTO.domain_prototype import domain_prototype
-from Src.DTO.filter import filter
 from Src.Processors.turnover_process import turnover_process
 from datetime import datetime
 

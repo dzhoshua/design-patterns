@@ -9,3 +9,6 @@ class event_type(Enum):
     CHANGE_NOMENCLATURE = 2
     SAVE_DATA_REPOSITY = 3
     RESTORE_DATA_REPOSITY = 4
+    DEBUG = 5
+    INFO = 6
+    ERROR = 7

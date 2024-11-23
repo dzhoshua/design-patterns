@@ -1,6 +1,6 @@
 from Src.Core.validator import validator
 from Src.Reports.report_factory import format_reporting
-from Src.Core.logger_level import logger_level
+from Src.Core.event_type import event_type
 from Src.Services.observe_service import observe_service
 from datetime import datetime
 
@@ -17,7 +17,7 @@ class settings:
     __report_format: str= format_reporting.JSON
     __block_period: str = ""
     __first_start: bool = True,
-    __min_log_level: int = logger_level.INFO,
+    __min_log_level: int = event_type.INFO,
     __save_to_file: bool = True
 
 
@@ -34,9 +34,9 @@ class settings:
         try:
             validator.validate(value, str, 255)
         except Exception as ex:
-            observe_service.raise_event(logger_level.ERROR, f"organization_name: {ex}")
+            observe_service.raise_event(event_type.ERROR, f"organization_name: {ex}")
         self.__organization_name = value
-        observe_service.raise_event(logger_level.DEBUG, f"Наименование организации (organization_name): {value}")
+        observe_service.raise_event(event_type.DEBUG, f"Наименование организации (organization_name): {value}")
 
 
     """
@@ -51,9 +51,9 @@ class settings:
         try:
             validator.validate(value, str, 12)
         except Exception as ex:
-            observe_service.raise_event(logger_level.ERROR, f"inn: {ex}")
+            observe_service.raise_event(event_type.ERROR, f"inn: {ex}")
         self.__inn = value
-        observe_service.raise_event(logger_level.DEBUG, f"ИНН (inn): {value}")
+        observe_service.raise_event(event_type.DEBUG, f"ИНН (inn): {value}")
         
     
     """
@@ -68,9 +68,9 @@ class settings:
         try:
             validator.validate(value, str, 11)
         except Exception as ex:
-            observe_service.raise_event(logger_level.ERROR, f"account: {ex}")
+            observe_service.raise_event(event_type.ERROR, f"account: {ex}")
         self.__account = value
-        observe_service.raise_event(logger_level.DEBUG, f"Счет (account): {value}")
+        observe_service.raise_event(event_type.DEBUG, f"Счет (account): {value}")
         
     """
     Корреспондентский счет
@@ -84,9 +84,9 @@ class settings:
         try:    
             validator.validate(value, str, 11)
         except Exception as ex:
-            observe_service.raise_event(logger_level.ERROR, f"correspondent_account: {ex}")
+            observe_service.raise_event(event_type.ERROR, f"correspondent_account: {ex}")
         self.__correspondent_account = value
-        observe_service.raise_event(logger_level.DEBUG, f"Корреспондентский счет (correspondent_account): {value}")
+        observe_service.raise_event(event_type.DEBUG, f"Корреспондентский счет (correspondent_account): {value}")
         
     
     """
@@ -101,9 +101,9 @@ class settings:
         try:
             validator.validate(value, str, 9)
         except Exception as ex:
-            observe_service.raise_event(logger_level.ERROR, f"bic: {ex}")
+            observe_service.raise_event(event_type.ERROR, f"bic: {ex}")
         self.__bic = value
-        observe_service.raise_event(logger_level.DEBUG, f"БИК (bic): {value}")
+        observe_service.raise_event(event_type.DEBUG, f"БИК (bic): {value}")
         
         
     """
@@ -118,9 +118,9 @@ class settings:
         try:
             validator.validate(value, str, 5)
         except Exception as ex:
-            observe_service.raise_event(logger_level.ERROR, f"organization_type: {ex}")
+            observe_service.raise_event(event_type.ERROR, f"organization_type: {ex}")
         self.__organization_type = value
-        observe_service.raise_event(logger_level.DEBUG, f"Вид собственности (organization_type): {value}")
+        observe_service.raise_event(event_type.DEBUG, f"Вид собственности (organization_type): {value}")
     
     """
     Вид отчета
@@ -134,9 +134,9 @@ class settings:
         try:
             validator.validate(value, format_reporting)
         except Exception as ex:
-            observe_service.raise_event(logger_level.ERROR, f"report_format: {ex}")
+            observe_service.raise_event(event_type.ERROR, f"report_format: {ex}")
         self.__report_format = value
-        observe_service.raise_event(logger_level.DEBUG, f"Вид отчета (report_format): {value}")
+        observe_service.raise_event(event_type.DEBUG, f"Вид отчета (report_format): {value}")
        
         
     """
@@ -151,9 +151,9 @@ class settings:
         try:
             validator.validate(value, str)
         except Exception as ex:
-            observe_service.raise_event(logger_level.ERROR, f"block_period: {ex}")
+            observe_service.raise_event(event_type.ERROR, f"block_period: {ex}")
         self.__block_period = value
-        observe_service.raise_event(logger_level.DEBUG, f"Дата блокировки (block_period): {value}")
+        observe_service.raise_event(event_type.DEBUG, f"Дата блокировки (block_period): {value}")
         
     
     """
@@ -168,9 +168,9 @@ class settings:
         try:
             validator.validate(value, bool)
         except Exception as ex:
-            observe_service.raise_event(logger_level.ERROR, f"first_start: {ex}")
+            observe_service.raise_event(event_type.ERROR, f"first_start: {ex}")
         self.__first_start = value
-        observe_service.raise_event(logger_level.DEBUG, f"Первый старт (first_start): {value}")
+        observe_service.raise_event(event_type.DEBUG, f"Первый старт (first_start): {value}")
         
         
     """
@@ -182,7 +182,7 @@ class settings:
 
     @min_log_level.setter
     def min_log_level(self, value:int):
-        validator.validate(value, logger_level)
+        validator.validate(value, event_type)
         self.__min_log_level = value
         
         
@@ -198,6 +198,6 @@ class settings:
         try:
             validator.validate(value, bool)
         except Exception as ex:
-            observe_service.raise_event(logger_level.ERROR, f"save_to_file: {ex}")
+            observe_service.raise_event(event_type.ERROR, f"save_to_file: {ex}")
         self.__save_to_file = value
-        observe_service.raise_event(logger_level.DEBUG, f"Сохранение логов в файл (save_to_file): {value}")
+        observe_service.raise_event(event_type.DEBUG, f"Сохранение логов в файл (save_to_file): {value}")

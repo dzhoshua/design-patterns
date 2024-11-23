@@ -1,6 +1,5 @@
 from Src.Core.abstract_logic import abstract_logic
 from Src.Core.event_type import event_type
-from Src.Core.validator import validator
 from Src.Core.logger_level import logger_level
 from Src.Managers.settings_manager import settings_manager
 from Src.Services.observe_service import observe_service
@@ -39,14 +38,14 @@ class logger(abstract_logic):
                 file.write(f"{log_output}\n")
         
         
-    def handle_event(self, type: logger_level, params):
+    def handle_event(self, type: event_type, params):
         super().handle_event(type, params)
         
-        if type == logger_level.ERROR and type.value >= self.manager.settings.min_log_level:
+        if type == event_type.ERROR and type.value >= self.manager.settings.min_log_level:
             self.log_error(params)
-        if type == logger_level.INFO and type.value >= self.manager.settings.min_log_level:
+        if type == event_type.INFO and type.value >= self.manager.settings.min_log_level:
             self.log_info(params)
-        if type == logger_level.DEBUG and type.value >= self.manager.settings.min_log_level:
+        if type == event_type.DEBUG and type.value >= self.manager.settings.min_log_level:
             self.log_debug(params)
     
     
