@@ -1,5 +1,6 @@
 from Src.Core.validator import validator
 from Src.Reports.report_factory import format_reporting
+from Src.Core.logger_level import logger_level
 from datetime import datetime
 
 """
@@ -12,9 +13,11 @@ class settings:
     __correspondent_account: str = ""
     __bic: str = ""
     __organization_type: str = ""
-    __report_format: format_reporting = format_reporting.JSON
+    __report_format: str= format_reporting.JSON
     __block_period: str = ""
-    __first_start: bool = True
+    __first_start: bool = True,
+    __min_log_level: int = logger_level.INFO,
+    __save_to_file: bool = True
 
     """
     Наименование организации
@@ -103,8 +106,11 @@ class settings:
     def report_format(self, value:str):
         validator.validate(value, format_reporting)
         self.__report_format = value
+       
         
-        
+    """
+    Дата блокировки
+    """ 
     @property
     def block_period(self):
         return self.__block_period
@@ -114,7 +120,10 @@ class settings:
         validator.validate(value, str)
         self.__block_period = value
         
-        
+    
+    """
+    Первый старт
+    """    
     @property
     def first_start(self):
         return self.__first_start
@@ -123,3 +132,29 @@ class settings:
     def first_start(self, value: bool):
         validator.validate(value, bool)
         self.__first_start = value
+        
+        
+    """
+    Минимальный уровень логировнаия
+    """
+    @property
+    def min_log_level(self):
+        return self.__min_log_level
+
+    @min_log_level.setter
+    def min_log_level(self, value:int):
+        validator.validate(value, logger_level)
+        self.__min_log_level = value
+        
+        
+    """
+    Сохранение в файл
+    """    
+    @property
+    def save_to_file(self):
+        return self.__save_to_file
+    
+    @save_to_file.setter
+    def save_to_file(self, value: bool):
+        validator.validate(value, bool)
+        self.__save_to_file = value

@@ -90,7 +90,9 @@ class settings_manager(abstract_logic):
             "biс": self.__settings.bic,
             "organization_type": self.__settings.organization_type,
             "block_period": self.__settings.block_period,
-            "first_start" : self.__settings.first_start
+            "first_start" : self.__settings.first_start,
+            "min_log_level" : self.__settings.min_log_level,
+            "save_to_file": self.__settings.save_to_file
         }
 
         try:
@@ -113,7 +115,9 @@ class settings_manager(abstract_logic):
         _settings.bic = "123456789"
         _settings.organization_type = "12345"
         _settings.block_period = "2024-01-01"
-        _settings.first_start = True
+        _settings.first_start = True,
+        _settings.min_log_level = "INFO",
+        _settings.save_to_file = True
         return _settings
     
     

@@ -74,5 +74,5 @@ class reposity_manager(abstract_logic):
             return self.restore_reposity_data()
         
     def set_exception(self, ex: Exception):
-        return super().set_exception(ex)
+        self._inner_set_exception(ex)
     
