@@ -1,0 +1,14 @@
+version: "3"
+
+services:
+  homework:
+      container name: homework
+      image: homework
+      ports:
+        - 8000:8080
+      volumes:
+        - ./settings.json:/settings.json
+
+networks:
+  default:
+    
