@@ -6,6 +6,8 @@ from Src.Managers.settings_manager import settings_manager
 from Src.Processors.calculations import calculations
 from datetime import datetime
 from Src.data_reposity import data_reposity
+from Src.Core.logger_level import logger_level
+from Src.Services.observe_service import observe_service
 
 
 class blocking_process(abstract_processing):
@@ -44,6 +46,8 @@ class blocking_process(abstract_processing):
                         range=transaction.range,
                         turnover = quantity
                     )
+                    observe_service.raise_event(logger_level.INFO, "Создан новый складской оборот.")
+                    observe_service.raise_event(logger_level.DEBUG, turnovers[key])
                 else:
                     turnovers[key].turnover = quantity
                     

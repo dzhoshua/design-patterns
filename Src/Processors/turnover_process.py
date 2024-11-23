@@ -6,6 +6,8 @@ from Src.Core.validator import validator, argument_exception
 from datetime import datetime
 from Src.Managers.settings_manager import settings_manager
 from Src.data_reposity import data_reposity
+from Src.Core.logger_level import logger_level
+from Src.Services.observe_service import observe_service
 
 
 """
@@ -42,6 +44,8 @@ class turnover_process(abstract_processing):
                         range=transaction.range,
                         turnover = quantity
                     )
+                    observe_service.raise_event(logger_level.INFO, "Создан новый складской оборот.")
+                    observe_service.raise_event(logger_level.DEBUG, turnovers[key])
                 else:
                     turnovers[key].turnover = quantity
         

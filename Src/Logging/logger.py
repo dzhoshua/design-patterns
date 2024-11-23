@@ -11,30 +11,42 @@ class logger(abstract_logic):
     
     
     def __init__(self, settings_manager: settings_manager):
+        self.__file_path = "log.txt"
         self.manager = settings_manager
         observe_service.append(self)
         
         
     def log_error(self, details):
-        pass
+        self.__log(logger_level.ERROR.name, details)
     
     
     def log_info(self, details):
-        pass
+        self.__log(logger_level.INFO.name, details)
     
     
     def log_debug(self, details):
-        pass
+        self.__log(logger_level.DEBUG.name, details)
+    
+    
+    def __log(self, level, message):
+        timestamp = datetime.now().isoformat()
+        log_output = f"[{timestamp}] {level}\t{message}"
+        
+        if not self.manager.settings.save_to_file:
+            print(log_output)
+        else:
+            with open(self.__file_path, "a", encoding="utf-8") as file:
+                file.write(f"{log_output}\n")
         
         
-    def handle_event(self, type: event_type, params):
+    def handle_event(self, type: logger_level, params):
         super().handle_event(type, params)
         
-        if type == logger_level.ERROR and self.manager.settings.min_log_level >= logger_level.ERROR.value:
+        if type == logger_level.ERROR and type.value >= self.manager.settings.min_log_level:
             self.log_error(params)
-        if type == logger_level.INFO and self.manager.settings.min_log_level >= logger_level.INFO.value:
+        if type == logger_level.INFO and type.value >= self.manager.settings.min_log_level:
             self.log_info(params)
-        if type == logger_level.DEBUG and self.manager.settings.min_log_level >= logger_level.DEBUG.value:
+        if type == logger_level.DEBUG and type.value >= self.manager.settings.min_log_level:
             self.log_debug(params)
     
     
