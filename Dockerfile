@@ -16,7 +16,3 @@ COPY ./main.py /app/main.py
 COPY ./swagger.yaml /app/swagger.yaml
 
 CMD ["python", "main.py"]
-
-
-# сделать с тэгом
-# sudo docker build -f Dockerfile -t homework .
