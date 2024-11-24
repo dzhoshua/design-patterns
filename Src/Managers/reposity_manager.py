@@ -1,12 +1,11 @@
 from Src.Core.event_type import event_type
-from Src.Core.validator import validator
 from Src.Core.abstract_logic import abstract_logic
 from Src.Managers.settings_manager import settings_manager
 from Src.data_reposity import data_reposity
 from Src.Services.observe_service import observe_service
-from Src.DTO.filter import filter
 from Src.Reports.report_factory import report_factory
 from Src.Reports.json_deserializer import json_deserializer
+from Src.Core.logger_level import logger_level
 import json
 import os
 
@@ -38,9 +37,14 @@ class reposity_manager(abstract_logic):
                 data = json.dumps(reposity_data, indent=4, ensure_ascii=False)
                 with open(self.file_name , 'w', encoding='utf-8') as f:
                     f.write(data)
-                return "Данные сохранены!"
+                    
+                message = "Данные сохранены в файл!"
+                observe_service.raise_event(event_type.INFO, message)
+                return message
             except Exception as ex:
-                return f"Ошибка при сохранении данных! {ex} "
+                message = f"Ошибка при сохранении данных! {ex}"
+                observe_service.raise_event(event_type.ERROR, message)
+                return message
             
     
     """
@@ -48,11 +52,14 @@ class reposity_manager(abstract_logic):
     """
     def restore_reposity_data(self):
         if not os.path.exists(self.file_name):
-            return "Файл не найден. Сохраните данные."
+            message = "Файл не найден. Сохраните данные."
+            observe_service.raise_event(event_type.ERROR, message)
+            return message
         try:
             with open(self.file_name , 'r', encoding='utf-8') as f:
                 data = json.load(f)
         except Exception as ex:
+            observe_service.raise_event(event_type.ERROR, ex)
             return ex
             
         models = data_reposity.keys_and_models()
@@ -62,8 +69,9 @@ class reposity_manager(abstract_logic):
                 deserializer.open(self.file_name, data_list=list)
                 
                 self.reposity.data[key] = deserializer.model_objects
-
-        return "Данные загружены!"
+        message = "Данные загружены!"
+        observe_service.raise_event(event_type.INFO, message)
+        return message
     
     
     def handle_event(self, type: event_type, params):
@@ -74,5 +82,5 @@ class reposity_manager(abstract_logic):
             return self.restore_reposity_data()
         
     def set_exception(self, ex: Exception):
-        return super().set_exception(ex)
+        self._inner_set_exception(ex)
     

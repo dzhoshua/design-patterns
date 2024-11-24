@@ -12,7 +12,7 @@ produces:
 basePath: "/api"
 
 paths:
-  /reports/formats:
+  /api/reports/formats:
     get:
       tags:
         - filter models
@@ -31,7 +31,7 @@ paths:
           description: Неизвестная ошибка     
 
 
-  /reports/range/{format}:
+  /api/reports/range/{format}:
     get:
       tags:
         - filter models
@@ -55,7 +55,7 @@ paths:
       required: true
       type: string 
 
-  /reports/group/{format}:
+  /api/reports/group/{format}:
     get:
       tags:
         - filter models
@@ -79,7 +79,7 @@ paths:
       required: true
       type: string
 
-  /reports/nomenclature/{format}:
+  /api/reports/nomenclature/{format}:
     get:
       tags:
         - filter models
@@ -103,7 +103,7 @@ paths:
       required: true
       type: string
 
-  /reports/recipe/{format}:
+  /api/reports/recipe/{format}:
     get:
       tags:
         - filter models
@@ -127,7 +127,7 @@ paths:
       required: true
       type: string
 
-  /filter/{domain}:
+  /api/filter/{domain}:
       post:
         tags:
         - filter models
@@ -177,7 +177,7 @@ paths:
             description: Неизвестная ошибка
 
 
-  /reports/transactions/{format}:
+  /api/reports/transactions/{format}:
     get:
       tags:
         - filter warehouse
@@ -201,7 +201,7 @@ paths:
       required: true
       type: string
 
-  /reports/turnovers/{format}:
+  /api/reports/turnovers/{format}:
     get:
       tags:
         - filter warehouse
@@ -226,7 +226,7 @@ paths:
       type: string
         
 
-  /filter/transactions:
+  /api/filter/transactions:
       post:
         tags:
           - filter warehouse
@@ -288,7 +288,7 @@ paths:
           default:
             description: Неизвестная ошибка
 
-  /block_period/get:
+  /api/block_period/get:
     get:
       tags:
         - block period
@@ -306,7 +306,7 @@ paths:
         default:
           description: Неизвестная ошибка
   
-  /block_period/set:
+  /api/block_period/set:
     post:
       tags:
         - block period
@@ -466,7 +466,7 @@ paths:
           description: Неизвестная ошибка
 
   
-  /reports/balanse_sheet/{date_start}/{date_end}/{warehouse_name}:
+  /api/reports/balanse_sheet/{date_start}/{date_end}/{warehouse_name}:
     get:
       tags:
         - turnover balance sheet

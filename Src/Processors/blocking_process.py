@@ -1,11 +1,12 @@
 from Src.Core.abstract_processing import abstract_processing
 from Src.Models.warehouse_transaction import warehouse_transaction
 from Src.Models.warehouse_turnover import warehouse_turnover
-from Src.Core.validator import validator
 from Src.Managers.settings_manager import settings_manager
 from Src.Processors.calculations import calculations
 from datetime import datetime
 from Src.data_reposity import data_reposity
+from Src.Services.observe_service import observe_service
+from Src.Core.event_type import event_type
 
 
 class blocking_process(abstract_processing):
@@ -44,6 +45,8 @@ class blocking_process(abstract_processing):
                         range=transaction.range,
                         turnover = quantity
                     )
+                    observe_service.raise_event(event_type.INFO, "Создан новый складской оборот.")
+                    observe_service.raise_event(event_type.DEBUG, turnovers[key])
                 else:
                     turnovers[key].turnover = quantity
                     

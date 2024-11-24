@@ -197,8 +197,7 @@ class start_service(abstract_logic):
             else:
                 observe_service.raise_event(event_type.RESTORE_DATA_REPOSITY, {})
             return True
-        except Exception as ex :
-            print(ex)
+        except Exception as ex:
             self.set_exception(ex)
             return False    
 
