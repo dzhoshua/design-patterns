@@ -85,13 +85,13 @@ class filter:
         filter_.filter_name = filter_name
         filter_.filter_unique_code = filter_unique_code
         
-        start_period = data.get('start_period', "")
-        end_period = data.get('end_period', "")
-        filter_.period = []
-        if start_period and end_period:
-            start_period = datetime.strptime(start_period, "%Y-%m-%d")
-            end_period = datetime.strptime(end_period, "%Y-%m-%d")
-            filter_.period = [start_period, end_period]
+        # start_period = data.get('start_period', "")
+        # end_period = data.get('end_period', "")
+        # filter_.period = []
+        # if start_period and end_period:
+        #     start_period = datetime.strptime(start_period, "%Y-%m-%d")
+        #     end_period = datetime.strptime(end_period, "%Y-%m-%d")
+        #     filter_.period = [start_period, end_period]
         
         return filter_
     

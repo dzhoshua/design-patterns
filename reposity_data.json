@@ -2,145 +2,145 @@
     "group": [
         {
             "name": "Сырье",
-            "unique_code": "3d8014692f4244f88d7ff7126231973d"
+            "unique_code": "e209adbf94904908b497f23c62baf392"
         },
         {
             "name": "Заморозка",
-            "unique_code": "a4b008bc44e6476bb2562d96ce7df0c1"
+            "unique_code": "fcf03a4b6d294565be6b08a7833e045c"
         }
     ],
     "range": [
         {
             "base": null,
             "name": "грамм",
-            "unique_code": "21c6260593f245b699cd4d9780ec08d7",
+            "unique_code": "cae6345aee8741f2a60b1f29e2b23ec8",
             "value": 1
         },
         {
             "base": null,
             "name": "миллилитр",
-            "unique_code": "301182835c3b41fbbd2e585acf58ddbf",
+            "unique_code": "2a1b4dbdd1804975b408abdcf9cc8cba",
             "value": 1
         },
         {
             "base": {
-                "unique_code": "21c6260593f245b699cd4d9780ec08d7",
+                "unique_code": "cae6345aee8741f2a60b1f29e2b23ec8",
                 "value": 1,
                 "name": "грамм",
                 "base": null
             },
             "name": "кг",
-            "unique_code": "7cc23489a0634d6c8cd6c87442dfaab0",
+            "unique_code": "cc504c0f80c54fd0be5010d21bc75b11",
             "value": 1000
         },
         {
             "base": {
-                "unique_code": "301182835c3b41fbbd2e585acf58ddbf",
+                "unique_code": "2a1b4dbdd1804975b408abdcf9cc8cba",
                 "value": 1,
                 "name": "миллилитр",
                 "base": null
             },
             "name": "литр",
-            "unique_code": "d19ec8f1bc304da29be1b31383731d9f",
+            "unique_code": "345d7e472a484d08bc6c18dd9240354d",
             "value": 1000
         },
         {
             "base": null,
             "name": "штука",
-            "unique_code": "4861e6ca89f245f5a5c4e9821966d818",
+            "unique_code": "1334f2edbf254781808d661eb786f564",
             "value": 1
         }
     ],
     "nomenclature": [
         {
             "group": {
-                "unique_code": "3d8014692f4244f88d7ff7126231973d",
+                "unique_code": "e209adbf94904908b497f23c62baf392",
                 "name": "Сырье"
             },
             "name": "Пшеничная мука",
             "range": {
-                "unique_code": "7cc23489a0634d6c8cd6c87442dfaab0",
+                "unique_code": "cc504c0f80c54fd0be5010d21bc75b11",
                 "value": 1000,
                 "name": "кг",
                 "base": {
-                    "unique_code": "21c6260593f245b699cd4d9780ec08d7",
+                    "unique_code": "cae6345aee8741f2a60b1f29e2b23ec8",
                     "value": 1,
                     "name": "грамм",
                     "base": null
                 }
             },
-            "unique_code": "0b3b5922b938429e88ba77f2dd232234"
+            "unique_code": "110167f9eb8e403db1d8829dfeaa5af7"
         },
         {
             "group": {
-                "unique_code": "3d8014692f4244f88d7ff7126231973d",
+                "unique_code": "e209adbf94904908b497f23c62baf392",
                 "name": "Сырье"
             },
             "name": "Сахар",
             "range": {
-                "unique_code": "7cc23489a0634d6c8cd6c87442dfaab0",
+                "unique_code": "cc504c0f80c54fd0be5010d21bc75b11",
                 "value": 1000,
                 "name": "кг",
                 "base": {
-                    "unique_code": "21c6260593f245b699cd4d9780ec08d7",
+                    "unique_code": "cae6345aee8741f2a60b1f29e2b23ec8",
                     "value": 1,
                     "name": "грамм",
                     "base": null
                 }
             },
-            "unique_code": "83d3ae0f1f8b48d9a12945526e626db2"
+            "unique_code": "b91ae51fd8224a7d88c61847db7d0c84"
         },
         {
             "group": {
-                "unique_code": "3d8014692f4244f88d7ff7126231973d",
+                "unique_code": "e209adbf94904908b497f23c62baf392",
                 "name": "Сырье"
             },
             "name": "Сливочное масло",
             "range": {
-                "unique_code": "7cc23489a0634d6c8cd6c87442dfaab0",
+                "unique_code": "cc504c0f80c54fd0be5010d21bc75b11",
                 "value": 1000,
                 "name": "кг",
                 "base": {
-                    "unique_code": "21c6260593f245b699cd4d9780ec08d7",
+                    "unique_code": "cae6345aee8741f2a60b1f29e2b23ec8",
                     "value": 1,
                     "name": "грамм",
                     "base": null
                 }
             },
-            "unique_code": "ff39bdda42094c778d2717207a3b05c4"
+            "unique_code": "ba7ba71ff32644baa5f9d828ed2d256b"
         },
         {
             "group": {
-                "unique_code": "3d8014692f4244f88d7ff7126231973d",
+                "unique_code": "e209adbf94904908b497f23c62baf392",
                 "name": "Сырье"
             },
             "name": "Яйцо",
             "range": {
-                "unique_code": "4861e6ca89f245f5a5c4e9821966d818",
+                "unique_code": "1334f2edbf254781808d661eb786f564",
                 "value": 1,
                 "name": "штука",
                 "base": null
             },
-            "unique_code": "fbe33affc5f1416da3fe97712e2136b4"
+            "unique_code": "cfb588cf2d274a65b0cb227c3119d408"
         },
         {
             "group": {
-                "unique_code": "3d8014692f4244f88d7ff7126231973d",
+                "unique_code": "e209adbf94904908b497f23c62baf392",
                 "name": "Сырье"
             },
             "name": "Ванилин",
             "range": {
-                "unique_code": "7cc23489a0634d6c8cd6c87442dfaab0",
+                "unique_code": "cc504c0f80c54fd0be5010d21bc75b11",
                 "value": 1000,
                 "name": "кг",
                 "base": {
-                    "unique_code": "21c6260593f245b699cd4d9780ec08d7",
+                    "unique_code": "cae6345aee8741f2a60b1f29e2b23ec8",
                     "value": 1,
                     "name": "грамм",
                     "base": null
                 }
             },
-            "unique_code": "5e978e4542f14f4f9a0c1bc25d8ca5a9"
+            "unique_code": "c1344844c568402aa2a7af46b1bacb72"
         }
     ],
     "receipt": [
@@ -151,15 +151,15 @@
                 {
                     "name": "Пшеничная мука",
                     "group": {
-                        "unique_code": "3d8014692f4244f88d7ff7126231973d",
+                        "unique_code": "e209adbf94904908b497f23c62baf392",
                         "name": "Сырье"
                     },
                     "range": {
-                        "unique_code": "7cc23489a0634d6c8cd6c87442dfaab0",
+                        "unique_code": "cc504c0f80c54fd0be5010d21bc75b11",
                         "value": 1000,
                         "name": "кг",
                         "base": {
-                            "unique_code": "21c6260593f245b699cd4d9780ec08d7",
+                            "unique_code": "cae6345aee8741f2a60b1f29e2b23ec8",
                             "value": 1,
                             "name": "грамм",
                             "base": null
@@ -169,15 +169,15 @@
                 {
                     "name": "Сахар",
                     "group": {
-                        "unique_code": "3d8014692f4244f88d7ff7126231973d",
+                        "unique_code": "e209adbf94904908b497f23c62baf392",
                         "name": "Сырье"
                     },
                     "range": {
-                        "unique_code": "7cc23489a0634d6c8cd6c87442dfaab0",
+                        "unique_code": "cc504c0f80c54fd0be5010d21bc75b11",
                         "value": 1000,
                         "name": "кг",
                         "base": {
-                            "unique_code": "21c6260593f245b699cd4d9780ec08d7",
+                            "unique_code": "cae6345aee8741f2a60b1f29e2b23ec8",
                             "value": 1,
                             "name": "грамм",
                             "base": null
@@ -187,15 +187,15 @@
                 {
                     "name": "Сливочное масло",
                     "group": {
-                        "unique_code": "3d8014692f4244f88d7ff7126231973d",
+                        "unique_code": "e209adbf94904908b497f23c62baf392",
                         "name": "Сырье"
                     },
                     "range": {
-                        "unique_code": "7cc23489a0634d6c8cd6c87442dfaab0",
+                        "unique_code": "cc504c0f80c54fd0be5010d21bc75b11",
                         "value": 1000,
                         "name": "кг",
                         "base": {
-                            "unique_code": "21c6260593f245b699cd4d9780ec08d7",
+                            "unique_code": "cae6345aee8741f2a60b1f29e2b23ec8",
                             "value": 1,
                             "name": "грамм",
                             "base": null
@@ -205,11 +205,11 @@
                 {
                     "name": "Яйцо",
                     "group": {
-                        "unique_code": "3d8014692f4244f88d7ff7126231973d",
+                        "unique_code": "e209adbf94904908b497f23c62baf392",
                         "name": "Сырье"
                     },
                     "range": {
-                        "unique_code": "4861e6ca89f245f5a5c4e9821966d818",
+                        "unique_code": "1334f2edbf254781808d661eb786f564",
                         "value": 1,
                         "name": "штука",
                         "base": null
@@ -218,15 +218,15 @@
                 {
                     "name": "Ванилин",
                     "group": {
-                        "unique_code": "3d8014692f4244f88d7ff7126231973d",
+                        "unique_code": "e209adbf94904908b497f23c62baf392",
                         "name": "Сырье"
                     },
                     "range": {
-                        "unique_code": "7cc23489a0634d6c8cd6c87442dfaab0",
+                        "unique_code": "cc504c0f80c54fd0be5010d21bc75b11",
                         "value": 1000,
                         "name": "кг",
                         "base": {
-                            "unique_code": "21c6260593f245b699cd4d9780ec08d7",
+                            "unique_code": "cae6345aee8741f2a60b1f29e2b23ec8",
                             "value": 1,
                             "name": "грамм",
                             "base": null
@@ -245,19 +245,19 @@
                 "Пеките вафли несколько минут до золотистого цвета. Осторожно откройте вафельницу, она очень горячая! Снимите вафлю лопаткой. Горячая она очень мягкая, как блинчик."
             ],
             "name": "Вафли хрустящие в вафельнице",
-            "unique_code": "68ee6bd0392b4880b0ee4aac92ba58c7"
+            "unique_code": "4683cbad3ddd47eaa06d7755d354c348"
         }
     ],
     "warehouse": [
         {
             "location": "ул. Баумана 222",
             "name": "Склад1",
-            "unique_code": "d5b386fc918d43b2a8ab36e7a1b46edf"
+            "unique_code": "9dc55dd1baf94767a962aadb77aa26a7"
         },
         {
             "location": "ул. Ленина 111",
             "name": "Склад2",
-            "unique_code": "b19c3d3482af4253a1b34709a137c558"
+            "unique_code": "bb9d272e5a434dd39c19ab19ce3873bc"
         }
     ],
     "transaction": [
@@ -265,33 +265,38 @@
             "nomenclature": {
                 "name": "Пшеничная мука",
                 "group": {
-                    "unique_code": "3d8014692f4244f88d7ff7126231973d",
+                    "unique_code": "e209adbf94904908b497f23c62baf392",
                     "name": "Сырье"
                 },
                 "range": {
-                    "unique_code": "7cc23489a0634d6c8cd6c87442dfaab0",
+                    "unique_code": "cc504c0f80c54fd0be5010d21bc75b11",
                     "value": 1000,
                     "name": "кг",
                     "base": {
-                        "unique_code": "21c6260593f245b699cd4d9780ec08d7",
+                        "unique_code": "cae6345aee8741f2a60b1f29e2b23ec8",
                         "value": 1,
                         "name": "грамм",
                         "base": null
                     }
                 }
             },
-            "period": 1731846902.610828,
-            "quantity": 1.0,
+            "period": 1720809018.000349,
+            "quantity": 148.0,
             "range": {
-                "unique_code": "ca37fd9fd0564a16b4de89bb5b8f4182",
-                "value": 2,
-                "name": "штука",
-                "base": null
+                "unique_code": "cc504c0f80c54fd0be5010d21bc75b11",
+                "value": 1000,
+                "name": "кг",
+                "base": {
+                    "unique_code": "cae6345aee8741f2a60b1f29e2b23ec8",
+                    "value": 1,
+                    "name": "грамм",
+                    "base": null
+                }
             },
-            "type": "Приход",
-            "unique_code": "728a3c35a2284f26a0938e46cab1b363",
+            "type": "Расход",
+            "unique_code": "fb6b7f1c79054b60aecd9302989b04b7",
             "warehouse": {
-                "unique_code": "d5b386fc918d43b2a8ab36e7a1b46edf",
+                "unique_code": "9dc55dd1baf94767a962aadb77aa26a7",
                 "location": "ул. Баумана 222",
                 "name": "Склад1"
             }
@@ -300,68 +305,78 @@
             "nomenclature": {
                 "name": "Сахар",
                 "group": {
-                    "unique_code": "3d8014692f4244f88d7ff7126231973d",
+                    "unique_code": "e209adbf94904908b497f23c62baf392",
                     "name": "Сырье"
                 },
                 "range": {
-                    "unique_code": "7cc23489a0634d6c8cd6c87442dfaab0",
+                    "unique_code": "cc504c0f80c54fd0be5010d21bc75b11",
                     "value": 1000,
                     "name": "кг",
                     "base": {
-                        "unique_code": "21c6260593f245b699cd4d9780ec08d7",
+                        "unique_code": "cae6345aee8741f2a60b1f29e2b23ec8",
                         "value": 1,
                         "name": "грамм",
                         "base": null
                     }
                 }
             },
-            "period": 1731846902.610828,
-            "quantity": 2.0,
+            "period": 1704306618.000349,
+            "quantity": 213.0,
             "range": {
-                "unique_code": "ed51abb14cb549b8890ecae1b1d59c7d",
-                "value": 2,
-                "name": "штука",
-                "base": null
+                "unique_code": "cc504c0f80c54fd0be5010d21bc75b11",
+                "value": 1000,
+                "name": "кг",
+                "base": {
+                    "unique_code": "cae6345aee8741f2a60b1f29e2b23ec8",
+                    "value": 1,
+                    "name": "грамм",
+                    "base": null
+                }
             },
             "type": "Приход",
-            "unique_code": "82bea821fe2b484cbd0e670a556b65ed",
+            "unique_code": "5772e6afbc5b4dc7a3ce345c5db58462",
             "warehouse": {
-                "unique_code": "d5b386fc918d43b2a8ab36e7a1b46edf",
-                "location": "ул. Баумана 222",
-                "name": "Склад1"
+                "unique_code": "bb9d272e5a434dd39c19ab19ce3873bc",
+                "location": "ул. Ленина 111",
+                "name": "Склад2"
             }
         },
         {
             "nomenclature": {
                 "name": "Сливочное масло",
                 "group": {
-                    "unique_code": "3d8014692f4244f88d7ff7126231973d",
+                    "unique_code": "e209adbf94904908b497f23c62baf392",
                     "name": "Сырье"
                 },
                 "range": {
-                    "unique_code": "7cc23489a0634d6c8cd6c87442dfaab0",
+                    "unique_code": "cc504c0f80c54fd0be5010d21bc75b11",
                     "value": 1000,
                     "name": "кг",
                     "base": {
-                        "unique_code": "21c6260593f245b699cd4d9780ec08d7",
+                        "unique_code": "cae6345aee8741f2a60b1f29e2b23ec8",
                         "value": 1,
                         "name": "грамм",
                         "base": null
                     }
                 }
             },
-            "period": 1731846902.610828,
-            "quantity": 3.0,
+            "period": 1706034618.000349,
+            "quantity": 261.0,
             "range": {
-                "unique_code": "a2e63e4f113745769f236d9451418ca9",
-                "value": 2,
-                "name": "штука",
-                "base": null
+                "unique_code": "cc504c0f80c54fd0be5010d21bc75b11",
+                "value": 1000,
+                "name": "кг",
+                "base": {
+                    "unique_code": "cae6345aee8741f2a60b1f29e2b23ec8",
+                    "value": 1,
+                    "name": "грамм",
+                    "base": null
+                }
             },
-            "type": "Приход",
-            "unique_code": "be6919529b354dd38d91fc4d9d21d74a",
+            "type": "Расход",
+            "unique_code": "ac324613e8284cf99787b080724665c2",
             "warehouse": {
-                "unique_code": "d5b386fc918d43b2a8ab36e7a1b46edf",
+                "unique_code": "9dc55dd1baf94767a962aadb77aa26a7",
                 "location": "ул. Баумана 222",
                 "name": "Склад1"
             }
@@ -370,28 +385,28 @@
             "nomenclature": {
                 "name": "Яйцо",
                 "group": {
-                    "unique_code": "3d8014692f4244f88d7ff7126231973d",
+                    "unique_code": "e209adbf94904908b497f23c62baf392",
                     "name": "Сырье"
                 },
                 "range": {
-                    "unique_code": "4861e6ca89f245f5a5c4e9821966d818",
+                    "unique_code": "1334f2edbf254781808d661eb786f564",
                     "value": 1,
                     "name": "штука",
                     "base": null
                 }
             },
-            "period": 1731846902.610828,
-            "quantity": 4.0,
+            "period": 1705861818.000349,
+            "quantity": 148.0,
             "range": {
-                "unique_code": "669907dc3c8542269423dc473887739d",
-                "value": 2,
+                "unique_code": "1334f2edbf254781808d661eb786f564",
+                "value": 1,
                 "name": "штука",
                 "base": null
             },
             "type": "Приход",
-            "unique_code": "a370c83f9b4f43f1a13580f70d9bf2a4",
+            "unique_code": "99736f724eb44e0a9a5d40171e4d30bc",
             "warehouse": {
-                "unique_code": "d5b386fc918d43b2a8ab36e7a1b46edf",
+                "unique_code": "9dc55dd1baf94767a962aadb77aa26a7",
                 "location": "ул. Баумана 222",
                 "name": "Склад1"
             }
@@ -400,35 +415,3650 @@
             "nomenclature": {
                 "name": "Ванилин",
                 "group": {
-                    "unique_code": "3d8014692f4244f88d7ff7126231973d",
+                    "unique_code": "e209adbf94904908b497f23c62baf392",
                     "name": "Сырье"
                 },
                 "range": {
-                    "unique_code": "7cc23489a0634d6c8cd6c87442dfaab0",
+                    "unique_code": "cc504c0f80c54fd0be5010d21bc75b11",
                     "value": 1000,
                     "name": "кг",
                     "base": {
-                        "unique_code": "21c6260593f245b699cd4d9780ec08d7",
+                        "unique_code": "cae6345aee8741f2a60b1f29e2b23ec8",
                         "value": 1,
                         "name": "грамм",
                         "base": null
                     }
                 }
             },
-            "period": 1731846902.610828,
-            "quantity": 5.0,
+            "period": 1732041018.000349,
+            "quantity": 229.0,
             "range": {
-                "unique_code": "8fcab2b4f0a644de8bdfaecddaf801f5",
-                "value": 2,
+                "unique_code": "cc504c0f80c54fd0be5010d21bc75b11",
+                "value": 1000,
+                "name": "кг",
+                "base": {
+                    "unique_code": "cae6345aee8741f2a60b1f29e2b23ec8",
+                    "value": 1,
+                    "name": "грамм",
+                    "base": null
+                }
+            },
+            "type": "Расход",
+            "unique_code": "cd7bf57f5a1f4307896413b22c660023",
+            "warehouse": {
+                "unique_code": "bb9d272e5a434dd39c19ab19ce3873bc",
+                "location": "ул. Ленина 111",
+                "name": "Склад2"
+            }
+        },
+        {
+            "nomenclature": {
+                "name": "Пшеничная мука",
+                "group": {
+                    "unique_code": "e209adbf94904908b497f23c62baf392",
+                    "name": "Сырье"
+                },
+                "range": {
+                    "unique_code": "cc504c0f80c54fd0be5010d21bc75b11",
+                    "value": 1000,
+                    "name": "кг",
+                    "base": {
+                        "unique_code": "cae6345aee8741f2a60b1f29e2b23ec8",
+                        "value": 1,
+                        "name": "грамм",
+                        "base": null
+                    }
+                }
+            },
+            "period": 1710700218.000349,
+            "quantity": 70.0,
+            "range": {
+                "unique_code": "cc504c0f80c54fd0be5010d21bc75b11",
+                "value": 1000,
+                "name": "кг",
+                "base": {
+                    "unique_code": "cae6345aee8741f2a60b1f29e2b23ec8",
+                    "value": 1,
+                    "name": "грамм",
+                    "base": null
+                }
+            },
+            "type": "Приход",
+            "unique_code": "f46f4d04e8414cacbabdaebd81592b41",
+            "warehouse": {
+                "unique_code": "bb9d272e5a434dd39c19ab19ce3873bc",
+                "location": "ул. Ленина 111",
+                "name": "Склад2"
+            }
+        },
+        {
+            "nomenclature": {
+                "name": "Сахар",
+                "group": {
+                    "unique_code": "e209adbf94904908b497f23c62baf392",
+                    "name": "Сырье"
+                },
+                "range": {
+                    "unique_code": "cc504c0f80c54fd0be5010d21bc75b11",
+                    "value": 1000,
+                    "name": "кг",
+                    "base": {
+                        "unique_code": "cae6345aee8741f2a60b1f29e2b23ec8",
+                        "value": 1,
+                        "name": "грамм",
+                        "base": null
+                    }
+                }
+            },
+            "period": 1706812218.000349,
+            "quantity": 204.0,
+            "range": {
+                "unique_code": "cc504c0f80c54fd0be5010d21bc75b11",
+                "value": 1000,
+                "name": "кг",
+                "base": {
+                    "unique_code": "cae6345aee8741f2a60b1f29e2b23ec8",
+                    "value": 1,
+                    "name": "грамм",
+                    "base": null
+                }
+            },
+            "type": "Расход",
+            "unique_code": "1671b04905cd4c90ae7c2bf860b62e5e",
+            "warehouse": {
+                "unique_code": "bb9d272e5a434dd39c19ab19ce3873bc",
+                "location": "ул. Ленина 111",
+                "name": "Склад2"
+            }
+        },
+        {
+            "nomenclature": {
+                "name": "Сливочное масло",
+                "group": {
+                    "unique_code": "e209adbf94904908b497f23c62baf392",
+                    "name": "Сырье"
+                },
+                "range": {
+                    "unique_code": "cc504c0f80c54fd0be5010d21bc75b11",
+                    "value": 1000,
+                    "name": "кг",
+                    "base": {
+                        "unique_code": "cae6345aee8741f2a60b1f29e2b23ec8",
+                        "value": 1,
+                        "name": "грамм",
+                        "base": null
+                    }
+                }
+            },
+            "period": 1730917818.000349,
+            "quantity": 162.0,
+            "range": {
+                "unique_code": "cc504c0f80c54fd0be5010d21bc75b11",
+                "value": 1000,
+                "name": "кг",
+                "base": {
+                    "unique_code": "cae6345aee8741f2a60b1f29e2b23ec8",
+                    "value": 1,
+                    "name": "грамм",
+                    "base": null
+                }
+            },
+            "type": "Расход",
+            "unique_code": "746baf7630c3469aa08b09fe493d8040",
+            "warehouse": {
+                "unique_code": "9dc55dd1baf94767a962aadb77aa26a7",
+                "location": "ул. Баумана 222",
+                "name": "Склад1"
+            }
+        },
+        {
+            "nomenclature": {
+                "name": "Яйцо",
+                "group": {
+                    "unique_code": "e209adbf94904908b497f23c62baf392",
+                    "name": "Сырье"
+                },
+                "range": {
+                    "unique_code": "1334f2edbf254781808d661eb786f564",
+                    "value": 1,
+                    "name": "штука",
+                    "base": null
+                }
+            },
+            "period": 1726165818.000349,
+            "quantity": 66.0,
+            "range": {
+                "unique_code": "1334f2edbf254781808d661eb786f564",
+                "value": 1,
                 "name": "штука",
                 "base": null
             },
             "type": "Приход",
-            "unique_code": "7428ba71975d4fb48f55f604134dcb56",
+            "unique_code": "f576944f1ba049dd84c7e7f38ca50d13",
             "warehouse": {
-                "unique_code": "d5b386fc918d43b2a8ab36e7a1b46edf",
+                "unique_code": "9dc55dd1baf94767a962aadb77aa26a7",
                 "location": "ул. Баумана 222",
                 "name": "Склад1"
+            }
+        },
+        {
+            "nomenclature": {
+                "name": "Ванилин",
+                "group": {
+                    "unique_code": "e209adbf94904908b497f23c62baf392",
+                    "name": "Сырье"
+                },
+                "range": {
+                    "unique_code": "cc504c0f80c54fd0be5010d21bc75b11",
+                    "value": 1000,
+                    "name": "кг",
+                    "base": {
+                        "unique_code": "cae6345aee8741f2a60b1f29e2b23ec8",
+                        "value": 1,
+                        "name": "грамм",
+                        "base": null
+                    }
+                }
+            },
+            "period": 1721241018.000349,
+            "quantity": 134.0,
+            "range": {
+                "unique_code": "cc504c0f80c54fd0be5010d21bc75b11",
+                "value": 1000,
+                "name": "кг",
+                "base": {
+                    "unique_code": "cae6345aee8741f2a60b1f29e2b23ec8",
+                    "value": 1,
+                    "name": "грамм",
+                    "base": null
+                }
+            },
+            "type": "Расход",
+            "unique_code": "a1944d990570407ab8d8ed0206b46d97",
+            "warehouse": {
+                "unique_code": "9dc55dd1baf94767a962aadb77aa26a7",
+                "location": "ул. Баумана 222",
+                "name": "Склад1"
+            }
+        },
+        {
+            "nomenclature": {
+                "name": "Пшеничная мука",
+                "group": {
+                    "unique_code": "e209adbf94904908b497f23c62baf392",
+                    "name": "Сырье"
+                },
+                "range": {
+                    "unique_code": "cc504c0f80c54fd0be5010d21bc75b11",
+                    "value": 1000,
+                    "name": "кг",
+                    "base": {
+                        "unique_code": "cae6345aee8741f2a60b1f29e2b23ec8",
+                        "value": 1,
+                        "name": "грамм",
+                        "base": null
+                    }
+                }
+            },
+            "period": 1701282618.000349,
+            "quantity": 197.0,
+            "range": {
+                "unique_code": "cc504c0f80c54fd0be5010d21bc75b11",
+                "value": 1000,
+                "name": "кг",
+                "base": {
+                    "unique_code": "cae6345aee8741f2a60b1f29e2b23ec8",
+                    "value": 1,
+                    "name": "грамм",
+                    "base": null
+                }
+            },
+            "type": "Расход",
+            "unique_code": "ffd7a28d67c241e6b9ea485e7ee018eb",
+            "warehouse": {
+                "unique_code": "bb9d272e5a434dd39c19ab19ce3873bc",
+                "location": "ул. Ленина 111",
+                "name": "Склад2"
+            }
+        },
+        {
+            "nomenclature": {
+                "name": "Сахар",
+                "group": {
+                    "unique_code": "e209adbf94904908b497f23c62baf392",
+                    "name": "Сырье"
+                },
+                "range": {
+                    "unique_code": "cc504c0f80c54fd0be5010d21bc75b11",
+                    "value": 1000,
+                    "name": "кг",
+                    "base": {
+                        "unique_code": "cae6345aee8741f2a60b1f29e2b23ec8",
+                        "value": 1,
+                        "name": "грамм",
+                        "base": null
+                    }
+                }
+            },
+            "period": 1711564218.000349,
+            "quantity": 254.0,
+            "range": {
+                "unique_code": "cc504c0f80c54fd0be5010d21bc75b11",
+                "value": 1000,
+                "name": "кг",
+                "base": {
+                    "unique_code": "cae6345aee8741f2a60b1f29e2b23ec8",
+                    "value": 1,
+                    "name": "грамм",
+                    "base": null
+                }
+            },
+            "type": "Расход",
+            "unique_code": "d86317391d1945e98409db8cea6d9511",
+            "warehouse": {
+                "unique_code": "9dc55dd1baf94767a962aadb77aa26a7",
+                "location": "ул. Баумана 222",
+                "name": "Склад1"
+            }
+        },
+        {
+            "nomenclature": {
+                "name": "Сливочное масло",
+                "group": {
+                    "unique_code": "e209adbf94904908b497f23c62baf392",
+                    "name": "Сырье"
+                },
+                "range": {
+                    "unique_code": "cc504c0f80c54fd0be5010d21bc75b11",
+                    "value": 1000,
+                    "name": "кг",
+                    "base": {
+                        "unique_code": "cae6345aee8741f2a60b1f29e2b23ec8",
+                        "value": 1,
+                        "name": "грамм",
+                        "base": null
+                    }
+                }
+            },
+            "period": 1728239418.000349,
+            "quantity": 39.0,
+            "range": {
+                "unique_code": "cc504c0f80c54fd0be5010d21bc75b11",
+                "value": 1000,
+                "name": "кг",
+                "base": {
+                    "unique_code": "cae6345aee8741f2a60b1f29e2b23ec8",
+                    "value": 1,
+                    "name": "грамм",
+                    "base": null
+                }
+            },
+            "type": "Расход",
+            "unique_code": "002ddb93ab994cea8b105e6780355be6",
+            "warehouse": {
+                "unique_code": "bb9d272e5a434dd39c19ab19ce3873bc",
+                "location": "ул. Ленина 111",
+                "name": "Склад2"
+            }
+        },
+        {
+            "nomenclature": {
+                "name": "Яйцо",
+                "group": {
+                    "unique_code": "e209adbf94904908b497f23c62baf392",
+                    "name": "Сырье"
+                },
+                "range": {
+                    "unique_code": "1334f2edbf254781808d661eb786f564",
+                    "value": 1,
+                    "name": "штука",
+                    "base": null
+                }
+            },
+            "period": 1724610618.000349,
+            "quantity": 205.0,
+            "range": {
+                "unique_code": "1334f2edbf254781808d661eb786f564",
+                "value": 1,
+                "name": "штука",
+                "base": null
+            },
+            "type": "Приход",
+            "unique_code": "bc1f096ef311442c9d62ace7b784dcee",
+            "warehouse": {
+                "unique_code": "9dc55dd1baf94767a962aadb77aa26a7",
+                "location": "ул. Баумана 222",
+                "name": "Склад1"
+            }
+        },
+        {
+            "nomenclature": {
+                "name": "Ванилин",
+                "group": {
+                    "unique_code": "e209adbf94904908b497f23c62baf392",
+                    "name": "Сырье"
+                },
+                "range": {
+                    "unique_code": "cc504c0f80c54fd0be5010d21bc75b11",
+                    "value": 1000,
+                    "name": "кг",
+                    "base": {
+                        "unique_code": "cae6345aee8741f2a60b1f29e2b23ec8",
+                        "value": 1,
+                        "name": "грамм",
+                        "base": null
+                    }
+                }
+            },
+            "period": 1728412218.000349,
+            "quantity": 26.0,
+            "range": {
+                "unique_code": "cc504c0f80c54fd0be5010d21bc75b11",
+                "value": 1000,
+                "name": "кг",
+                "base": {
+                    "unique_code": "cae6345aee8741f2a60b1f29e2b23ec8",
+                    "value": 1,
+                    "name": "грамм",
+                    "base": null
+                }
+            },
+            "type": "Приход",
+            "unique_code": "1ded456151b742f79cf659da48ca26b5",
+            "warehouse": {
+                "unique_code": "9dc55dd1baf94767a962aadb77aa26a7",
+                "location": "ул. Баумана 222",
+                "name": "Склад1"
+            }
+        },
+        {
+            "nomenclature": {
+                "name": "Пшеничная мука",
+                "group": {
+                    "unique_code": "e209adbf94904908b497f23c62baf392",
+                    "name": "Сырье"
+                },
+                "range": {
+                    "unique_code": "cc504c0f80c54fd0be5010d21bc75b11",
+                    "value": 1000,
+                    "name": "кг",
+                    "base": {
+                        "unique_code": "cae6345aee8741f2a60b1f29e2b23ec8",
+                        "value": 1,
+                        "name": "грамм",
+                        "base": null
+                    }
+                }
+            },
+            "period": 1718994618.000349,
+            "quantity": 91.0,
+            "range": {
+                "unique_code": "cc504c0f80c54fd0be5010d21bc75b11",
+                "value": 1000,
+                "name": "кг",
+                "base": {
+                    "unique_code": "cae6345aee8741f2a60b1f29e2b23ec8",
+                    "value": 1,
+                    "name": "грамм",
+                    "base": null
+                }
+            },
+            "type": "Расход",
+            "unique_code": "fd02c968365149468faf95f037e7c520",
+            "warehouse": {
+                "unique_code": "9dc55dd1baf94767a962aadb77aa26a7",
+                "location": "ул. Баумана 222",
+                "name": "Склад1"
+            }
+        },
+        {
+            "nomenclature": {
+                "name": "Сахар",
+                "group": {
+                    "unique_code": "e209adbf94904908b497f23c62baf392",
+                    "name": "Сырье"
+                },
+                "range": {
+                    "unique_code": "cc504c0f80c54fd0be5010d21bc75b11",
+                    "value": 1000,
+                    "name": "кг",
+                    "base": {
+                        "unique_code": "cae6345aee8741f2a60b1f29e2b23ec8",
+                        "value": 1,
+                        "name": "грамм",
+                        "base": null
+                    }
+                }
+            },
+            "period": 1719081018.000349,
+            "quantity": 124.0,
+            "range": {
+                "unique_code": "cc504c0f80c54fd0be5010d21bc75b11",
+                "value": 1000,
+                "name": "кг",
+                "base": {
+                    "unique_code": "cae6345aee8741f2a60b1f29e2b23ec8",
+                    "value": 1,
+                    "name": "грамм",
+                    "base": null
+                }
+            },
+            "type": "Расход",
+            "unique_code": "09c84ebe70214465b5f4c108edda28c4",
+            "warehouse": {
+                "unique_code": "9dc55dd1baf94767a962aadb77aa26a7",
+                "location": "ул. Баумана 222",
+                "name": "Склад1"
+            }
+        },
+        {
+            "nomenclature": {
+                "name": "Сливочное масло",
+                "group": {
+                    "unique_code": "e209adbf94904908b497f23c62baf392",
+                    "name": "Сырье"
+                },
+                "range": {
+                    "unique_code": "cc504c0f80c54fd0be5010d21bc75b11",
+                    "value": 1000,
+                    "name": "кг",
+                    "base": {
+                        "unique_code": "cae6345aee8741f2a60b1f29e2b23ec8",
+                        "value": 1,
+                        "name": "грамм",
+                        "base": null
+                    }
+                }
+            },
+            "period": 1702405818.000349,
+            "quantity": 176.0,
+            "range": {
+                "unique_code": "cc504c0f80c54fd0be5010d21bc75b11",
+                "value": 1000,
+                "name": "кг",
+                "base": {
+                    "unique_code": "cae6345aee8741f2a60b1f29e2b23ec8",
+                    "value": 1,
+                    "name": "грамм",
+                    "base": null
+                }
+            },
+            "type": "Приход",
+            "unique_code": "032ddefb4b274d21a6877ea0a5e742e5",
+            "warehouse": {
+                "unique_code": "9dc55dd1baf94767a962aadb77aa26a7",
+                "location": "ул. Баумана 222",
+                "name": "Склад1"
+            }
+        },
+        {
+            "nomenclature": {
+                "name": "Яйцо",
+                "group": {
+                    "unique_code": "e209adbf94904908b497f23c62baf392",
+                    "name": "Сырье"
+                },
+                "range": {
+                    "unique_code": "1334f2edbf254781808d661eb786f564",
+                    "value": 1,
+                    "name": "штука",
+                    "base": null
+                }
+            },
+            "period": 1721068218.000349,
+            "quantity": 280.0,
+            "range": {
+                "unique_code": "1334f2edbf254781808d661eb786f564",
+                "value": 1,
+                "name": "штука",
+                "base": null
+            },
+            "type": "Приход",
+            "unique_code": "9bc52b1ca10b4b84adf7dced5528ab82",
+            "warehouse": {
+                "unique_code": "9dc55dd1baf94767a962aadb77aa26a7",
+                "location": "ул. Баумана 222",
+                "name": "Склад1"
+            }
+        },
+        {
+            "nomenclature": {
+                "name": "Ванилин",
+                "group": {
+                    "unique_code": "e209adbf94904908b497f23c62baf392",
+                    "name": "Сырье"
+                },
+                "range": {
+                    "unique_code": "cc504c0f80c54fd0be5010d21bc75b11",
+                    "value": 1000,
+                    "name": "кг",
+                    "base": {
+                        "unique_code": "cae6345aee8741f2a60b1f29e2b23ec8",
+                        "value": 1,
+                        "name": "грамм",
+                        "base": null
+                    }
+                }
+            },
+            "period": 1711218618.000349,
+            "quantity": 90.0,
+            "range": {
+                "unique_code": "cc504c0f80c54fd0be5010d21bc75b11",
+                "value": 1000,
+                "name": "кг",
+                "base": {
+                    "unique_code": "cae6345aee8741f2a60b1f29e2b23ec8",
+                    "value": 1,
+                    "name": "грамм",
+                    "base": null
+                }
+            },
+            "type": "Расход",
+            "unique_code": "9dbd58815647461a9514f347ea045c41",
+            "warehouse": {
+                "unique_code": "bb9d272e5a434dd39c19ab19ce3873bc",
+                "location": "ул. Ленина 111",
+                "name": "Склад2"
+            }
+        },
+        {
+            "nomenclature": {
+                "name": "Пшеничная мука",
+                "group": {
+                    "unique_code": "e209adbf94904908b497f23c62baf392",
+                    "name": "Сырье"
+                },
+                "range": {
+                    "unique_code": "cc504c0f80c54fd0be5010d21bc75b11",
+                    "value": 1000,
+                    "name": "кг",
+                    "base": {
+                        "unique_code": "cae6345aee8741f2a60b1f29e2b23ec8",
+                        "value": 1,
+                        "name": "грамм",
+                        "base": null
+                    }
+                }
+            },
+            "period": 1731695418.000349,
+            "quantity": 84.0,
+            "range": {
+                "unique_code": "cc504c0f80c54fd0be5010d21bc75b11",
+                "value": 1000,
+                "name": "кг",
+                "base": {
+                    "unique_code": "cae6345aee8741f2a60b1f29e2b23ec8",
+                    "value": 1,
+                    "name": "грамм",
+                    "base": null
+                }
+            },
+            "type": "Расход",
+            "unique_code": "1b9d3cc148d744fa99e7456ab52a48d4",
+            "warehouse": {
+                "unique_code": "9dc55dd1baf94767a962aadb77aa26a7",
+                "location": "ул. Баумана 222",
+                "name": "Склад1"
+            }
+        },
+        {
+            "nomenclature": {
+                "name": "Сахар",
+                "group": {
+                    "unique_code": "e209adbf94904908b497f23c62baf392",
+                    "name": "Сырье"
+                },
+                "range": {
+                    "unique_code": "cc504c0f80c54fd0be5010d21bc75b11",
+                    "value": 1000,
+                    "name": "кг",
+                    "base": {
+                        "unique_code": "cae6345aee8741f2a60b1f29e2b23ec8",
+                        "value": 1,
+                        "name": "грамм",
+                        "base": null
+                    }
+                }
+            },
+            "period": 1706725818.000349,
+            "quantity": 178.0,
+            "range": {
+                "unique_code": "cc504c0f80c54fd0be5010d21bc75b11",
+                "value": 1000,
+                "name": "кг",
+                "base": {
+                    "unique_code": "cae6345aee8741f2a60b1f29e2b23ec8",
+                    "value": 1,
+                    "name": "грамм",
+                    "base": null
+                }
+            },
+            "type": "Расход",
+            "unique_code": "451d2935c84d47dd834efc2048caeaa3",
+            "warehouse": {
+                "unique_code": "9dc55dd1baf94767a962aadb77aa26a7",
+                "location": "ул. Баумана 222",
+                "name": "Склад1"
+            }
+        },
+        {
+            "nomenclature": {
+                "name": "Сливочное масло",
+                "group": {
+                    "unique_code": "e209adbf94904908b497f23c62baf392",
+                    "name": "Сырье"
+                },
+                "range": {
+                    "unique_code": "cc504c0f80c54fd0be5010d21bc75b11",
+                    "value": 1000,
+                    "name": "кг",
+                    "base": {
+                        "unique_code": "cae6345aee8741f2a60b1f29e2b23ec8",
+                        "value": 1,
+                        "name": "грамм",
+                        "base": null
+                    }
+                }
+            },
+            "period": 1702492218.000349,
+            "quantity": 212.0,
+            "range": {
+                "unique_code": "cc504c0f80c54fd0be5010d21bc75b11",
+                "value": 1000,
+                "name": "кг",
+                "base": {
+                    "unique_code": "cae6345aee8741f2a60b1f29e2b23ec8",
+                    "value": 1,
+                    "name": "грамм",
+                    "base": null
+                }
+            },
+            "type": "Расход",
+            "unique_code": "5495971c790f4e6eb704724283c21433",
+            "warehouse": {
+                "unique_code": "bb9d272e5a434dd39c19ab19ce3873bc",
+                "location": "ул. Ленина 111",
+                "name": "Склад2"
+            }
+        },
+        {
+            "nomenclature": {
+                "name": "Яйцо",
+                "group": {
+                    "unique_code": "e209adbf94904908b497f23c62baf392",
+                    "name": "Сырье"
+                },
+                "range": {
+                    "unique_code": "1334f2edbf254781808d661eb786f564",
+                    "value": 1,
+                    "name": "штука",
+                    "base": null
+                }
+            },
+            "period": 1719426618.000349,
+            "quantity": 149.0,
+            "range": {
+                "unique_code": "1334f2edbf254781808d661eb786f564",
+                "value": 1,
+                "name": "штука",
+                "base": null
+            },
+            "type": "Приход",
+            "unique_code": "1ae93b0274e8416a8fd9f0fcbfa060d2",
+            "warehouse": {
+                "unique_code": "bb9d272e5a434dd39c19ab19ce3873bc",
+                "location": "ул. Ленина 111",
+                "name": "Склад2"
+            }
+        },
+        {
+            "nomenclature": {
+                "name": "Ванилин",
+                "group": {
+                    "unique_code": "e209adbf94904908b497f23c62baf392",
+                    "name": "Сырье"
+                },
+                "range": {
+                    "unique_code": "cc504c0f80c54fd0be5010d21bc75b11",
+                    "value": 1000,
+                    "name": "кг",
+                    "base": {
+                        "unique_code": "cae6345aee8741f2a60b1f29e2b23ec8",
+                        "value": 1,
+                        "name": "грамм",
+                        "base": null
+                    }
+                }
+            },
+            "period": 1701628218.000349,
+            "quantity": 54.0,
+            "range": {
+                "unique_code": "cc504c0f80c54fd0be5010d21bc75b11",
+                "value": 1000,
+                "name": "кг",
+                "base": {
+                    "unique_code": "cae6345aee8741f2a60b1f29e2b23ec8",
+                    "value": 1,
+                    "name": "грамм",
+                    "base": null
+                }
+            },
+            "type": "Приход",
+            "unique_code": "765f323964424a49842636301f7fc739",
+            "warehouse": {
+                "unique_code": "bb9d272e5a434dd39c19ab19ce3873bc",
+                "location": "ул. Ленина 111",
+                "name": "Склад2"
+            }
+        },
+        {
+            "nomenclature": {
+                "name": "Пшеничная мука",
+                "group": {
+                    "unique_code": "e209adbf94904908b497f23c62baf392",
+                    "name": "Сырье"
+                },
+                "range": {
+                    "unique_code": "cc504c0f80c54fd0be5010d21bc75b11",
+                    "value": 1000,
+                    "name": "кг",
+                    "base": {
+                        "unique_code": "cae6345aee8741f2a60b1f29e2b23ec8",
+                        "value": 1,
+                        "name": "грамм",
+                        "base": null
+                    }
+                }
+            },
+            "period": 1701196218.000349,
+            "quantity": 52.0,
+            "range": {
+                "unique_code": "cc504c0f80c54fd0be5010d21bc75b11",
+                "value": 1000,
+                "name": "кг",
+                "base": {
+                    "unique_code": "cae6345aee8741f2a60b1f29e2b23ec8",
+                    "value": 1,
+                    "name": "грамм",
+                    "base": null
+                }
+            },
+            "type": "Приход",
+            "unique_code": "53f043119c494a698684ee6038f6d417",
+            "warehouse": {
+                "unique_code": "9dc55dd1baf94767a962aadb77aa26a7",
+                "location": "ул. Баумана 222",
+                "name": "Склад1"
+            }
+        },
+        {
+            "nomenclature": {
+                "name": "Сахар",
+                "group": {
+                    "unique_code": "e209adbf94904908b497f23c62baf392",
+                    "name": "Сырье"
+                },
+                "range": {
+                    "unique_code": "cc504c0f80c54fd0be5010d21bc75b11",
+                    "value": 1000,
+                    "name": "кг",
+                    "base": {
+                        "unique_code": "cae6345aee8741f2a60b1f29e2b23ec8",
+                        "value": 1,
+                        "name": "грамм",
+                        "base": null
+                    }
+                }
+            },
+            "period": 1715279418.000349,
+            "quantity": 118.0,
+            "range": {
+                "unique_code": "cc504c0f80c54fd0be5010d21bc75b11",
+                "value": 1000,
+                "name": "кг",
+                "base": {
+                    "unique_code": "cae6345aee8741f2a60b1f29e2b23ec8",
+                    "value": 1,
+                    "name": "грамм",
+                    "base": null
+                }
+            },
+            "type": "Приход",
+            "unique_code": "70236e514e474ec8aa0d6abb46faa681",
+            "warehouse": {
+                "unique_code": "9dc55dd1baf94767a962aadb77aa26a7",
+                "location": "ул. Баумана 222",
+                "name": "Склад1"
+            }
+        },
+        {
+            "nomenclature": {
+                "name": "Сливочное масло",
+                "group": {
+                    "unique_code": "e209adbf94904908b497f23c62baf392",
+                    "name": "Сырье"
+                },
+                "range": {
+                    "unique_code": "cc504c0f80c54fd0be5010d21bc75b11",
+                    "value": 1000,
+                    "name": "кг",
+                    "base": {
+                        "unique_code": "cae6345aee8741f2a60b1f29e2b23ec8",
+                        "value": 1,
+                        "name": "грамм",
+                        "base": null
+                    }
+                }
+            },
+            "period": 1705084218.000349,
+            "quantity": 182.0,
+            "range": {
+                "unique_code": "cc504c0f80c54fd0be5010d21bc75b11",
+                "value": 1000,
+                "name": "кг",
+                "base": {
+                    "unique_code": "cae6345aee8741f2a60b1f29e2b23ec8",
+                    "value": 1,
+                    "name": "грамм",
+                    "base": null
+                }
+            },
+            "type": "Расход",
+            "unique_code": "a4a8ae2e115a4dad88e9519629497aa8",
+            "warehouse": {
+                "unique_code": "9dc55dd1baf94767a962aadb77aa26a7",
+                "location": "ул. Баумана 222",
+                "name": "Склад1"
+            }
+        },
+        {
+            "nomenclature": {
+                "name": "Яйцо",
+                "group": {
+                    "unique_code": "e209adbf94904908b497f23c62baf392",
+                    "name": "Сырье"
+                },
+                "range": {
+                    "unique_code": "1334f2edbf254781808d661eb786f564",
+                    "value": 1,
+                    "name": "штука",
+                    "base": null
+                }
+            },
+            "period": 1703183418.000349,
+            "quantity": 193.0,
+            "range": {
+                "unique_code": "1334f2edbf254781808d661eb786f564",
+                "value": 1,
+                "name": "штука",
+                "base": null
+            },
+            "type": "Приход",
+            "unique_code": "6ff0898b6fbc42baa654c3f615517671",
+            "warehouse": {
+                "unique_code": "9dc55dd1baf94767a962aadb77aa26a7",
+                "location": "ул. Баумана 222",
+                "name": "Склад1"
+            }
+        },
+        {
+            "nomenclature": {
+                "name": "Ванилин",
+                "group": {
+                    "unique_code": "e209adbf94904908b497f23c62baf392",
+                    "name": "Сырье"
+                },
+                "range": {
+                    "unique_code": "cc504c0f80c54fd0be5010d21bc75b11",
+                    "value": 1000,
+                    "name": "кг",
+                    "base": {
+                        "unique_code": "cae6345aee8741f2a60b1f29e2b23ec8",
+                        "value": 1,
+                        "name": "грамм",
+                        "base": null
+                    }
+                }
+            },
+            "period": 1721759418.000349,
+            "quantity": 265.0,
+            "range": {
+                "unique_code": "cc504c0f80c54fd0be5010d21bc75b11",
+                "value": 1000,
+                "name": "кг",
+                "base": {
+                    "unique_code": "cae6345aee8741f2a60b1f29e2b23ec8",
+                    "value": 1,
+                    "name": "грамм",
+                    "base": null
+                }
+            },
+            "type": "Расход",
+            "unique_code": "e2f7df0fd40341a3a13faf3cbacef036",
+            "warehouse": {
+                "unique_code": "bb9d272e5a434dd39c19ab19ce3873bc",
+                "location": "ул. Ленина 111",
+                "name": "Склад2"
+            }
+        },
+        {
+            "nomenclature": {
+                "name": "Пшеничная мука",
+                "group": {
+                    "unique_code": "e209adbf94904908b497f23c62baf392",
+                    "name": "Сырье"
+                },
+                "range": {
+                    "unique_code": "cc504c0f80c54fd0be5010d21bc75b11",
+                    "value": 1000,
+                    "name": "кг",
+                    "base": {
+                        "unique_code": "cae6345aee8741f2a60b1f29e2b23ec8",
+                        "value": 1,
+                        "name": "грамм",
+                        "base": null
+                    }
+                }
+            },
+            "period": 1718044218.000349,
+            "quantity": 104.0,
+            "range": {
+                "unique_code": "cc504c0f80c54fd0be5010d21bc75b11",
+                "value": 1000,
+                "name": "кг",
+                "base": {
+                    "unique_code": "cae6345aee8741f2a60b1f29e2b23ec8",
+                    "value": 1,
+                    "name": "грамм",
+                    "base": null
+                }
+            },
+            "type": "Приход",
+            "unique_code": "a02c270c08514908936f2ccab387fe50",
+            "warehouse": {
+                "unique_code": "bb9d272e5a434dd39c19ab19ce3873bc",
+                "location": "ул. Ленина 111",
+                "name": "Склад2"
+            }
+        },
+        {
+            "nomenclature": {
+                "name": "Сахар",
+                "group": {
+                    "unique_code": "e209adbf94904908b497f23c62baf392",
+                    "name": "Сырье"
+                },
+                "range": {
+                    "unique_code": "cc504c0f80c54fd0be5010d21bc75b11",
+                    "value": 1000,
+                    "name": "кг",
+                    "base": {
+                        "unique_code": "cae6345aee8741f2a60b1f29e2b23ec8",
+                        "value": 1,
+                        "name": "грамм",
+                        "base": null
+                    }
+                }
+            },
+            "period": 1709404218.000349,
+            "quantity": 218.0,
+            "range": {
+                "unique_code": "cc504c0f80c54fd0be5010d21bc75b11",
+                "value": 1000,
+                "name": "кг",
+                "base": {
+                    "unique_code": "cae6345aee8741f2a60b1f29e2b23ec8",
+                    "value": 1,
+                    "name": "грамм",
+                    "base": null
+                }
+            },
+            "type": "Расход",
+            "unique_code": "fb81716532b84e85807f9a477b7799e7",
+            "warehouse": {
+                "unique_code": "9dc55dd1baf94767a962aadb77aa26a7",
+                "location": "ул. Баумана 222",
+                "name": "Склад1"
+            }
+        },
+        {
+            "nomenclature": {
+                "name": "Сливочное масло",
+                "group": {
+                    "unique_code": "e209adbf94904908b497f23c62baf392",
+                    "name": "Сырье"
+                },
+                "range": {
+                    "unique_code": "cc504c0f80c54fd0be5010d21bc75b11",
+                    "value": 1000,
+                    "name": "кг",
+                    "base": {
+                        "unique_code": "cae6345aee8741f2a60b1f29e2b23ec8",
+                        "value": 1,
+                        "name": "грамм",
+                        "base": null
+                    }
+                }
+            },
+            "period": 1710095418.000349,
+            "quantity": 250.0,
+            "range": {
+                "unique_code": "cc504c0f80c54fd0be5010d21bc75b11",
+                "value": 1000,
+                "name": "кг",
+                "base": {
+                    "unique_code": "cae6345aee8741f2a60b1f29e2b23ec8",
+                    "value": 1,
+                    "name": "грамм",
+                    "base": null
+                }
+            },
+            "type": "Расход",
+            "unique_code": "fd5966d820d64622a93d4cf4613e8e5e",
+            "warehouse": {
+                "unique_code": "9dc55dd1baf94767a962aadb77aa26a7",
+                "location": "ул. Баумана 222",
+                "name": "Склад1"
+            }
+        },
+        {
+            "nomenclature": {
+                "name": "Яйцо",
+                "group": {
+                    "unique_code": "e209adbf94904908b497f23c62baf392",
+                    "name": "Сырье"
+                },
+                "range": {
+                    "unique_code": "1334f2edbf254781808d661eb786f564",
+                    "value": 1,
+                    "name": "штука",
+                    "base": null
+                }
+            },
+            "period": 1731868218.000349,
+            "quantity": 90.0,
+            "range": {
+                "unique_code": "1334f2edbf254781808d661eb786f564",
+                "value": 1,
+                "name": "штука",
+                "base": null
+            },
+            "type": "Расход",
+            "unique_code": "9bd436e204f74b5d87e690cdf9d2dba0",
+            "warehouse": {
+                "unique_code": "bb9d272e5a434dd39c19ab19ce3873bc",
+                "location": "ул. Ленина 111",
+                "name": "Склад2"
+            }
+        },
+        {
+            "nomenclature": {
+                "name": "Ванилин",
+                "group": {
+                    "unique_code": "e209adbf94904908b497f23c62baf392",
+                    "name": "Сырье"
+                },
+                "range": {
+                    "unique_code": "cc504c0f80c54fd0be5010d21bc75b11",
+                    "value": 1000,
+                    "name": "кг",
+                    "base": {
+                        "unique_code": "cae6345aee8741f2a60b1f29e2b23ec8",
+                        "value": 1,
+                        "name": "грамм",
+                        "base": null
+                    }
+                }
+            },
+            "period": 1706985018.000349,
+            "quantity": 144.0,
+            "range": {
+                "unique_code": "cc504c0f80c54fd0be5010d21bc75b11",
+                "value": 1000,
+                "name": "кг",
+                "base": {
+                    "unique_code": "cae6345aee8741f2a60b1f29e2b23ec8",
+                    "value": 1,
+                    "name": "грамм",
+                    "base": null
+                }
+            },
+            "type": "Расход",
+            "unique_code": "4b40feadebcc4f369a5085ddbfc32bd7",
+            "warehouse": {
+                "unique_code": "bb9d272e5a434dd39c19ab19ce3873bc",
+                "location": "ул. Ленина 111",
+                "name": "Склад2"
+            }
+        },
+        {
+            "nomenclature": {
+                "name": "Пшеничная мука",
+                "group": {
+                    "unique_code": "e209adbf94904908b497f23c62baf392",
+                    "name": "Сырье"
+                },
+                "range": {
+                    "unique_code": "cc504c0f80c54fd0be5010d21bc75b11",
+                    "value": 1000,
+                    "name": "кг",
+                    "base": {
+                        "unique_code": "cae6345aee8741f2a60b1f29e2b23ec8",
+                        "value": 1,
+                        "name": "грамм",
+                        "base": null
+                    }
+                }
+            },
+            "period": 1715279418.000349,
+            "quantity": 24.0,
+            "range": {
+                "unique_code": "cc504c0f80c54fd0be5010d21bc75b11",
+                "value": 1000,
+                "name": "кг",
+                "base": {
+                    "unique_code": "cae6345aee8741f2a60b1f29e2b23ec8",
+                    "value": 1,
+                    "name": "грамм",
+                    "base": null
+                }
+            },
+            "type": "Расход",
+            "unique_code": "707ac73ae2a64ddd87b744ac4fb48dc9",
+            "warehouse": {
+                "unique_code": "bb9d272e5a434dd39c19ab19ce3873bc",
+                "location": "ул. Ленина 111",
+                "name": "Склад2"
+            }
+        },
+        {
+            "nomenclature": {
+                "name": "Сахар",
+                "group": {
+                    "unique_code": "e209adbf94904908b497f23c62baf392",
+                    "name": "Сырье"
+                },
+                "range": {
+                    "unique_code": "cc504c0f80c54fd0be5010d21bc75b11",
+                    "value": 1000,
+                    "name": "кг",
+                    "base": {
+                        "unique_code": "cae6345aee8741f2a60b1f29e2b23ec8",
+                        "value": 1,
+                        "name": "грамм",
+                        "base": null
+                    }
+                }
+            },
+            "period": 1730831418.000349,
+            "quantity": 61.0,
+            "range": {
+                "unique_code": "cc504c0f80c54fd0be5010d21bc75b11",
+                "value": 1000,
+                "name": "кг",
+                "base": {
+                    "unique_code": "cae6345aee8741f2a60b1f29e2b23ec8",
+                    "value": 1,
+                    "name": "грамм",
+                    "base": null
+                }
+            },
+            "type": "Приход",
+            "unique_code": "c7cb3d5893e84623a814e5bd0bce832f",
+            "warehouse": {
+                "unique_code": "bb9d272e5a434dd39c19ab19ce3873bc",
+                "location": "ул. Ленина 111",
+                "name": "Склад2"
+            }
+        },
+        {
+            "nomenclature": {
+                "name": "Сливочное масло",
+                "group": {
+                    "unique_code": "e209adbf94904908b497f23c62baf392",
+                    "name": "Сырье"
+                },
+                "range": {
+                    "unique_code": "cc504c0f80c54fd0be5010d21bc75b11",
+                    "value": 1000,
+                    "name": "кг",
+                    "base": {
+                        "unique_code": "cae6345aee8741f2a60b1f29e2b23ec8",
+                        "value": 1,
+                        "name": "грамм",
+                        "base": null
+                    }
+                }
+            },
+            "period": 1718821818.000349,
+            "quantity": 260.0,
+            "range": {
+                "unique_code": "cc504c0f80c54fd0be5010d21bc75b11",
+                "value": 1000,
+                "name": "кг",
+                "base": {
+                    "unique_code": "cae6345aee8741f2a60b1f29e2b23ec8",
+                    "value": 1,
+                    "name": "грамм",
+                    "base": null
+                }
+            },
+            "type": "Расход",
+            "unique_code": "295b8c58ba314dc583e3469b3887705b",
+            "warehouse": {
+                "unique_code": "bb9d272e5a434dd39c19ab19ce3873bc",
+                "location": "ул. Ленина 111",
+                "name": "Склад2"
+            }
+        },
+        {
+            "nomenclature": {
+                "name": "Яйцо",
+                "group": {
+                    "unique_code": "e209adbf94904908b497f23c62baf392",
+                    "name": "Сырье"
+                },
+                "range": {
+                    "unique_code": "1334f2edbf254781808d661eb786f564",
+                    "value": 1,
+                    "name": "штука",
+                    "base": null
+                }
+            },
+            "period": 1722969018.000349,
+            "quantity": 197.0,
+            "range": {
+                "unique_code": "1334f2edbf254781808d661eb786f564",
+                "value": 1,
+                "name": "штука",
+                "base": null
+            },
+            "type": "Приход",
+            "unique_code": "c3baee2d073d4b80972e4b26156dc172",
+            "warehouse": {
+                "unique_code": "bb9d272e5a434dd39c19ab19ce3873bc",
+                "location": "ул. Ленина 111",
+                "name": "Склад2"
+            }
+        },
+        {
+            "nomenclature": {
+                "name": "Ванилин",
+                "group": {
+                    "unique_code": "e209adbf94904908b497f23c62baf392",
+                    "name": "Сырье"
+                },
+                "range": {
+                    "unique_code": "cc504c0f80c54fd0be5010d21bc75b11",
+                    "value": 1000,
+                    "name": "кг",
+                    "base": {
+                        "unique_code": "cae6345aee8741f2a60b1f29e2b23ec8",
+                        "value": 1,
+                        "name": "грамм",
+                        "base": null
+                    }
+                }
+            },
+            "period": 1720117818.000349,
+            "quantity": 287.0,
+            "range": {
+                "unique_code": "cc504c0f80c54fd0be5010d21bc75b11",
+                "value": 1000,
+                "name": "кг",
+                "base": {
+                    "unique_code": "cae6345aee8741f2a60b1f29e2b23ec8",
+                    "value": 1,
+                    "name": "грамм",
+                    "base": null
+                }
+            },
+            "type": "Расход",
+            "unique_code": "660cd07785d345eb96bf36ef42afe801",
+            "warehouse": {
+                "unique_code": "9dc55dd1baf94767a962aadb77aa26a7",
+                "location": "ул. Баумана 222",
+                "name": "Склад1"
+            }
+        },
+        {
+            "nomenclature": {
+                "name": "Пшеничная мука",
+                "group": {
+                    "unique_code": "e209adbf94904908b497f23c62baf392",
+                    "name": "Сырье"
+                },
+                "range": {
+                    "unique_code": "cc504c0f80c54fd0be5010d21bc75b11",
+                    "value": 1000,
+                    "name": "кг",
+                    "base": {
+                        "unique_code": "cae6345aee8741f2a60b1f29e2b23ec8",
+                        "value": 1,
+                        "name": "грамм",
+                        "base": null
+                    }
+                }
+            },
+            "period": 1727029818.000349,
+            "quantity": 208.0,
+            "range": {
+                "unique_code": "cc504c0f80c54fd0be5010d21bc75b11",
+                "value": 1000,
+                "name": "кг",
+                "base": {
+                    "unique_code": "cae6345aee8741f2a60b1f29e2b23ec8",
+                    "value": 1,
+                    "name": "грамм",
+                    "base": null
+                }
+            },
+            "type": "Расход",
+            "unique_code": "cfce05222b7b4b25a3f2210feb21566f",
+            "warehouse": {
+                "unique_code": "bb9d272e5a434dd39c19ab19ce3873bc",
+                "location": "ул. Ленина 111",
+                "name": "Склад2"
+            }
+        },
+        {
+            "nomenclature": {
+                "name": "Сахар",
+                "group": {
+                    "unique_code": "e209adbf94904908b497f23c62baf392",
+                    "name": "Сырье"
+                },
+                "range": {
+                    "unique_code": "cc504c0f80c54fd0be5010d21bc75b11",
+                    "value": 1000,
+                    "name": "кг",
+                    "base": {
+                        "unique_code": "cae6345aee8741f2a60b1f29e2b23ec8",
+                        "value": 1,
+                        "name": "грамм",
+                        "base": null
+                    }
+                }
+            },
+            "period": 1712514618.000349,
+            "quantity": 70.0,
+            "range": {
+                "unique_code": "cc504c0f80c54fd0be5010d21bc75b11",
+                "value": 1000,
+                "name": "кг",
+                "base": {
+                    "unique_code": "cae6345aee8741f2a60b1f29e2b23ec8",
+                    "value": 1,
+                    "name": "грамм",
+                    "base": null
+                }
+            },
+            "type": "Приход",
+            "unique_code": "2877d1e4669f47779ccdb9392c0139c0",
+            "warehouse": {
+                "unique_code": "9dc55dd1baf94767a962aadb77aa26a7",
+                "location": "ул. Баумана 222",
+                "name": "Склад1"
+            }
+        },
+        {
+            "nomenclature": {
+                "name": "Сливочное масло",
+                "group": {
+                    "unique_code": "e209adbf94904908b497f23c62baf392",
+                    "name": "Сырье"
+                },
+                "range": {
+                    "unique_code": "cc504c0f80c54fd0be5010d21bc75b11",
+                    "value": 1000,
+                    "name": "кг",
+                    "base": {
+                        "unique_code": "cae6345aee8741f2a60b1f29e2b23ec8",
+                        "value": 1,
+                        "name": "грамм",
+                        "base": null
+                    }
+                }
+            },
+            "period": 1730313018.000349,
+            "quantity": 249.0,
+            "range": {
+                "unique_code": "cc504c0f80c54fd0be5010d21bc75b11",
+                "value": 1000,
+                "name": "кг",
+                "base": {
+                    "unique_code": "cae6345aee8741f2a60b1f29e2b23ec8",
+                    "value": 1,
+                    "name": "грамм",
+                    "base": null
+                }
+            },
+            "type": "Приход",
+            "unique_code": "6ef3c9f60f07437a813198bfbeb7f3cf",
+            "warehouse": {
+                "unique_code": "9dc55dd1baf94767a962aadb77aa26a7",
+                "location": "ул. Баумана 222",
+                "name": "Склад1"
+            }
+        },
+        {
+            "nomenclature": {
+                "name": "Яйцо",
+                "group": {
+                    "unique_code": "e209adbf94904908b497f23c62baf392",
+                    "name": "Сырье"
+                },
+                "range": {
+                    "unique_code": "1334f2edbf254781808d661eb786f564",
+                    "value": 1,
+                    "name": "штука",
+                    "base": null
+                }
+            },
+            "period": 1708799418.000349,
+            "quantity": 135.0,
+            "range": {
+                "unique_code": "1334f2edbf254781808d661eb786f564",
+                "value": 1,
+                "name": "штука",
+                "base": null
+            },
+            "type": "Приход",
+            "unique_code": "ccec68a650eb4253abe0e84e3e487c9d",
+            "warehouse": {
+                "unique_code": "bb9d272e5a434dd39c19ab19ce3873bc",
+                "location": "ул. Ленина 111",
+                "name": "Склад2"
+            }
+        },
+        {
+            "nomenclature": {
+                "name": "Ванилин",
+                "group": {
+                    "unique_code": "e209adbf94904908b497f23c62baf392",
+                    "name": "Сырье"
+                },
+                "range": {
+                    "unique_code": "cc504c0f80c54fd0be5010d21bc75b11",
+                    "value": 1000,
+                    "name": "кг",
+                    "base": {
+                        "unique_code": "cae6345aee8741f2a60b1f29e2b23ec8",
+                        "value": 1,
+                        "name": "грамм",
+                        "base": null
+                    }
+                }
+            },
+            "period": 1717871418.000349,
+            "quantity": 65.0,
+            "range": {
+                "unique_code": "cc504c0f80c54fd0be5010d21bc75b11",
+                "value": 1000,
+                "name": "кг",
+                "base": {
+                    "unique_code": "cae6345aee8741f2a60b1f29e2b23ec8",
+                    "value": 1,
+                    "name": "грамм",
+                    "base": null
+                }
+            },
+            "type": "Приход",
+            "unique_code": "2c450fee1bf341ea91276d3bee23c9d7",
+            "warehouse": {
+                "unique_code": "9dc55dd1baf94767a962aadb77aa26a7",
+                "location": "ул. Баумана 222",
+                "name": "Склад1"
+            }
+        },
+        {
+            "nomenclature": {
+                "name": "Пшеничная мука",
+                "group": {
+                    "unique_code": "e209adbf94904908b497f23c62baf392",
+                    "name": "Сырье"
+                },
+                "range": {
+                    "unique_code": "cc504c0f80c54fd0be5010d21bc75b11",
+                    "value": 1000,
+                    "name": "кг",
+                    "base": {
+                        "unique_code": "cae6345aee8741f2a60b1f29e2b23ec8",
+                        "value": 1,
+                        "name": "грамм",
+                        "base": null
+                    }
+                }
+            },
+            "period": 1724610618.000349,
+            "quantity": 56.0,
+            "range": {
+                "unique_code": "cc504c0f80c54fd0be5010d21bc75b11",
+                "value": 1000,
+                "name": "кг",
+                "base": {
+                    "unique_code": "cae6345aee8741f2a60b1f29e2b23ec8",
+                    "value": 1,
+                    "name": "грамм",
+                    "base": null
+                }
+            },
+            "type": "Приход",
+            "unique_code": "18538c3eb43a41a0bb37fce1a1d0155d",
+            "warehouse": {
+                "unique_code": "bb9d272e5a434dd39c19ab19ce3873bc",
+                "location": "ул. Ленина 111",
+                "name": "Склад2"
+            }
+        },
+        {
+            "nomenclature": {
+                "name": "Сахар",
+                "group": {
+                    "unique_code": "e209adbf94904908b497f23c62baf392",
+                    "name": "Сырье"
+                },
+                "range": {
+                    "unique_code": "cc504c0f80c54fd0be5010d21bc75b11",
+                    "value": 1000,
+                    "name": "кг",
+                    "base": {
+                        "unique_code": "cae6345aee8741f2a60b1f29e2b23ec8",
+                        "value": 1,
+                        "name": "грамм",
+                        "base": null
+                    }
+                }
+            },
+            "period": 1715797818.000349,
+            "quantity": 13.0,
+            "range": {
+                "unique_code": "cc504c0f80c54fd0be5010d21bc75b11",
+                "value": 1000,
+                "name": "кг",
+                "base": {
+                    "unique_code": "cae6345aee8741f2a60b1f29e2b23ec8",
+                    "value": 1,
+                    "name": "грамм",
+                    "base": null
+                }
+            },
+            "type": "Приход",
+            "unique_code": "800d019488de45aab13e48e9bc2a9e15",
+            "warehouse": {
+                "unique_code": "9dc55dd1baf94767a962aadb77aa26a7",
+                "location": "ул. Баумана 222",
+                "name": "Склад1"
+            }
+        },
+        {
+            "nomenclature": {
+                "name": "Сливочное масло",
+                "group": {
+                    "unique_code": "e209adbf94904908b497f23c62baf392",
+                    "name": "Сырье"
+                },
+                "range": {
+                    "unique_code": "cc504c0f80c54fd0be5010d21bc75b11",
+                    "value": 1000,
+                    "name": "кг",
+                    "base": {
+                        "unique_code": "cae6345aee8741f2a60b1f29e2b23ec8",
+                        "value": 1,
+                        "name": "грамм",
+                        "base": null
+                    }
+                }
+            },
+            "period": 1707157818.000349,
+            "quantity": 256.0,
+            "range": {
+                "unique_code": "cc504c0f80c54fd0be5010d21bc75b11",
+                "value": 1000,
+                "name": "кг",
+                "base": {
+                    "unique_code": "cae6345aee8741f2a60b1f29e2b23ec8",
+                    "value": 1,
+                    "name": "грамм",
+                    "base": null
+                }
+            },
+            "type": "Расход",
+            "unique_code": "cf877a62f89b40059ee7cdb5be34cfde",
+            "warehouse": {
+                "unique_code": "9dc55dd1baf94767a962aadb77aa26a7",
+                "location": "ул. Баумана 222",
+                "name": "Склад1"
+            }
+        },
+        {
+            "nomenclature": {
+                "name": "Яйцо",
+                "group": {
+                    "unique_code": "e209adbf94904908b497f23c62baf392",
+                    "name": "Сырье"
+                },
+                "range": {
+                    "unique_code": "1334f2edbf254781808d661eb786f564",
+                    "value": 1,
+                    "name": "штука",
+                    "base": null
+                }
+            },
+            "period": 1722882618.000349,
+            "quantity": 86.0,
+            "range": {
+                "unique_code": "1334f2edbf254781808d661eb786f564",
+                "value": 1,
+                "name": "штука",
+                "base": null
+            },
+            "type": "Расход",
+            "unique_code": "f4e35f757dcd493c9f52bbcc766161b8",
+            "warehouse": {
+                "unique_code": "bb9d272e5a434dd39c19ab19ce3873bc",
+                "location": "ул. Ленина 111",
+                "name": "Склад2"
+            }
+        },
+        {
+            "nomenclature": {
+                "name": "Ванилин",
+                "group": {
+                    "unique_code": "e209adbf94904908b497f23c62baf392",
+                    "name": "Сырье"
+                },
+                "range": {
+                    "unique_code": "cc504c0f80c54fd0be5010d21bc75b11",
+                    "value": 1000,
+                    "name": "кг",
+                    "base": {
+                        "unique_code": "cae6345aee8741f2a60b1f29e2b23ec8",
+                        "value": 1,
+                        "name": "грамм",
+                        "base": null
+                    }
+                }
+            },
+            "period": 1727807418.000349,
+            "quantity": 250.0,
+            "range": {
+                "unique_code": "cc504c0f80c54fd0be5010d21bc75b11",
+                "value": 1000,
+                "name": "кг",
+                "base": {
+                    "unique_code": "cae6345aee8741f2a60b1f29e2b23ec8",
+                    "value": 1,
+                    "name": "грамм",
+                    "base": null
+                }
+            },
+            "type": "Расход",
+            "unique_code": "6515140e4ce0451db8af319337a01645",
+            "warehouse": {
+                "unique_code": "bb9d272e5a434dd39c19ab19ce3873bc",
+                "location": "ул. Ленина 111",
+                "name": "Склад2"
+            }
+        },
+        {
+            "nomenclature": {
+                "name": "Пшеничная мука",
+                "group": {
+                    "unique_code": "e209adbf94904908b497f23c62baf392",
+                    "name": "Сырье"
+                },
+                "range": {
+                    "unique_code": "cc504c0f80c54fd0be5010d21bc75b11",
+                    "value": 1000,
+                    "name": "кг",
+                    "base": {
+                        "unique_code": "cae6345aee8741f2a60b1f29e2b23ec8",
+                        "value": 1,
+                        "name": "грамм",
+                        "base": null
+                    }
+                }
+            },
+            "period": 1729621818.000349,
+            "quantity": 90.0,
+            "range": {
+                "unique_code": "cc504c0f80c54fd0be5010d21bc75b11",
+                "value": 1000,
+                "name": "кг",
+                "base": {
+                    "unique_code": "cae6345aee8741f2a60b1f29e2b23ec8",
+                    "value": 1,
+                    "name": "грамм",
+                    "base": null
+                }
+            },
+            "type": "Приход",
+            "unique_code": "0278f725dafc4d319ac0b65b728e105f",
+            "warehouse": {
+                "unique_code": "bb9d272e5a434dd39c19ab19ce3873bc",
+                "location": "ул. Ленина 111",
+                "name": "Склад2"
+            }
+        },
+        {
+            "nomenclature": {
+                "name": "Сахар",
+                "group": {
+                    "unique_code": "e209adbf94904908b497f23c62baf392",
+                    "name": "Сырье"
+                },
+                "range": {
+                    "unique_code": "cc504c0f80c54fd0be5010d21bc75b11",
+                    "value": 1000,
+                    "name": "кг",
+                    "base": {
+                        "unique_code": "cae6345aee8741f2a60b1f29e2b23ec8",
+                        "value": 1,
+                        "name": "грамм",
+                        "base": null
+                    }
+                }
+            },
+            "period": 1712946618.000349,
+            "quantity": 33.0,
+            "range": {
+                "unique_code": "cc504c0f80c54fd0be5010d21bc75b11",
+                "value": 1000,
+                "name": "кг",
+                "base": {
+                    "unique_code": "cae6345aee8741f2a60b1f29e2b23ec8",
+                    "value": 1,
+                    "name": "грамм",
+                    "base": null
+                }
+            },
+            "type": "Расход",
+            "unique_code": "c29d64b80b0946a49960b088b74f0062",
+            "warehouse": {
+                "unique_code": "bb9d272e5a434dd39c19ab19ce3873bc",
+                "location": "ул. Ленина 111",
+                "name": "Склад2"
+            }
+        },
+        {
+            "nomenclature": {
+                "name": "Сливочное масло",
+                "group": {
+                    "unique_code": "e209adbf94904908b497f23c62baf392",
+                    "name": "Сырье"
+                },
+                "range": {
+                    "unique_code": "cc504c0f80c54fd0be5010d21bc75b11",
+                    "value": 1000,
+                    "name": "кг",
+                    "base": {
+                        "unique_code": "cae6345aee8741f2a60b1f29e2b23ec8",
+                        "value": 1,
+                        "name": "грамм",
+                        "base": null
+                    }
+                }
+            },
+            "period": 1718476218.000349,
+            "quantity": 183.0,
+            "range": {
+                "unique_code": "cc504c0f80c54fd0be5010d21bc75b11",
+                "value": 1000,
+                "name": "кг",
+                "base": {
+                    "unique_code": "cae6345aee8741f2a60b1f29e2b23ec8",
+                    "value": 1,
+                    "name": "грамм",
+                    "base": null
+                }
+            },
+            "type": "Расход",
+            "unique_code": "95c57a1a1a88471581246a8c5b243df1",
+            "warehouse": {
+                "unique_code": "bb9d272e5a434dd39c19ab19ce3873bc",
+                "location": "ул. Ленина 111",
+                "name": "Склад2"
+            }
+        },
+        {
+            "nomenclature": {
+                "name": "Яйцо",
+                "group": {
+                    "unique_code": "e209adbf94904908b497f23c62baf392",
+                    "name": "Сырье"
+                },
+                "range": {
+                    "unique_code": "1334f2edbf254781808d661eb786f564",
+                    "value": 1,
+                    "name": "штука",
+                    "base": null
+                }
+            },
+            "period": 1703097018.000349,
+            "quantity": 79.0,
+            "range": {
+                "unique_code": "1334f2edbf254781808d661eb786f564",
+                "value": 1,
+                "name": "штука",
+                "base": null
+            },
+            "type": "Приход",
+            "unique_code": "868031c69a5f485f995765fa4295e5e8",
+            "warehouse": {
+                "unique_code": "9dc55dd1baf94767a962aadb77aa26a7",
+                "location": "ул. Баумана 222",
+                "name": "Склад1"
+            }
+        },
+        {
+            "nomenclature": {
+                "name": "Ванилин",
+                "group": {
+                    "unique_code": "e209adbf94904908b497f23c62baf392",
+                    "name": "Сырье"
+                },
+                "range": {
+                    "unique_code": "cc504c0f80c54fd0be5010d21bc75b11",
+                    "value": 1000,
+                    "name": "кг",
+                    "base": {
+                        "unique_code": "cae6345aee8741f2a60b1f29e2b23ec8",
+                        "value": 1,
+                        "name": "грамм",
+                        "base": null
+                    }
+                }
+            },
+            "period": 1732386618.000349,
+            "quantity": 135.0,
+            "range": {
+                "unique_code": "cc504c0f80c54fd0be5010d21bc75b11",
+                "value": 1000,
+                "name": "кг",
+                "base": {
+                    "unique_code": "cae6345aee8741f2a60b1f29e2b23ec8",
+                    "value": 1,
+                    "name": "грамм",
+                    "base": null
+                }
+            },
+            "type": "Приход",
+            "unique_code": "a6cb3f527f31444ead3ad02d21702f9e",
+            "warehouse": {
+                "unique_code": "bb9d272e5a434dd39c19ab19ce3873bc",
+                "location": "ул. Ленина 111",
+                "name": "Склад2"
+            }
+        },
+        {
+            "nomenclature": {
+                "name": "Пшеничная мука",
+                "group": {
+                    "unique_code": "e209adbf94904908b497f23c62baf392",
+                    "name": "Сырье"
+                },
+                "range": {
+                    "unique_code": "cc504c0f80c54fd0be5010d21bc75b11",
+                    "value": 1000,
+                    "name": "кг",
+                    "base": {
+                        "unique_code": "cae6345aee8741f2a60b1f29e2b23ec8",
+                        "value": 1,
+                        "name": "грамм",
+                        "base": null
+                    }
+                }
+            },
+            "period": 1714329018.000349,
+            "quantity": 54.0,
+            "range": {
+                "unique_code": "cc504c0f80c54fd0be5010d21bc75b11",
+                "value": 1000,
+                "name": "кг",
+                "base": {
+                    "unique_code": "cae6345aee8741f2a60b1f29e2b23ec8",
+                    "value": 1,
+                    "name": "грамм",
+                    "base": null
+                }
+            },
+            "type": "Приход",
+            "unique_code": "87b7bfc8771944a1a52d185b5f3d6208",
+            "warehouse": {
+                "unique_code": "9dc55dd1baf94767a962aadb77aa26a7",
+                "location": "ул. Баумана 222",
+                "name": "Склад1"
+            }
+        },
+        {
+            "nomenclature": {
+                "name": "Сахар",
+                "group": {
+                    "unique_code": "e209adbf94904908b497f23c62baf392",
+                    "name": "Сырье"
+                },
+                "range": {
+                    "unique_code": "cc504c0f80c54fd0be5010d21bc75b11",
+                    "value": 1000,
+                    "name": "кг",
+                    "base": {
+                        "unique_code": "cae6345aee8741f2a60b1f29e2b23ec8",
+                        "value": 1,
+                        "name": "грамм",
+                        "base": null
+                    }
+                }
+            },
+            "period": 1729189818.000349,
+            "quantity": 23.0,
+            "range": {
+                "unique_code": "cc504c0f80c54fd0be5010d21bc75b11",
+                "value": 1000,
+                "name": "кг",
+                "base": {
+                    "unique_code": "cae6345aee8741f2a60b1f29e2b23ec8",
+                    "value": 1,
+                    "name": "грамм",
+                    "base": null
+                }
+            },
+            "type": "Приход",
+            "unique_code": "ff830ab2e1274d03bc1d43b5683b60d9",
+            "warehouse": {
+                "unique_code": "bb9d272e5a434dd39c19ab19ce3873bc",
+                "location": "ул. Ленина 111",
+                "name": "Склад2"
+            }
+        },
+        {
+            "nomenclature": {
+                "name": "Сливочное масло",
+                "group": {
+                    "unique_code": "e209adbf94904908b497f23c62baf392",
+                    "name": "Сырье"
+                },
+                "range": {
+                    "unique_code": "cc504c0f80c54fd0be5010d21bc75b11",
+                    "value": 1000,
+                    "name": "кг",
+                    "base": {
+                        "unique_code": "cae6345aee8741f2a60b1f29e2b23ec8",
+                        "value": 1,
+                        "name": "грамм",
+                        "base": null
+                    }
+                }
+            },
+            "period": 1705084218.000349,
+            "quantity": 90.0,
+            "range": {
+                "unique_code": "cc504c0f80c54fd0be5010d21bc75b11",
+                "value": 1000,
+                "name": "кг",
+                "base": {
+                    "unique_code": "cae6345aee8741f2a60b1f29e2b23ec8",
+                    "value": 1,
+                    "name": "грамм",
+                    "base": null
+                }
+            },
+            "type": "Приход",
+            "unique_code": "013903e0bd344c35af53b0ff57cd643b",
+            "warehouse": {
+                "unique_code": "9dc55dd1baf94767a962aadb77aa26a7",
+                "location": "ул. Баумана 222",
+                "name": "Склад1"
+            }
+        },
+        {
+            "nomenclature": {
+                "name": "Яйцо",
+                "group": {
+                    "unique_code": "e209adbf94904908b497f23c62baf392",
+                    "name": "Сырье"
+                },
+                "range": {
+                    "unique_code": "1334f2edbf254781808d661eb786f564",
+                    "value": 1,
+                    "name": "штука",
+                    "base": null
+                }
+            },
+            "period": 1723746618.000349,
+            "quantity": 141.0,
+            "range": {
+                "unique_code": "1334f2edbf254781808d661eb786f564",
+                "value": 1,
+                "name": "штука",
+                "base": null
+            },
+            "type": "Расход",
+            "unique_code": "868ea335e0a9406c8114144b03dcc53d",
+            "warehouse": {
+                "unique_code": "9dc55dd1baf94767a962aadb77aa26a7",
+                "location": "ул. Баумана 222",
+                "name": "Склад1"
+            }
+        },
+        {
+            "nomenclature": {
+                "name": "Ванилин",
+                "group": {
+                    "unique_code": "e209adbf94904908b497f23c62baf392",
+                    "name": "Сырье"
+                },
+                "range": {
+                    "unique_code": "cc504c0f80c54fd0be5010d21bc75b11",
+                    "value": 1000,
+                    "name": "кг",
+                    "base": {
+                        "unique_code": "cae6345aee8741f2a60b1f29e2b23ec8",
+                        "value": 1,
+                        "name": "грамм",
+                        "base": null
+                    }
+                }
+            },
+            "period": 1727893818.000349,
+            "quantity": 255.0,
+            "range": {
+                "unique_code": "cc504c0f80c54fd0be5010d21bc75b11",
+                "value": 1000,
+                "name": "кг",
+                "base": {
+                    "unique_code": "cae6345aee8741f2a60b1f29e2b23ec8",
+                    "value": 1,
+                    "name": "грамм",
+                    "base": null
+                }
+            },
+            "type": "Приход",
+            "unique_code": "ea1a9364a9d44df2a5fbf068e1e4ba5a",
+            "warehouse": {
+                "unique_code": "9dc55dd1baf94767a962aadb77aa26a7",
+                "location": "ул. Баумана 222",
+                "name": "Склад1"
+            }
+        },
+        {
+            "nomenclature": {
+                "name": "Пшеничная мука",
+                "group": {
+                    "unique_code": "e209adbf94904908b497f23c62baf392",
+                    "name": "Сырье"
+                },
+                "range": {
+                    "unique_code": "cc504c0f80c54fd0be5010d21bc75b11",
+                    "value": 1000,
+                    "name": "кг",
+                    "base": {
+                        "unique_code": "cae6345aee8741f2a60b1f29e2b23ec8",
+                        "value": 1,
+                        "name": "грамм",
+                        "base": null
+                    }
+                }
+            },
+            "period": 1716575418.000349,
+            "quantity": 120.0,
+            "range": {
+                "unique_code": "cc504c0f80c54fd0be5010d21bc75b11",
+                "value": 1000,
+                "name": "кг",
+                "base": {
+                    "unique_code": "cae6345aee8741f2a60b1f29e2b23ec8",
+                    "value": 1,
+                    "name": "грамм",
+                    "base": null
+                }
+            },
+            "type": "Расход",
+            "unique_code": "98ec16acce634ac5a7a99d35d24f8a42",
+            "warehouse": {
+                "unique_code": "bb9d272e5a434dd39c19ab19ce3873bc",
+                "location": "ул. Ленина 111",
+                "name": "Склад2"
+            }
+        },
+        {
+            "nomenclature": {
+                "name": "Сахар",
+                "group": {
+                    "unique_code": "e209adbf94904908b497f23c62baf392",
+                    "name": "Сырье"
+                },
+                "range": {
+                    "unique_code": "cc504c0f80c54fd0be5010d21bc75b11",
+                    "value": 1000,
+                    "name": "кг",
+                    "base": {
+                        "unique_code": "cae6345aee8741f2a60b1f29e2b23ec8",
+                        "value": 1,
+                        "name": "грамм",
+                        "base": null
+                    }
+                }
+            },
+            "period": 1714069818.000349,
+            "quantity": 243.0,
+            "range": {
+                "unique_code": "cc504c0f80c54fd0be5010d21bc75b11",
+                "value": 1000,
+                "name": "кг",
+                "base": {
+                    "unique_code": "cae6345aee8741f2a60b1f29e2b23ec8",
+                    "value": 1,
+                    "name": "грамм",
+                    "base": null
+                }
+            },
+            "type": "Расход",
+            "unique_code": "8f8aa0badc7a4984acea6ddaa8acdc5a",
+            "warehouse": {
+                "unique_code": "9dc55dd1baf94767a962aadb77aa26a7",
+                "location": "ул. Баумана 222",
+                "name": "Склад1"
+            }
+        },
+        {
+            "nomenclature": {
+                "name": "Сливочное масло",
+                "group": {
+                    "unique_code": "e209adbf94904908b497f23c62baf392",
+                    "name": "Сырье"
+                },
+                "range": {
+                    "unique_code": "cc504c0f80c54fd0be5010d21bc75b11",
+                    "value": 1000,
+                    "name": "кг",
+                    "base": {
+                        "unique_code": "cae6345aee8741f2a60b1f29e2b23ec8",
+                        "value": 1,
+                        "name": "грамм",
+                        "base": null
+                    }
+                }
+            },
+            "period": 1729967418.000349,
+            "quantity": 70.0,
+            "range": {
+                "unique_code": "cc504c0f80c54fd0be5010d21bc75b11",
+                "value": 1000,
+                "name": "кг",
+                "base": {
+                    "unique_code": "cae6345aee8741f2a60b1f29e2b23ec8",
+                    "value": 1,
+                    "name": "грамм",
+                    "base": null
+                }
+            },
+            "type": "Приход",
+            "unique_code": "b1bcc63a6ad8450080376997049fe193",
+            "warehouse": {
+                "unique_code": "9dc55dd1baf94767a962aadb77aa26a7",
+                "location": "ул. Баумана 222",
+                "name": "Склад1"
+            }
+        },
+        {
+            "nomenclature": {
+                "name": "Яйцо",
+                "group": {
+                    "unique_code": "e209adbf94904908b497f23c62baf392",
+                    "name": "Сырье"
+                },
+                "range": {
+                    "unique_code": "1334f2edbf254781808d661eb786f564",
+                    "value": 1,
+                    "name": "штука",
+                    "base": null
+                }
+            },
+            "period": 1701541818.000349,
+            "quantity": 116.0,
+            "range": {
+                "unique_code": "1334f2edbf254781808d661eb786f564",
+                "value": 1,
+                "name": "штука",
+                "base": null
+            },
+            "type": "Приход",
+            "unique_code": "f5e77b9f22024b02a45db41d53ebb8e6",
+            "warehouse": {
+                "unique_code": "9dc55dd1baf94767a962aadb77aa26a7",
+                "location": "ул. Баумана 222",
+                "name": "Склад1"
+            }
+        },
+        {
+            "nomenclature": {
+                "name": "Ванилин",
+                "group": {
+                    "unique_code": "e209adbf94904908b497f23c62baf392",
+                    "name": "Сырье"
+                },
+                "range": {
+                    "unique_code": "cc504c0f80c54fd0be5010d21bc75b11",
+                    "value": 1000,
+                    "name": "кг",
+                    "base": {
+                        "unique_code": "cae6345aee8741f2a60b1f29e2b23ec8",
+                        "value": 1,
+                        "name": "грамм",
+                        "base": null
+                    }
+                }
+            },
+            "period": 1709577018.000349,
+            "quantity": 221.0,
+            "range": {
+                "unique_code": "cc504c0f80c54fd0be5010d21bc75b11",
+                "value": 1000,
+                "name": "кг",
+                "base": {
+                    "unique_code": "cae6345aee8741f2a60b1f29e2b23ec8",
+                    "value": 1,
+                    "name": "грамм",
+                    "base": null
+                }
+            },
+            "type": "Расход",
+            "unique_code": "665b6cd786a84ee5a4c4c37603d3cb2a",
+            "warehouse": {
+                "unique_code": "bb9d272e5a434dd39c19ab19ce3873bc",
+                "location": "ул. Ленина 111",
+                "name": "Склад2"
+            }
+        },
+        {
+            "nomenclature": {
+                "name": "Пшеничная мука",
+                "group": {
+                    "unique_code": "e209adbf94904908b497f23c62baf392",
+                    "name": "Сырье"
+                },
+                "range": {
+                    "unique_code": "cc504c0f80c54fd0be5010d21bc75b11",
+                    "value": 1000,
+                    "name": "кг",
+                    "base": {
+                        "unique_code": "cae6345aee8741f2a60b1f29e2b23ec8",
+                        "value": 1,
+                        "name": "грамм",
+                        "base": null
+                    }
+                }
+            },
+            "period": 1724005818.000349,
+            "quantity": 115.0,
+            "range": {
+                "unique_code": "cc504c0f80c54fd0be5010d21bc75b11",
+                "value": 1000,
+                "name": "кг",
+                "base": {
+                    "unique_code": "cae6345aee8741f2a60b1f29e2b23ec8",
+                    "value": 1,
+                    "name": "грамм",
+                    "base": null
+                }
+            },
+            "type": "Приход",
+            "unique_code": "6c9f7b0066af45ebb4029311490d05b4",
+            "warehouse": {
+                "unique_code": "bb9d272e5a434dd39c19ab19ce3873bc",
+                "location": "ул. Ленина 111",
+                "name": "Склад2"
+            }
+        },
+        {
+            "nomenclature": {
+                "name": "Сахар",
+                "group": {
+                    "unique_code": "e209adbf94904908b497f23c62baf392",
+                    "name": "Сырье"
+                },
+                "range": {
+                    "unique_code": "cc504c0f80c54fd0be5010d21bc75b11",
+                    "value": 1000,
+                    "name": "кг",
+                    "base": {
+                        "unique_code": "cae6345aee8741f2a60b1f29e2b23ec8",
+                        "value": 1,
+                        "name": "грамм",
+                        "base": null
+                    }
+                }
+            },
+            "period": 1722709818.000349,
+            "quantity": 101.0,
+            "range": {
+                "unique_code": "cc504c0f80c54fd0be5010d21bc75b11",
+                "value": 1000,
+                "name": "кг",
+                "base": {
+                    "unique_code": "cae6345aee8741f2a60b1f29e2b23ec8",
+                    "value": 1,
+                    "name": "грамм",
+                    "base": null
+                }
+            },
+            "type": "Расход",
+            "unique_code": "c3a478b648ce4a7888fb8c73d460f46c",
+            "warehouse": {
+                "unique_code": "9dc55dd1baf94767a962aadb77aa26a7",
+                "location": "ул. Баумана 222",
+                "name": "Склад1"
+            }
+        },
+        {
+            "nomenclature": {
+                "name": "Сливочное масло",
+                "group": {
+                    "unique_code": "e209adbf94904908b497f23c62baf392",
+                    "name": "Сырье"
+                },
+                "range": {
+                    "unique_code": "cc504c0f80c54fd0be5010d21bc75b11",
+                    "value": 1000,
+                    "name": "кг",
+                    "base": {
+                        "unique_code": "cae6345aee8741f2a60b1f29e2b23ec8",
+                        "value": 1,
+                        "name": "грамм",
+                        "base": null
+                    }
+                }
+            },
+            "period": 1715452218.000349,
+            "quantity": 33.0,
+            "range": {
+                "unique_code": "cc504c0f80c54fd0be5010d21bc75b11",
+                "value": 1000,
+                "name": "кг",
+                "base": {
+                    "unique_code": "cae6345aee8741f2a60b1f29e2b23ec8",
+                    "value": 1,
+                    "name": "грамм",
+                    "base": null
+                }
+            },
+            "type": "Приход",
+            "unique_code": "234feda397d3451e8e426872b915b816",
+            "warehouse": {
+                "unique_code": "9dc55dd1baf94767a962aadb77aa26a7",
+                "location": "ул. Баумана 222",
+                "name": "Склад1"
+            }
+        },
+        {
+            "nomenclature": {
+                "name": "Яйцо",
+                "group": {
+                    "unique_code": "e209adbf94904908b497f23c62baf392",
+                    "name": "Сырье"
+                },
+                "range": {
+                    "unique_code": "1334f2edbf254781808d661eb786f564",
+                    "value": 1,
+                    "name": "штука",
+                    "base": null
+                }
+            },
+            "period": 1701282618.000349,
+            "quantity": 260.0,
+            "range": {
+                "unique_code": "1334f2edbf254781808d661eb786f564",
+                "value": 1,
+                "name": "штука",
+                "base": null
+            },
+            "type": "Приход",
+            "unique_code": "fd967e09cf534168bb92d18fb540eb68",
+            "warehouse": {
+                "unique_code": "bb9d272e5a434dd39c19ab19ce3873bc",
+                "location": "ул. Ленина 111",
+                "name": "Склад2"
+            }
+        },
+        {
+            "nomenclature": {
+                "name": "Ванилин",
+                "group": {
+                    "unique_code": "e209adbf94904908b497f23c62baf392",
+                    "name": "Сырье"
+                },
+                "range": {
+                    "unique_code": "cc504c0f80c54fd0be5010d21bc75b11",
+                    "value": 1000,
+                    "name": "кг",
+                    "base": {
+                        "unique_code": "cae6345aee8741f2a60b1f29e2b23ec8",
+                        "value": 1,
+                        "name": "грамм",
+                        "base": null
+                    }
+                }
+            },
+            "period": 1711650618.000349,
+            "quantity": 121.0,
+            "range": {
+                "unique_code": "cc504c0f80c54fd0be5010d21bc75b11",
+                "value": 1000,
+                "name": "кг",
+                "base": {
+                    "unique_code": "cae6345aee8741f2a60b1f29e2b23ec8",
+                    "value": 1,
+                    "name": "грамм",
+                    "base": null
+                }
+            },
+            "type": "Приход",
+            "unique_code": "8a41ad528d274bde82ddf227f2db1ee1",
+            "warehouse": {
+                "unique_code": "bb9d272e5a434dd39c19ab19ce3873bc",
+                "location": "ул. Ленина 111",
+                "name": "Склад2"
+            }
+        },
+        {
+            "nomenclature": {
+                "name": "Пшеничная мука",
+                "group": {
+                    "unique_code": "e209adbf94904908b497f23c62baf392",
+                    "name": "Сырье"
+                },
+                "range": {
+                    "unique_code": "cc504c0f80c54fd0be5010d21bc75b11",
+                    "value": 1000,
+                    "name": "кг",
+                    "base": {
+                        "unique_code": "cae6345aee8741f2a60b1f29e2b23ec8",
+                        "value": 1,
+                        "name": "грамм",
+                        "base": null
+                    }
+                }
+            },
+            "period": 1719167418.000349,
+            "quantity": 30.0,
+            "range": {
+                "unique_code": "cc504c0f80c54fd0be5010d21bc75b11",
+                "value": 1000,
+                "name": "кг",
+                "base": {
+                    "unique_code": "cae6345aee8741f2a60b1f29e2b23ec8",
+                    "value": 1,
+                    "name": "грамм",
+                    "base": null
+                }
+            },
+            "type": "Приход",
+            "unique_code": "8e757ff4eb924fca8eba724401322615",
+            "warehouse": {
+                "unique_code": "bb9d272e5a434dd39c19ab19ce3873bc",
+                "location": "ул. Ленина 111",
+                "name": "Склад2"
+            }
+        },
+        {
+            "nomenclature": {
+                "name": "Сахар",
+                "group": {
+                    "unique_code": "e209adbf94904908b497f23c62baf392",
+                    "name": "Сырье"
+                },
+                "range": {
+                    "unique_code": "cc504c0f80c54fd0be5010d21bc75b11",
+                    "value": 1000,
+                    "name": "кг",
+                    "base": {
+                        "unique_code": "cae6345aee8741f2a60b1f29e2b23ec8",
+                        "value": 1,
+                        "name": "грамм",
+                        "base": null
+                    }
+                }
+            },
+            "period": 1728412218.000349,
+            "quantity": 78.0,
+            "range": {
+                "unique_code": "cc504c0f80c54fd0be5010d21bc75b11",
+                "value": 1000,
+                "name": "кг",
+                "base": {
+                    "unique_code": "cae6345aee8741f2a60b1f29e2b23ec8",
+                    "value": 1,
+                    "name": "грамм",
+                    "base": null
+                }
+            },
+            "type": "Расход",
+            "unique_code": "0c306ab1e96e4e9d96892560fda5e889",
+            "warehouse": {
+                "unique_code": "bb9d272e5a434dd39c19ab19ce3873bc",
+                "location": "ул. Ленина 111",
+                "name": "Склад2"
+            }
+        },
+        {
+            "nomenclature": {
+                "name": "Сливочное масло",
+                "group": {
+                    "unique_code": "e209adbf94904908b497f23c62baf392",
+                    "name": "Сырье"
+                },
+                "range": {
+                    "unique_code": "cc504c0f80c54fd0be5010d21bc75b11",
+                    "value": 1000,
+                    "name": "кг",
+                    "base": {
+                        "unique_code": "cae6345aee8741f2a60b1f29e2b23ec8",
+                        "value": 1,
+                        "name": "грамм",
+                        "base": null
+                    }
+                }
+            },
+            "period": 1703097018.000349,
+            "quantity": 244.0,
+            "range": {
+                "unique_code": "cc504c0f80c54fd0be5010d21bc75b11",
+                "value": 1000,
+                "name": "кг",
+                "base": {
+                    "unique_code": "cae6345aee8741f2a60b1f29e2b23ec8",
+                    "value": 1,
+                    "name": "грамм",
+                    "base": null
+                }
+            },
+            "type": "Расход",
+            "unique_code": "ba58c2eca9f14fbda6f45be87fe8b3c4",
+            "warehouse": {
+                "unique_code": "9dc55dd1baf94767a962aadb77aa26a7",
+                "location": "ул. Баумана 222",
+                "name": "Склад1"
+            }
+        },
+        {
+            "nomenclature": {
+                "name": "Яйцо",
+                "group": {
+                    "unique_code": "e209adbf94904908b497f23c62baf392",
+                    "name": "Сырье"
+                },
+                "range": {
+                    "unique_code": "1334f2edbf254781808d661eb786f564",
+                    "value": 1,
+                    "name": "штука",
+                    "base": null
+                }
+            },
+            "period": 1729103418.000349,
+            "quantity": 116.0,
+            "range": {
+                "unique_code": "1334f2edbf254781808d661eb786f564",
+                "value": 1,
+                "name": "штука",
+                "base": null
+            },
+            "type": "Расход",
+            "unique_code": "306150ef897f49db9740aa58b629cac5",
+            "warehouse": {
+                "unique_code": "9dc55dd1baf94767a962aadb77aa26a7",
+                "location": "ул. Баумана 222",
+                "name": "Склад1"
+            }
+        },
+        {
+            "nomenclature": {
+                "name": "Ванилин",
+                "group": {
+                    "unique_code": "e209adbf94904908b497f23c62baf392",
+                    "name": "Сырье"
+                },
+                "range": {
+                    "unique_code": "cc504c0f80c54fd0be5010d21bc75b11",
+                    "value": 1000,
+                    "name": "кг",
+                    "base": {
+                        "unique_code": "cae6345aee8741f2a60b1f29e2b23ec8",
+                        "value": 1,
+                        "name": "грамм",
+                        "base": null
+                    }
+                }
+            },
+            "period": 1730053818.000349,
+            "quantity": 122.0,
+            "range": {
+                "unique_code": "cc504c0f80c54fd0be5010d21bc75b11",
+                "value": 1000,
+                "name": "кг",
+                "base": {
+                    "unique_code": "cae6345aee8741f2a60b1f29e2b23ec8",
+                    "value": 1,
+                    "name": "грамм",
+                    "base": null
+                }
+            },
+            "type": "Приход",
+            "unique_code": "bc93f5040387435a8e943275ba9d4c33",
+            "warehouse": {
+                "unique_code": "9dc55dd1baf94767a962aadb77aa26a7",
+                "location": "ул. Баумана 222",
+                "name": "Склад1"
+            }
+        },
+        {
+            "nomenclature": {
+                "name": "Пшеничная мука",
+                "group": {
+                    "unique_code": "e209adbf94904908b497f23c62baf392",
+                    "name": "Сырье"
+                },
+                "range": {
+                    "unique_code": "cc504c0f80c54fd0be5010d21bc75b11",
+                    "value": 1000,
+                    "name": "кг",
+                    "base": {
+                        "unique_code": "cae6345aee8741f2a60b1f29e2b23ec8",
+                        "value": 1,
+                        "name": "грамм",
+                        "base": null
+                    }
+                }
+            },
+            "period": 1708108218.000349,
+            "quantity": 60.0,
+            "range": {
+                "unique_code": "cc504c0f80c54fd0be5010d21bc75b11",
+                "value": 1000,
+                "name": "кг",
+                "base": {
+                    "unique_code": "cae6345aee8741f2a60b1f29e2b23ec8",
+                    "value": 1,
+                    "name": "грамм",
+                    "base": null
+                }
+            },
+            "type": "Приход",
+            "unique_code": "59fe7bd14ac34ba79ca68260ada99e8a",
+            "warehouse": {
+                "unique_code": "9dc55dd1baf94767a962aadb77aa26a7",
+                "location": "ул. Баумана 222",
+                "name": "Склад1"
+            }
+        },
+        {
+            "nomenclature": {
+                "name": "Сахар",
+                "group": {
+                    "unique_code": "e209adbf94904908b497f23c62baf392",
+                    "name": "Сырье"
+                },
+                "range": {
+                    "unique_code": "cc504c0f80c54fd0be5010d21bc75b11",
+                    "value": 1000,
+                    "name": "кг",
+                    "base": {
+                        "unique_code": "cae6345aee8741f2a60b1f29e2b23ec8",
+                        "value": 1,
+                        "name": "грамм",
+                        "base": null
+                    }
+                }
+            },
+            "period": 1729621818.000349,
+            "quantity": 160.0,
+            "range": {
+                "unique_code": "cc504c0f80c54fd0be5010d21bc75b11",
+                "value": 1000,
+                "name": "кг",
+                "base": {
+                    "unique_code": "cae6345aee8741f2a60b1f29e2b23ec8",
+                    "value": 1,
+                    "name": "грамм",
+                    "base": null
+                }
+            },
+            "type": "Расход",
+            "unique_code": "a4934371df0e4e38b01bbc7958549999",
+            "warehouse": {
+                "unique_code": "9dc55dd1baf94767a962aadb77aa26a7",
+                "location": "ул. Баумана 222",
+                "name": "Склад1"
+            }
+        },
+        {
+            "nomenclature": {
+                "name": "Сливочное масло",
+                "group": {
+                    "unique_code": "e209adbf94904908b497f23c62baf392",
+                    "name": "Сырье"
+                },
+                "range": {
+                    "unique_code": "cc504c0f80c54fd0be5010d21bc75b11",
+                    "value": 1000,
+                    "name": "кг",
+                    "base": {
+                        "unique_code": "cae6345aee8741f2a60b1f29e2b23ec8",
+                        "value": 1,
+                        "name": "грамм",
+                        "base": null
+                    }
+                }
+            },
+            "period": 1712946618.000349,
+            "quantity": 26.0,
+            "range": {
+                "unique_code": "cc504c0f80c54fd0be5010d21bc75b11",
+                "value": 1000,
+                "name": "кг",
+                "base": {
+                    "unique_code": "cae6345aee8741f2a60b1f29e2b23ec8",
+                    "value": 1,
+                    "name": "грамм",
+                    "base": null
+                }
+            },
+            "type": "Расход",
+            "unique_code": "fa03a2d28ba84fd7bbc2a1cab402082c",
+            "warehouse": {
+                "unique_code": "bb9d272e5a434dd39c19ab19ce3873bc",
+                "location": "ул. Ленина 111",
+                "name": "Склад2"
+            }
+        },
+        {
+            "nomenclature": {
+                "name": "Яйцо",
+                "group": {
+                    "unique_code": "e209adbf94904908b497f23c62baf392",
+                    "name": "Сырье"
+                },
+                "range": {
+                    "unique_code": "1334f2edbf254781808d661eb786f564",
+                    "value": 1,
+                    "name": "штука",
+                    "base": null
+                }
+            },
+            "period": 1705516218.000349,
+            "quantity": 14.0,
+            "range": {
+                "unique_code": "1334f2edbf254781808d661eb786f564",
+                "value": 1,
+                "name": "штука",
+                "base": null
+            },
+            "type": "Расход",
+            "unique_code": "6e5aaeb7f1964258846ffbd0b0119f82",
+            "warehouse": {
+                "unique_code": "9dc55dd1baf94767a962aadb77aa26a7",
+                "location": "ул. Баумана 222",
+                "name": "Склад1"
+            }
+        },
+        {
+            "nomenclature": {
+                "name": "Ванилин",
+                "group": {
+                    "unique_code": "e209adbf94904908b497f23c62baf392",
+                    "name": "Сырье"
+                },
+                "range": {
+                    "unique_code": "cc504c0f80c54fd0be5010d21bc75b11",
+                    "value": 1000,
+                    "name": "кг",
+                    "base": {
+                        "unique_code": "cae6345aee8741f2a60b1f29e2b23ec8",
+                        "value": 1,
+                        "name": "грамм",
+                        "base": null
+                    }
+                }
+            },
+            "period": 1727375418.000349,
+            "quantity": 240.0,
+            "range": {
+                "unique_code": "cc504c0f80c54fd0be5010d21bc75b11",
+                "value": 1000,
+                "name": "кг",
+                "base": {
+                    "unique_code": "cae6345aee8741f2a60b1f29e2b23ec8",
+                    "value": 1,
+                    "name": "грамм",
+                    "base": null
+                }
+            },
+            "type": "Приход",
+            "unique_code": "1d46d6289e6c4f5bba0c810e62f2ec07",
+            "warehouse": {
+                "unique_code": "9dc55dd1baf94767a962aadb77aa26a7",
+                "location": "ул. Баумана 222",
+                "name": "Склад1"
+            }
+        },
+        {
+            "nomenclature": {
+                "name": "Пшеничная мука",
+                "group": {
+                    "unique_code": "e209adbf94904908b497f23c62baf392",
+                    "name": "Сырье"
+                },
+                "range": {
+                    "unique_code": "cc504c0f80c54fd0be5010d21bc75b11",
+                    "value": 1000,
+                    "name": "кг",
+                    "base": {
+                        "unique_code": "cae6345aee8741f2a60b1f29e2b23ec8",
+                        "value": 1,
+                        "name": "грамм",
+                        "base": null
+                    }
+                }
+            },
+            "period": 1717439418.000349,
+            "quantity": 116.0,
+            "range": {
+                "unique_code": "cc504c0f80c54fd0be5010d21bc75b11",
+                "value": 1000,
+                "name": "кг",
+                "base": {
+                    "unique_code": "cae6345aee8741f2a60b1f29e2b23ec8",
+                    "value": 1,
+                    "name": "грамм",
+                    "base": null
+                }
+            },
+            "type": "Приход",
+            "unique_code": "c3cf4a95c93a4cd4baf27fa8931971fd",
+            "warehouse": {
+                "unique_code": "bb9d272e5a434dd39c19ab19ce3873bc",
+                "location": "ул. Ленина 111",
+                "name": "Склад2"
+            }
+        },
+        {
+            "nomenclature": {
+                "name": "Сахар",
+                "group": {
+                    "unique_code": "e209adbf94904908b497f23c62baf392",
+                    "name": "Сырье"
+                },
+                "range": {
+                    "unique_code": "cc504c0f80c54fd0be5010d21bc75b11",
+                    "value": 1000,
+                    "name": "кг",
+                    "base": {
+                        "unique_code": "cae6345aee8741f2a60b1f29e2b23ec8",
+                        "value": 1,
+                        "name": "грамм",
+                        "base": null
+                    }
+                }
+            },
+            "period": 1703529018.000349,
+            "quantity": 122.0,
+            "range": {
+                "unique_code": "cc504c0f80c54fd0be5010d21bc75b11",
+                "value": 1000,
+                "name": "кг",
+                "base": {
+                    "unique_code": "cae6345aee8741f2a60b1f29e2b23ec8",
+                    "value": 1,
+                    "name": "грамм",
+                    "base": null
+                }
+            },
+            "type": "Приход",
+            "unique_code": "0d4ca24633f246a0b60d055d26be86a6",
+            "warehouse": {
+                "unique_code": "9dc55dd1baf94767a962aadb77aa26a7",
+                "location": "ул. Баумана 222",
+                "name": "Склад1"
+            }
+        },
+        {
+            "nomenclature": {
+                "name": "Сливочное масло",
+                "group": {
+                    "unique_code": "e209adbf94904908b497f23c62baf392",
+                    "name": "Сырье"
+                },
+                "range": {
+                    "unique_code": "cc504c0f80c54fd0be5010d21bc75b11",
+                    "value": 1000,
+                    "name": "кг",
+                    "base": {
+                        "unique_code": "cae6345aee8741f2a60b1f29e2b23ec8",
+                        "value": 1,
+                        "name": "грамм",
+                        "base": null
+                    }
+                }
+            },
+            "period": 1722105018.000349,
+            "quantity": 226.0,
+            "range": {
+                "unique_code": "cc504c0f80c54fd0be5010d21bc75b11",
+                "value": 1000,
+                "name": "кг",
+                "base": {
+                    "unique_code": "cae6345aee8741f2a60b1f29e2b23ec8",
+                    "value": 1,
+                    "name": "грамм",
+                    "base": null
+                }
+            },
+            "type": "Приход",
+            "unique_code": "5cea34a8f3554654ae4bcadfa37bc56d",
+            "warehouse": {
+                "unique_code": "bb9d272e5a434dd39c19ab19ce3873bc",
+                "location": "ул. Ленина 111",
+                "name": "Склад2"
+            }
+        },
+        {
+            "nomenclature": {
+                "name": "Яйцо",
+                "group": {
+                    "unique_code": "e209adbf94904908b497f23c62baf392",
+                    "name": "Сырье"
+                },
+                "range": {
+                    "unique_code": "1334f2edbf254781808d661eb786f564",
+                    "value": 1,
+                    "name": "штука",
+                    "base": null
+                }
+            },
+            "period": 1702060218.000349,
+            "quantity": 102.0,
+            "range": {
+                "unique_code": "1334f2edbf254781808d661eb786f564",
+                "value": 1,
+                "name": "штука",
+                "base": null
+            },
+            "type": "Расход",
+            "unique_code": "311b89dc1c1b4dd7a66a531c4b3d3baf",
+            "warehouse": {
+                "unique_code": "bb9d272e5a434dd39c19ab19ce3873bc",
+                "location": "ул. Ленина 111",
+                "name": "Склад2"
+            }
+        },
+        {
+            "nomenclature": {
+                "name": "Ванилин",
+                "group": {
+                    "unique_code": "e209adbf94904908b497f23c62baf392",
+                    "name": "Сырье"
+                },
+                "range": {
+                    "unique_code": "cc504c0f80c54fd0be5010d21bc75b11",
+                    "value": 1000,
+                    "name": "кг",
+                    "base": {
+                        "unique_code": "cae6345aee8741f2a60b1f29e2b23ec8",
+                        "value": 1,
+                        "name": "грамм",
+                        "base": null
+                    }
+                }
+            },
+            "period": 1729708218.000349,
+            "quantity": 69.0,
+            "range": {
+                "unique_code": "cc504c0f80c54fd0be5010d21bc75b11",
+                "value": 1000,
+                "name": "кг",
+                "base": {
+                    "unique_code": "cae6345aee8741f2a60b1f29e2b23ec8",
+                    "value": 1,
+                    "name": "грамм",
+                    "base": null
+                }
+            },
+            "type": "Расход",
+            "unique_code": "5a691d457d064bceb29dde431702a689",
+            "warehouse": {
+                "unique_code": "9dc55dd1baf94767a962aadb77aa26a7",
+                "location": "ул. Баумана 222",
+                "name": "Склад1"
+            }
+        },
+        {
+            "nomenclature": {
+                "name": "Пшеничная мука",
+                "group": {
+                    "unique_code": "e209adbf94904908b497f23c62baf392",
+                    "name": "Сырье"
+                },
+                "range": {
+                    "unique_code": "cc504c0f80c54fd0be5010d21bc75b11",
+                    "value": 1000,
+                    "name": "кг",
+                    "base": {
+                        "unique_code": "cae6345aee8741f2a60b1f29e2b23ec8",
+                        "value": 1,
+                        "name": "грамм",
+                        "base": null
+                    }
+                }
+            },
+            "period": 1722191418.000349,
+            "quantity": 218.0,
+            "range": {
+                "unique_code": "cc504c0f80c54fd0be5010d21bc75b11",
+                "value": 1000,
+                "name": "кг",
+                "base": {
+                    "unique_code": "cae6345aee8741f2a60b1f29e2b23ec8",
+                    "value": 1,
+                    "name": "грамм",
+                    "base": null
+                }
+            },
+            "type": "Приход",
+            "unique_code": "82bfa140007d4001855bab3a551f976e",
+            "warehouse": {
+                "unique_code": "bb9d272e5a434dd39c19ab19ce3873bc",
+                "location": "ул. Ленина 111",
+                "name": "Склад2"
+            }
+        },
+        {
+            "nomenclature": {
+                "name": "Сахар",
+                "group": {
+                    "unique_code": "e209adbf94904908b497f23c62baf392",
+                    "name": "Сырье"
+                },
+                "range": {
+                    "unique_code": "cc504c0f80c54fd0be5010d21bc75b11",
+                    "value": 1000,
+                    "name": "кг",
+                    "base": {
+                        "unique_code": "cae6345aee8741f2a60b1f29e2b23ec8",
+                        "value": 1,
+                        "name": "грамм",
+                        "base": null
+                    }
+                }
+            },
+            "period": 1711996218.000349,
+            "quantity": 268.0,
+            "range": {
+                "unique_code": "cc504c0f80c54fd0be5010d21bc75b11",
+                "value": 1000,
+                "name": "кг",
+                "base": {
+                    "unique_code": "cae6345aee8741f2a60b1f29e2b23ec8",
+                    "value": 1,
+                    "name": "грамм",
+                    "base": null
+                }
+            },
+            "type": "Приход",
+            "unique_code": "aac68b512fbd45e3bdf103776fa21197",
+            "warehouse": {
+                "unique_code": "bb9d272e5a434dd39c19ab19ce3873bc",
+                "location": "ул. Ленина 111",
+                "name": "Склад2"
+            }
+        },
+        {
+            "nomenclature": {
+                "name": "Сливочное масло",
+                "group": {
+                    "unique_code": "e209adbf94904908b497f23c62baf392",
+                    "name": "Сырье"
+                },
+                "range": {
+                    "unique_code": "cc504c0f80c54fd0be5010d21bc75b11",
+                    "value": 1000,
+                    "name": "кг",
+                    "base": {
+                        "unique_code": "cae6345aee8741f2a60b1f29e2b23ec8",
+                        "value": 1,
+                        "name": "грамм",
+                        "base": null
+                    }
+                }
+            },
+            "period": 1729276218.000349,
+            "quantity": 234.0,
+            "range": {
+                "unique_code": "cc504c0f80c54fd0be5010d21bc75b11",
+                "value": 1000,
+                "name": "кг",
+                "base": {
+                    "unique_code": "cae6345aee8741f2a60b1f29e2b23ec8",
+                    "value": 1,
+                    "name": "грамм",
+                    "base": null
+                }
+            },
+            "type": "Приход",
+            "unique_code": "95bbe2c177874866ac7cbd0f78e75595",
+            "warehouse": {
+                "unique_code": "9dc55dd1baf94767a962aadb77aa26a7",
+                "location": "ул. Баумана 222",
+                "name": "Склад1"
+            }
+        },
+        {
+            "nomenclature": {
+                "name": "Яйцо",
+                "group": {
+                    "unique_code": "e209adbf94904908b497f23c62baf392",
+                    "name": "Сырье"
+                },
+                "range": {
+                    "unique_code": "1334f2edbf254781808d661eb786f564",
+                    "value": 1,
+                    "name": "штука",
+                    "base": null
+                }
+            },
+            "period": 1728239418.000349,
+            "quantity": 222.0,
+            "range": {
+                "unique_code": "1334f2edbf254781808d661eb786f564",
+                "value": 1,
+                "name": "штука",
+                "base": null
+            },
+            "type": "Расход",
+            "unique_code": "e729997750ba4b91ac77ffb929db3922",
+            "warehouse": {
+                "unique_code": "bb9d272e5a434dd39c19ab19ce3873bc",
+                "location": "ул. Ленина 111",
+                "name": "Склад2"
+            }
+        },
+        {
+            "nomenclature": {
+                "name": "Ванилин",
+                "group": {
+                    "unique_code": "e209adbf94904908b497f23c62baf392",
+                    "name": "Сырье"
+                },
+                "range": {
+                    "unique_code": "cc504c0f80c54fd0be5010d21bc75b11",
+                    "value": 1000,
+                    "name": "кг",
+                    "base": {
+                        "unique_code": "cae6345aee8741f2a60b1f29e2b23ec8",
+                        "value": 1,
+                        "name": "грамм",
+                        "base": null
+                    }
+                }
+            },
+            "period": 1713465018.000349,
+            "quantity": 75.0,
+            "range": {
+                "unique_code": "cc504c0f80c54fd0be5010d21bc75b11",
+                "value": 1000,
+                "name": "кг",
+                "base": {
+                    "unique_code": "cae6345aee8741f2a60b1f29e2b23ec8",
+                    "value": 1,
+                    "name": "грамм",
+                    "base": null
+                }
+            },
+            "type": "Расход",
+            "unique_code": "cf3e716ca0604a948b733fa4655a9a3b",
+            "warehouse": {
+                "unique_code": "9dc55dd1baf94767a962aadb77aa26a7",
+                "location": "ул. Баумана 222",
+                "name": "Склад1"
+            }
+        },
+        {
+            "nomenclature": {
+                "name": "Пшеничная мука",
+                "group": {
+                    "unique_code": "e209adbf94904908b497f23c62baf392",
+                    "name": "Сырье"
+                },
+                "range": {
+                    "unique_code": "cc504c0f80c54fd0be5010d21bc75b11",
+                    "value": 1000,
+                    "name": "кг",
+                    "base": {
+                        "unique_code": "cae6345aee8741f2a60b1f29e2b23ec8",
+                        "value": 1,
+                        "name": "грамм",
+                        "base": null
+                    }
+                }
+            },
+            "period": 1712514618.000349,
+            "quantity": 113.0,
+            "range": {
+                "unique_code": "cc504c0f80c54fd0be5010d21bc75b11",
+                "value": 1000,
+                "name": "кг",
+                "base": {
+                    "unique_code": "cae6345aee8741f2a60b1f29e2b23ec8",
+                    "value": 1,
+                    "name": "грамм",
+                    "base": null
+                }
+            },
+            "type": "Приход",
+            "unique_code": "3a5fa408b6a844daadb98ce5a79d9d41",
+            "warehouse": {
+                "unique_code": "9dc55dd1baf94767a962aadb77aa26a7",
+                "location": "ул. Баумана 222",
+                "name": "Склад1"
+            }
+        },
+        {
+            "nomenclature": {
+                "name": "Сахар",
+                "group": {
+                    "unique_code": "e209adbf94904908b497f23c62baf392",
+                    "name": "Сырье"
+                },
+                "range": {
+                    "unique_code": "cc504c0f80c54fd0be5010d21bc75b11",
+                    "value": 1000,
+                    "name": "кг",
+                    "base": {
+                        "unique_code": "cae6345aee8741f2a60b1f29e2b23ec8",
+                        "value": 1,
+                        "name": "грамм",
+                        "base": null
+                    }
+                }
+            },
+            "period": 1731695418.000349,
+            "quantity": 21.0,
+            "range": {
+                "unique_code": "cc504c0f80c54fd0be5010d21bc75b11",
+                "value": 1000,
+                "name": "кг",
+                "base": {
+                    "unique_code": "cae6345aee8741f2a60b1f29e2b23ec8",
+                    "value": 1,
+                    "name": "грамм",
+                    "base": null
+                }
+            },
+            "type": "Приход",
+            "unique_code": "9aee0733ada14123aabf31cdad0fc461",
+            "warehouse": {
+                "unique_code": "9dc55dd1baf94767a962aadb77aa26a7",
+                "location": "ул. Баумана 222",
+                "name": "Склад1"
+            }
+        },
+        {
+            "nomenclature": {
+                "name": "Сливочное масло",
+                "group": {
+                    "unique_code": "e209adbf94904908b497f23c62baf392",
+                    "name": "Сырье"
+                },
+                "range": {
+                    "unique_code": "cc504c0f80c54fd0be5010d21bc75b11",
+                    "value": 1000,
+                    "name": "кг",
+                    "base": {
+                        "unique_code": "cae6345aee8741f2a60b1f29e2b23ec8",
+                        "value": 1,
+                        "name": "грамм",
+                        "base": null
+                    }
+                }
+            },
+            "period": 1711737018.000349,
+            "quantity": 255.0,
+            "range": {
+                "unique_code": "cc504c0f80c54fd0be5010d21bc75b11",
+                "value": 1000,
+                "name": "кг",
+                "base": {
+                    "unique_code": "cae6345aee8741f2a60b1f29e2b23ec8",
+                    "value": 1,
+                    "name": "грамм",
+                    "base": null
+                }
+            },
+            "type": "Расход",
+            "unique_code": "5193f8f0d9884ae580f5dbfa0cf9d62e",
+            "warehouse": {
+                "unique_code": "bb9d272e5a434dd39c19ab19ce3873bc",
+                "location": "ул. Ленина 111",
+                "name": "Склад2"
+            }
+        },
+        {
+            "nomenclature": {
+                "name": "Яйцо",
+                "group": {
+                    "unique_code": "e209adbf94904908b497f23c62baf392",
+                    "name": "Сырье"
+                },
+                "range": {
+                    "unique_code": "1334f2edbf254781808d661eb786f564",
+                    "value": 1,
+                    "name": "штука",
+                    "base": null
+                }
+            },
+            "period": 1723919418.000349,
+            "quantity": 23.0,
+            "range": {
+                "unique_code": "1334f2edbf254781808d661eb786f564",
+                "value": 1,
+                "name": "штука",
+                "base": null
+            },
+            "type": "Приход",
+            "unique_code": "88e119742f89495389e4115bc6e4b489",
+            "warehouse": {
+                "unique_code": "bb9d272e5a434dd39c19ab19ce3873bc",
+                "location": "ул. Ленина 111",
+                "name": "Склад2"
+            }
+        },
+        {
+            "nomenclature": {
+                "name": "Ванилин",
+                "group": {
+                    "unique_code": "e209adbf94904908b497f23c62baf392",
+                    "name": "Сырье"
+                },
+                "range": {
+                    "unique_code": "cc504c0f80c54fd0be5010d21bc75b11",
+                    "value": 1000,
+                    "name": "кг",
+                    "base": {
+                        "unique_code": "cae6345aee8741f2a60b1f29e2b23ec8",
+                        "value": 1,
+                        "name": "грамм",
+                        "base": null
+                    }
+                }
+            },
+            "period": 1726684218.000349,
+            "quantity": 88.0,
+            "range": {
+                "unique_code": "cc504c0f80c54fd0be5010d21bc75b11",
+                "value": 1000,
+                "name": "кг",
+                "base": {
+                    "unique_code": "cae6345aee8741f2a60b1f29e2b23ec8",
+                    "value": 1,
+                    "name": "грамм",
+                    "base": null
+                }
+            },
+            "type": "Приход",
+            "unique_code": "e91a6316772443f1ac213339e3d74200",
+            "warehouse": {
+                "unique_code": "9dc55dd1baf94767a962aadb77aa26a7",
+                "location": "ул. Баумана 222",
+                "name": "Склад1"
+            }
+        },
+        {
+            "nomenclature": {
+                "name": "Пшеничная мука",
+                "group": {
+                    "unique_code": "e209adbf94904908b497f23c62baf392",
+                    "name": "Сырье"
+                },
+                "range": {
+                    "unique_code": "cc504c0f80c54fd0be5010d21bc75b11",
+                    "value": 1000,
+                    "name": "кг",
+                    "base": {
+                        "unique_code": "cae6345aee8741f2a60b1f29e2b23ec8",
+                        "value": 1,
+                        "name": "грамм",
+                        "base": null
+                    }
+                }
+            },
+            "period": 1715797818.000349,
+            "quantity": 200.0,
+            "range": {
+                "unique_code": "cc504c0f80c54fd0be5010d21bc75b11",
+                "value": 1000,
+                "name": "кг",
+                "base": {
+                    "unique_code": "cae6345aee8741f2a60b1f29e2b23ec8",
+                    "value": 1,
+                    "name": "грамм",
+                    "base": null
+                }
+            },
+            "type": "Расход",
+            "unique_code": "0f4d1435189845abbd706cb6ca2cd8dc",
+            "warehouse": {
+                "unique_code": "bb9d272e5a434dd39c19ab19ce3873bc",
+                "location": "ул. Ленина 111",
+                "name": "Склад2"
+            }
+        },
+        {
+            "nomenclature": {
+                "name": "Сахар",
+                "group": {
+                    "unique_code": "e209adbf94904908b497f23c62baf392",
+                    "name": "Сырье"
+                },
+                "range": {
+                    "unique_code": "cc504c0f80c54fd0be5010d21bc75b11",
+                    "value": 1000,
+                    "name": "кг",
+                    "base": {
+                        "unique_code": "cae6345aee8741f2a60b1f29e2b23ec8",
+                        "value": 1,
+                        "name": "грамм",
+                        "base": null
+                    }
+                }
+            },
+            "period": 1710959418.000349,
+            "quantity": 20.0,
+            "range": {
+                "unique_code": "cc504c0f80c54fd0be5010d21bc75b11",
+                "value": 1000,
+                "name": "кг",
+                "base": {
+                    "unique_code": "cae6345aee8741f2a60b1f29e2b23ec8",
+                    "value": 1,
+                    "name": "грамм",
+                    "base": null
+                }
+            },
+            "type": "Расход",
+            "unique_code": "0576d2bc42a24ecdb87226f66430e7a4",
+            "warehouse": {
+                "unique_code": "9dc55dd1baf94767a962aadb77aa26a7",
+                "location": "ул. Баумана 222",
+                "name": "Склад1"
+            }
+        },
+        {
+            "nomenclature": {
+                "name": "Сливочное масло",
+                "group": {
+                    "unique_code": "e209adbf94904908b497f23c62baf392",
+                    "name": "Сырье"
+                },
+                "range": {
+                    "unique_code": "cc504c0f80c54fd0be5010d21bc75b11",
+                    "value": 1000,
+                    "name": "кг",
+                    "base": {
+                        "unique_code": "cae6345aee8741f2a60b1f29e2b23ec8",
+                        "value": 1,
+                        "name": "грамм",
+                        "base": null
+                    }
+                }
+            },
+            "period": 1710613818.000349,
+            "quantity": 16.0,
+            "range": {
+                "unique_code": "cc504c0f80c54fd0be5010d21bc75b11",
+                "value": 1000,
+                "name": "кг",
+                "base": {
+                    "unique_code": "cae6345aee8741f2a60b1f29e2b23ec8",
+                    "value": 1,
+                    "name": "грамм",
+                    "base": null
+                }
+            },
+            "type": "Расход",
+            "unique_code": "9c30d6f2892c42e384313d7d38d183de",
+            "warehouse": {
+                "unique_code": "9dc55dd1baf94767a962aadb77aa26a7",
+                "location": "ул. Баумана 222",
+                "name": "Склад1"
+            }
+        },
+        {
+            "nomenclature": {
+                "name": "Яйцо",
+                "group": {
+                    "unique_code": "e209adbf94904908b497f23c62baf392",
+                    "name": "Сырье"
+                },
+                "range": {
+                    "unique_code": "1334f2edbf254781808d661eb786f564",
+                    "value": 1,
+                    "name": "штука",
+                    "base": null
+                }
+            },
+            "period": 1724610618.000349,
+            "quantity": 279.0,
+            "range": {
+                "unique_code": "1334f2edbf254781808d661eb786f564",
+                "value": 1,
+                "name": "штука",
+                "base": null
+            },
+            "type": "Расход",
+            "unique_code": "71e5b3484a164aa0baeae049fa512bd3",
+            "warehouse": {
+                "unique_code": "9dc55dd1baf94767a962aadb77aa26a7",
+                "location": "ул. Баумана 222",
+                "name": "Склад1"
+            }
+        },
+        {
+            "nomenclature": {
+                "name": "Ванилин",
+                "group": {
+                    "unique_code": "e209adbf94904908b497f23c62baf392",
+                    "name": "Сырье"
+                },
+                "range": {
+                    "unique_code": "cc504c0f80c54fd0be5010d21bc75b11",
+                    "value": 1000,
+                    "name": "кг",
+                    "base": {
+                        "unique_code": "cae6345aee8741f2a60b1f29e2b23ec8",
+                        "value": 1,
+                        "name": "грамм",
+                        "base": null
+                    }
+                }
+            },
+            "period": 1706293818.000349,
+            "quantity": 121.0,
+            "range": {
+                "unique_code": "cc504c0f80c54fd0be5010d21bc75b11",
+                "value": 1000,
+                "name": "кг",
+                "base": {
+                    "unique_code": "cae6345aee8741f2a60b1f29e2b23ec8",
+                    "value": 1,
+                    "name": "грамм",
+                    "base": null
+                }
+            },
+            "type": "Расход",
+            "unique_code": "d1d3c13fe4f04712ae7358eba0d65197",
+            "warehouse": {
+                "unique_code": "bb9d272e5a434dd39c19ab19ce3873bc",
+                "location": "ул. Ленина 111",
+                "name": "Склад2"
             }
         }
     ]

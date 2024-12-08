@@ -10,7 +10,7 @@ class logger(abstract_logic):
     
     
     def __init__(self, settings_manager: settings_manager):
-        self.__file_path = "log.txt"
+        self.__file_path = "log_docker.txt"
         self.manager = settings_manager
         observe_service.append(self)
         

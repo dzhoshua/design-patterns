@@ -5,8 +5,8 @@
     "correspondent_account": "12345678901",
     "biс": "123456789",
     "organization_type": "12345",
-    "block_period": "2024-09-24",
-    "first_start": false,
-    "min_log_level": 1,
+    "block_period": "2023-10-01",
+    "first_start": true,
+    "min_log_level": 2,
     "save_to_file": true
 }

@@ -17,7 +17,7 @@ class domain_prototype(abstract_filter):
 
         self.data = self.get_filtered_name(filterDTO)
         self.data = self.get_filtered_id(filterDTO)
-        self.data = self.get_filtered_period(filterDTO)
+        # self.data = self.get_filtered_period(filterDTO)
         domains = domain_prototype(self.data)
         return domains
     
