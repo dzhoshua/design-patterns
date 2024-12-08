@@ -31,7 +31,7 @@ class logger(abstract_logic):
         timestamp = datetime.now().isoformat()
         log_output = f"[{timestamp}] {level}\t{message}"
         
-        if not self.manager.settings.save_to_file:
+        if not self.manager.settings.log_to_file:
             print(log_output)
         else:
             with open(self.__file_path, "a", encoding="utf-8") as file:

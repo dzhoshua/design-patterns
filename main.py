@@ -16,7 +16,6 @@ from datetime import datetime
 from Src.Processors.blocking_process import blocking_process
 
 from Src.Services.observe_service import observe_service
-from Src.Core.logger_level import logger_level
 from Src.Logging.logger import logger
 from Src.Services.nomenclature_service import nomenclature_service
 from Src.Core.event_type import event_type
@@ -31,7 +30,6 @@ reposity = data_reposity()
 _nomenclature_service = nomenclature_service(reposity)
 _reposity_manager = reposity_manager(reposity, manager)
 _balanse_sheet = turnover_balanse_sheet(manager)
-_logger = logger(manager)
 start = start_service(reposity, manager)
 start.create()
 
@@ -388,5 +386,5 @@ def filter_transactions():
 
 if __name__ == "__main__":
     app.add_api("swagger.yaml")
-    app.run(port = 8080)
-    # app.run(host="0.0.0.0", port = 8080)
+    # app.run(port = 8080)
+    app.run(host="0.0.0.0", port = 8080)

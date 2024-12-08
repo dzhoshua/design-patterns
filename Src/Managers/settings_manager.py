@@ -93,7 +93,8 @@ class settings_manager(abstract_logic):
             "block_period": self.__settings.block_period,
             "first_start" : self.__settings.first_start,
             "min_log_level" : self.__settings.min_log_level,
-            "save_to_file": self.__settings.save_to_file
+            "log_to_file": self.__settings.log_to_file,
+            "data_to_db": self.__settings.data_to_db
         }
 
         try:
@@ -117,8 +118,9 @@ class settings_manager(abstract_logic):
         _settings.organization_type = "12345"
         _settings.block_period = "2024-01-01"
         _settings.first_start = True
-        _settings.save_to_file = True
+        _settings.log_to_file = True
         _settings.min_log_level = logger_level.INFO.value
+        _settings.data_to_db = True
         
         return _settings
     
