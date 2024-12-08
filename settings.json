@@ -6,7 +6,8 @@
     "biс": "123456789",
     "organization_type": "12345",
     "block_period": "2024-09-24",
-    "first_start": false,
+    "first_start": true,
     "min_log_level": 1,
-    "save_to_file": true
+    "log_to_file": true,
+    "data_to_db":true
 }

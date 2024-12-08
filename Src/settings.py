@@ -19,7 +19,8 @@ class settings:
     __block_period: str = ""
     __first_start: bool = True
     __min_log_level:int = None
-    __save_to_file: bool = True
+    __log_to_file: bool = True
+    __data_to_db: bool = True
 
 
     """
@@ -195,14 +196,31 @@ class settings:
     Сохранение логов в файл
     """    
     @property
-    def save_to_file(self):
-        return self.__save_to_file
+    def log_to_file(self):
+        return self.__log_to_file
     
-    @save_to_file.setter
-    def save_to_file(self, value: bool):
+    @log_to_file.setter
+    def log_to_file(self, value: bool):
         try:
             validator.validate(value, bool)
         except Exception as ex:
-            observe_service.raise_event(event_type.ERROR, f"save_to_file: {ex}")
-        self.__save_to_file = value
-        observe_service.raise_event(event_type.DEBUG, f"Сохранение логов в файл (save_to_file): {value}")
+            observe_service.raise_event(event_type.ERROR, f"log_to_file: {ex}")
+        self.__log_to_file = value
+        observe_service.raise_event(event_type.DEBUG, f"Сохранение логов в файл (log_to_file): {value}")
+        
+        
+    """
+    Сохранение данных в базу данных
+    """    
+    @property
+    def data_to_db(self):
+        return self.__data_to_db
+    
+    @data_to_db.setter
+    def data_to_db(self, value: bool):
+        try:
+            validator.validate(value, bool)
+        except Exception as ex:
+            observe_service.raise_event(event_type.ERROR, f"data_to_db: {ex}")
+        self.__data_to_db = value
+        observe_service.raise_event(event_type.DEBUG, f"Сохранение в базу данных (data_to_db): {value}")
