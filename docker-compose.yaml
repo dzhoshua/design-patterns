@@ -23,25 +23,25 @@ version: "3"
 
 services:
   # Основной сервис
-  study2024_8001:
-    container_name: study2024_9001
+  cont1:
+    container_name: cont1
     image: cont1
     ports:
-      - 9001:8080
+      - 8000:8080
     volumes:
       - ./settings.json:/app/settings.json
 
   # Основной сервис
-  study2024_8002:
-    container_name: study2024_9002
+  cont2:
+    container_name: cont2
     image: cont1
     ports:  
-      - 9002:8080
+      - 8001:8080
     volumes:
       - ./settings.json:/app/settings.json
 
   # Proxy
-  proxy.study2024:
+  proxy:
     container_name: proxy
     image: proxy
     ports:
